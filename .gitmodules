@@ -1,12 +1,12 @@
 [submodule "src/lib/theme"]
-	path = src/lib/theme
+	path = theme
 	url = https://github.com/Godmy/stylist-svelte-theme.git
 [submodule "src/lib/svg"]
-	path = src/lib/svg
+	path = svg
 	url = https://github.com/Godmy/stylist-svelte-svg.git
 [submodule "src/lib/typography"]
-	path = src/lib/typography
+	path = typography
 	url = https://github.com/Godmy/stylist-svelte-typography.git
 [submodule "src/lib/layout"]
-	path = src/lib/layout
+	path = layout
 	url = https://github.com/Godmy/stylist-svelte-layout.git
