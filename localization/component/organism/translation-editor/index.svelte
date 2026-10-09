@@ -3,13 +3,8 @@
 	import { createTranslationEditorState } from './state.svelte';
 	import type { RecipeTranslationEditor } from '$stylist/localization/interface/recipe/translation-editor';
 
-	let {
-		onTranslationChange,
-		onSave,
-		onImport,
-		onExport,
-		...stateProps
-	}: RecipeTranslationEditor = $props();
+	let { onTranslationChange, onSave, onImport, onExport, ...stateProps }: RecipeTranslationEditor =
+		$props();
 
 	const state = createTranslationEditorState(stateProps);
 </script>
@@ -73,8 +68,7 @@
 										<textarea
 											class="c-translation-editor__textarea"
 											rows={3}
-											bind:value={state.editedValue}
-										></textarea>
+											bind:value={state.editedValue}></textarea>
 										<div class="c-translation-editor__editor-actions">
 											<button
 												type="button"
