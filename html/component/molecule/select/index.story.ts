@@ -1,0 +1,37 @@
+import HtmlSelect from './index.svelte';
+import type { RecipeHtmlSelect } from '../../../interface/recipe/select';
+import type { ContractStory } from '$stylist/domain/interface/contract/story';
+
+/** `<select>`: List box control. */
+export default {
+	component: HtmlSelect,
+	controls: {
+		autocomplete: { type: 'select', options: ['on', 'off'] },
+		disabled: { type: 'boolean' },
+		multiple: { type: 'boolean' },
+		name: { type: 'text' },
+		required: { type: 'boolean' },
+		size: { type: 'number' }
+	},
+	presets: { Disabled: { disabled: true }, Required: { required: true } },
+	content: [
+		{
+			kind: 'element',
+			tag: 'option',
+			attrs: { value: 'apple' },
+			children: [{ kind: 'text', value: 'Apple' }]
+		},
+		{
+			kind: 'element',
+			tag: 'option',
+			attrs: { value: 'pear' },
+			children: [{ kind: 'text', value: 'Pear' }]
+		},
+		{
+			kind: 'element',
+			tag: 'option',
+			attrs: { value: 'plum' },
+			children: [{ kind: 'text', value: 'Plum' }]
+		}
+	]
+} satisfies ContractStory<RecipeHtmlSelect>;

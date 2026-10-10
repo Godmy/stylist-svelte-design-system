@@ -1,0 +1,352 @@
+{
+  "source": "https://html.spec.whatwg.org/multipage/indices.html#elements-3",
+  "updated": "2026-10-09",
+  "retrieved": "2026-10-10",
+  "elements": {
+    "a": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element"
+    },
+    "abbr": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element"
+    },
+    "address": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-address-element"
+    },
+    "area": {
+      "source": "https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element"
+    },
+    "article": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-article-element"
+    },
+    "aside": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-aside-element"
+    },
+    "audio": {
+      "source": "https://html.spec.whatwg.org/multipage/media.html#the-audio-element"
+    },
+    "b": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element"
+    },
+    "base": {
+      "source": "https://html.spec.whatwg.org/multipage/semantics.html#the-base-element"
+    },
+    "bdi": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element"
+    },
+    "bdo": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element"
+    },
+    "blockquote": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element"
+    },
+    "body": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-body-element"
+    },
+    "br": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element"
+    },
+    "button": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element"
+    },
+    "canvas": {
+      "source": "https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element"
+    },
+    "caption": {
+      "source": "https://html.spec.whatwg.org/multipage/tables.html#the-caption-element"
+    },
+    "cite": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element"
+    },
+    "code": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element"
+    },
+    "col": {
+      "source": "https://html.spec.whatwg.org/multipage/tables.html#the-col-element"
+    },
+    "colgroup": {
+      "source": "https://html.spec.whatwg.org/multipage/tables.html#the-colgroup-element"
+    },
+    "data": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element"
+    },
+    "datalist": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element"
+    },
+    "dd": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element"
+    },
+    "del": {
+      "source": "https://html.spec.whatwg.org/multipage/edits.html#the-del-element"
+    },
+    "details": {
+      "source": "https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element"
+    },
+    "dfn": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element"
+    },
+    "dialog": {
+      "source": "https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element"
+    },
+    "div": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"
+    },
+    "dl": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element"
+    },
+    "dt": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element"
+    },
+    "em": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element"
+    },
+    "embed": {
+      "source": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-embed-element"
+    },
+    "fieldset": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element"
+    },
+    "figcaption": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element"
+    },
+    "figure": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element"
+    },
+    "footer": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-footer-element"
+    },
+    "form": {
+      "source": "https://html.spec.whatwg.org/multipage/forms.html#the-form-element"
+    },
+    "h1": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements"
+    },
+    "h2": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements"
+    },
+    "h3": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements"
+    },
+    "h4": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements"
+    },
+    "h5": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements"
+    },
+    "h6": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements"
+    },
+    "head": {
+      "source": "https://html.spec.whatwg.org/multipage/semantics.html#the-head-element"
+    },
+    "header": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-header-element"
+    },
+    "hgroup": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element"
+    },
+    "hr": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element"
+    },
+    "html": {
+      "source": "https://html.spec.whatwg.org/multipage/semantics.html#the-html-element"
+    },
+    "i": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element"
+    },
+    "iframe": {
+      "source": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element"
+    },
+    "img": {
+      "source": "https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"
+    },
+    "input": {
+      "source": "https://html.spec.whatwg.org/multipage/input.html#the-input-element"
+    },
+    "ins": {
+      "source": "https://html.spec.whatwg.org/multipage/edits.html#the-ins-element"
+    },
+    "kbd": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element"
+    },
+    "label": {
+      "source": "https://html.spec.whatwg.org/multipage/forms.html#the-label-element"
+    },
+    "legend": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element"
+    },
+    "li": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element"
+    },
+    "link": {
+      "source": "https://html.spec.whatwg.org/multipage/semantics.html#the-link-element"
+    },
+    "main": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element"
+    },
+    "map": {
+      "source": "https://html.spec.whatwg.org/multipage/image-maps.html#the-map-element"
+    },
+    "mark": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element"
+    },
+    "math": {
+      "source": "https://w3c.github.io/mathml-core/#the-top-level-math-element"
+    },
+    "menu": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element"
+    },
+    "meta": {
+      "source": "https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element"
+    },
+    "meter": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-meter-element"
+    },
+    "nav": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-nav-element"
+    },
+    "noscript": {
+      "source": "https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element"
+    },
+    "object": {
+      "source": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element"
+    },
+    "ol": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element"
+    },
+    "optgroup": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element"
+    },
+    "option": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element"
+    },
+    "output": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element"
+    },
+    "p": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element"
+    },
+    "picture": {
+      "source": "https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element"
+    },
+    "pre": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element"
+    },
+    "progress": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element"
+    },
+    "q": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element"
+    },
+    "rp": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element"
+    },
+    "rt": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element"
+    },
+    "ruby": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element"
+    },
+    "s": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element"
+    },
+    "samp": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element"
+    },
+    "script": {
+      "source": "https://html.spec.whatwg.org/multipage/scripting.html#the-script-element"
+    },
+    "search": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-search-element"
+    },
+    "section": {
+      "source": "https://html.spec.whatwg.org/multipage/sections.html#the-section-element"
+    },
+    "select": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element"
+    },
+    "selectedcontent": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-selectedcontent-element"
+    },
+    "slot": {
+      "source": "https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element"
+    },
+    "small": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element"
+    },
+    "source": {
+      "source": "https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element"
+    },
+    "span": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element"
+    },
+    "strong": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element"
+    },
+    "style": {
+      "source": "https://html.spec.whatwg.org/multipage/semantics.html#the-style-element"
+    },
+    "sub": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"
+    },
+    "summary": {
+      "source": "https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element"
+    },
+    "sup": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements"
+    },
+    "svg": {
+      "source": "https://w3c.github.io/svgwg/svg2-draft/struct.html#elementdef-svg"
+    },
+    "table": {
+      "source": "https://html.spec.whatwg.org/multipage/tables.html#the-table-element"
+    },
+    "tbody": {
+      "source": "https://html.spec.whatwg.org/multipage/tables.html#the-tbody-element"
+    },
+    "td": {
+      "source": "https://html.spec.whatwg.org/multipage/tables.html#the-td-element"
+    },
+    "template": {
+      "source": "https://html.spec.whatwg.org/multipage/scripting.html#the-template-element"
+    },
+    "textarea": {
+      "source": "https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element"
+    },
+    "tfoot": {
+      "source": "https://html.spec.whatwg.org/multipage/tables.html#the-tfoot-element"
+    },
+    "th": {
+      "source": "https://html.spec.whatwg.org/multipage/tables.html#the-th-element"
+    },
+    "thead": {
+      "source": "https://html.spec.whatwg.org/multipage/tables.html#the-thead-element"
+    },
+    "time": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element"
+    },
+    "title": {
+      "source": "https://html.spec.whatwg.org/multipage/semantics.html#the-title-element"
+    },
+    "tr": {
+      "source": "https://html.spec.whatwg.org/multipage/tables.html#the-tr-element"
+    },
+    "track": {
+      "source": "https://html.spec.whatwg.org/multipage/media.html#the-track-element"
+    },
+    "u": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element"
+    },
+    "ul": {
+      "source": "https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element"
+    },
+    "var": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element"
+    },
+    "video": {
+      "source": "https://html.spec.whatwg.org/multipage/media.html#the-video-element"
+    },
+    "wbr": {
+      "source": "https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element"
+    }
+  }
+}

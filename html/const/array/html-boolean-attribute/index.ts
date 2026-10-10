@@ -1,0 +1,28 @@
+/** HTML boolean attributes; enumerated attributes and ARIA values are strings. */
+export const HTML_BOOLEAN_ATTRIBUTE = [
+	'allowfullscreen',
+	'async',
+	'autofocus',
+	'autoplay',
+	'checked',
+	'controls',
+	'default',
+	'defer',
+	'disabled',
+	'formnovalidate',
+	'hidden',
+	'inert',
+	'ismap',
+	'itemscope',
+	'loop',
+	'multiple',
+	'muted',
+	'nomodule',
+	'novalidate',
+	'open',
+	'playsinline',
+	'readonly',
+	'required',
+	'reversed',
+	'selected'
+] as const;

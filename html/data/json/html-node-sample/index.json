@@ -1,0 +1,162 @@
+{
+	"kind": "element",
+	"tag": "main",
+	"id": "main",
+	"children": [
+		{
+			"kind": "element",
+			"tag": "header",
+			"id": "header",
+			"children": [
+				{ "kind": "element", "tag": "h1", "id": "title", "children": [{ "kind": "text", "value": "Sakartvelo tea" }] },
+				{
+					"kind": "element",
+					"tag": "nav",
+					"id": "nav",
+					"children": [
+						{
+							"kind": "element",
+							"tag": "ul",
+							"id": "menu",
+							"children": [
+								{
+									"kind": "element",
+									"tag": "li",
+									"children": [{ "kind": "element", "tag": "a", "attrs": { "href": "#shop" }, "children": [{ "kind": "text", "value": "Shop" }] }]
+								},
+								{
+									"kind": "element",
+									"tag": "li",
+									"children": [{ "kind": "element", "tag": "a", "attrs": { "href": "#faq" }, "children": [{ "kind": "text", "value": "FAQ" }] }]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"kind": "element",
+			"tag": "section",
+			"id": "shop",
+			"attrs": { "id": "shop" },
+			"children": [
+				{ "kind": "element", "tag": "h2", "children": [{ "kind": "text", "value": "Black tea" }] },
+				{
+					"kind": "element",
+					"tag": "figure",
+					"id": "figure",
+					"children": [
+						{
+							"kind": "element",
+							"tag": "picture",
+							"children": [
+								{ "kind": "element", "tag": "source", "attrs": { "media": "(min-width: 40rem)", "srcset": "/logos/stylist.png" } },
+								{ "kind": "element", "tag": "img", "attrs": { "src": "/logos/stylist.png", "alt": "Tea leaves", "width": 96 } }
+							]
+						},
+						{ "kind": "element", "tag": "figcaption", "children": [{ "kind": "text", "value": "Harvested in Guria" }] }
+					]
+				},
+				{
+					"kind": "element",
+					"tag": "p",
+					"children": [
+						{ "kind": "text", "value": "Price: " },
+						{ "kind": "element", "tag": "data", "attrs": { "value": "12" }, "children": [{ "kind": "text", "value": "12 €" }] },
+						{ "kind": "text", "value": " per " },
+						{ "kind": "element", "tag": "abbr", "attrs": { "title": "100 grams" }, "children": [{ "kind": "text", "value": "100 g" }] }
+					]
+				},
+				{
+					"kind": "element",
+					"tag": "form",
+					"id": "order",
+					"children": [
+						{
+							"kind": "element",
+							"tag": "fieldset",
+							"children": [
+								{ "kind": "element", "tag": "legend", "children": [{ "kind": "text", "value": "Order" }] },
+								{
+									"kind": "element",
+									"tag": "label",
+									"children": [
+										{ "kind": "element", "tag": "input", "id": "gift", "attrs": { "type": "checkbox", "name": "gift" } },
+										{ "kind": "text", "value": " Gift wrap" }
+									]
+								},
+								{
+									"kind": "element",
+									"tag": "label",
+									"children": [
+										{ "kind": "text", "value": "Amount " },
+										{ "kind": "element", "tag": "input", "id": "amount", "attrs": { "type": "number", "name": "amount", "min": 1, "value": 1 } }
+									]
+								},
+								{ "kind": "element", "tag": "button", "attrs": { "type": "submit" }, "children": [{ "kind": "text", "value": "Buy" }] }
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"kind": "element",
+			"tag": "section",
+			"id": "faq",
+			"attrs": { "id": "faq" },
+			"children": [
+				{
+					"kind": "element",
+					"tag": "details",
+					"attrs": { "name": "faq" },
+					"children": [
+						{ "kind": "element", "tag": "summary", "children": [{ "kind": "text", "value": "Delivery?" }] },
+						{ "kind": "element", "tag": "p", "children": [{ "kind": "text", "value": "Across Europe in 5 days." }] }
+					]
+				},
+				{
+					"kind": "element",
+					"tag": "table",
+					"children": [
+						{ "kind": "element", "tag": "caption", "children": [{ "kind": "text", "value": "Brewing" }] },
+						{
+							"kind": "element",
+							"tag": "thead",
+							"children": [
+								{
+									"kind": "element",
+									"tag": "tr",
+									"children": [
+										{ "kind": "element", "tag": "th", "attrs": { "scope": "col" }, "children": [{ "kind": "text", "value": "Tea" }] },
+										{ "kind": "element", "tag": "th", "attrs": { "scope": "col" }, "children": [{ "kind": "text", "value": "°C" }] }
+									]
+								}
+							]
+						},
+						{
+							"kind": "element",
+							"tag": "tbody",
+							"children": [
+								{
+									"kind": "element",
+									"tag": "tr",
+									"children": [
+										{ "kind": "element", "tag": "td", "children": [{ "kind": "text", "value": "Black" }] },
+										{ "kind": "element", "tag": "td", "children": [{ "kind": "text", "value": "95" }] }
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"kind": "element",
+			"tag": "footer",
+			"children": [{ "kind": "element", "tag": "small", "children": [{ "kind": "text", "value": "© 2026" }] }]
+		}
+	]
+}

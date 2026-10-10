@@ -1,0 +1,25 @@
+/** States of the input type attribute (traits of input). */
+export const HTML_INPUT_TYPE = [
+	'hidden',
+	'text',
+	'search',
+	'tel',
+	'url',
+	'email',
+	'password',
+	'date',
+	'month',
+	'week',
+	'time',
+	'datetime-local',
+	'number',
+	'range',
+	'color',
+	'checkbox',
+	'radio',
+	'file',
+	'submit',
+	'image',
+	'reset',
+	'button'
+] as const;
