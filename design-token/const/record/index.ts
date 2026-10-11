@@ -1,0 +1,2 @@
+/** AREA: STYLIST CODER MODEL -> AUTO-GENERATED */
+export { DESIGN_TOKEN_HTML_REQUIREMENT } from './html-requirement';

@@ -1,0 +1,1184 @@
+{
+  "date": "2026-10-10",
+  "source": "html/const/array/html-style/index.ts",
+  "scope": "Observed references; emission is verified separately against light/dark theme providers.",
+  "rules": 57,
+  "names": [
+    "--color-backdrop",
+    "--color-background-primary",
+    "--color-background-raised",
+    "--color-background-secondary",
+    "--color-border-accent",
+    "--color-border-primary",
+    "--color-border-secondary",
+    "--color-danger-500",
+    "--color-on-primary",
+    "--color-primary-500",
+    "--color-primary-600",
+    "--color-primary-700",
+    "--color-success-100",
+    "--color-text-primary",
+    "--color-text-secondary",
+    "--color-warning-100",
+    "--elevation-modal",
+    "--font-mono",
+    "--layout-border-radius-lg",
+    "--layout-border-radius-md",
+    "--layout-border-radius-sm",
+    "--layout-border-radius-xl",
+    "--layout-spacing-0.25rem",
+    "--layout-spacing-0.5rem",
+    "--layout-spacing-0.75rem",
+    "--layout-spacing-1.5rem",
+    "--layout-spacing-1rem",
+    "--layout-spacing-2rem",
+    "--motion-duration-150",
+    "--opacity-60",
+    "--typography-font-family",
+    "--typography-font-size-10",
+    "--typography-font-size-3",
+    "--typography-font-size-4",
+    "--typography-font-size-5",
+    "--typography-font-size-6",
+    "--typography-font-size-8",
+    "--typography-font-weight-medium",
+    "--typography-font-weight-semibold",
+    "--typography-letter-spacing-narrow",
+    "--typography-letter-spacing-wide",
+    "--typography-line-height-normal",
+    "--typography-line-height-tight"
+  ],
+  "usages": [
+    {
+      "name": "--typography-font-family",
+      "rule": 0,
+      "targets": [
+        "@scope"
+      ],
+      "property": "font-family",
+      "value": "var(--typography-font-family, system-ui, sans-serif)"
+    },
+    {
+      "name": "--typography-font-size-4",
+      "rule": 0,
+      "targets": [
+        "@scope"
+      ],
+      "property": "font-size",
+      "value": "var(--typography-font-size-4, 1rem)"
+    },
+    {
+      "name": "--typography-line-height-normal",
+      "rule": 0,
+      "targets": [
+        "@scope"
+      ],
+      "property": "line-height",
+      "value": "var(--typography-line-height-normal, 1.5)"
+    },
+    {
+      "name": "--color-text-primary",
+      "rule": 0,
+      "targets": [
+        "@scope"
+      ],
+      "property": "color",
+      "value": "var(--color-text-primary, CanvasText)"
+    },
+    {
+      "name": "--layout-spacing-1rem",
+      "rule": 1,
+      "targets": [
+        "p",
+        "ul",
+        "ol",
+        "menu",
+        "dl",
+        "pre",
+        "blockquote",
+        "figure",
+        "table",
+        "details",
+        "fieldset",
+        "form",
+        "hgroup",
+        "address"
+      ],
+      "property": "margin-block",
+      "value": "0 var(--layout-spacing-1rem, 1rem)"
+    },
+    {
+      "name": "--layout-spacing-1.5rem",
+      "rule": 2,
+      "targets": [
+        "#heading"
+      ],
+      "property": "margin-block",
+      "value": "var(--layout-spacing-1.5rem, 1.5rem) var(--layout-spacing-0.5rem, 0.5rem)"
+    },
+    {
+      "name": "--layout-spacing-0.5rem",
+      "rule": 2,
+      "targets": [
+        "#heading"
+      ],
+      "property": "margin-block",
+      "value": "var(--layout-spacing-1.5rem, 1.5rem) var(--layout-spacing-0.5rem, 0.5rem)"
+    },
+    {
+      "name": "--typography-font-weight-semibold",
+      "rule": 2,
+      "targets": [
+        "#heading"
+      ],
+      "property": "font-weight",
+      "value": "var(--typography-font-weight-semibold, 600)"
+    },
+    {
+      "name": "--typography-line-height-tight",
+      "rule": 2,
+      "targets": [
+        "#heading"
+      ],
+      "property": "line-height",
+      "value": "var(--typography-line-height-tight, 1.25)"
+    },
+    {
+      "name": "--typography-letter-spacing-narrow",
+      "rule": 2,
+      "targets": [
+        "#heading"
+      ],
+      "property": "letter-spacing",
+      "value": "var(--typography-letter-spacing-narrow, -0.01em)"
+    },
+    {
+      "name": "--typography-font-size-10",
+      "rule": 3,
+      "targets": [
+        "h1"
+      ],
+      "property": "font-size",
+      "value": "var(--typography-font-size-10, 2.5rem)"
+    },
+    {
+      "name": "--typography-font-size-8",
+      "rule": 4,
+      "targets": [
+        "h2"
+      ],
+      "property": "font-size",
+      "value": "var(--typography-font-size-8, 2rem)"
+    },
+    {
+      "name": "--typography-font-size-6",
+      "rule": 5,
+      "targets": [
+        "h3"
+      ],
+      "property": "font-size",
+      "value": "var(--typography-font-size-6, 1.5rem)"
+    },
+    {
+      "name": "--typography-font-size-5",
+      "rule": 6,
+      "targets": [
+        "h4"
+      ],
+      "property": "font-size",
+      "value": "var(--typography-font-size-5, 1.25rem)"
+    },
+    {
+      "name": "--typography-font-size-4",
+      "rule": 7,
+      "targets": [
+        "h5"
+      ],
+      "property": "font-size",
+      "value": "var(--typography-font-size-4, 1rem)"
+    },
+    {
+      "name": "--typography-font-size-3",
+      "rule": 8,
+      "targets": [
+        "h6"
+      ],
+      "property": "font-size",
+      "value": "var(--typography-font-size-3, 0.75rem)"
+    },
+    {
+      "name": "--typography-letter-spacing-wide",
+      "rule": 8,
+      "targets": [
+        "h6"
+      ],
+      "property": "letter-spacing",
+      "value": "var(--typography-letter-spacing-wide, 0.04em)"
+    },
+    {
+      "name": "--color-text-secondary",
+      "rule": 9,
+      "targets": [
+        "hgroup > p"
+      ],
+      "property": "color",
+      "value": "var(--color-text-secondary, GrayText)"
+    },
+    {
+      "name": "--color-primary-600",
+      "rule": 10,
+      "targets": [
+        "a[href]"
+      ],
+      "property": "color",
+      "value": "var(--color-primary-600, LinkText)"
+    },
+    {
+      "name": "--color-primary-700",
+      "rule": 11,
+      "targets": [
+        "a[href]"
+      ],
+      "state": ":hover",
+      "property": "color",
+      "value": "var(--color-primary-700, LinkText)"
+    },
+    {
+      "name": "--color-primary-500",
+      "rule": 12,
+      "targets": [
+        "#interactive",
+        "summary",
+        "[tabindex]"
+      ],
+      "state": ":focus-visible",
+      "property": "outline",
+      "value": "2px solid var(--color-primary-500, Highlight)"
+    },
+    {
+      "name": "--opacity-60",
+      "rule": 13,
+      "targets": [
+        "button",
+        "input",
+        "select",
+        "textarea"
+      ],
+      "state": ":disabled",
+      "property": "opacity",
+      "value": "var(--opacity-60, 0.6)"
+    },
+    {
+      "name": "--font-mono",
+      "rule": 14,
+      "targets": [
+        "code",
+        "kbd",
+        "samp",
+        "pre"
+      ],
+      "property": "font-family",
+      "value": "var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace)"
+    },
+    {
+      "name": "--layout-border-radius-sm",
+      "rule": 15,
+      "targets": [
+        "code",
+        "kbd",
+        "samp"
+      ],
+      "property": "border-radius",
+      "value": "var(--layout-border-radius-sm, 0.125rem)"
+    },
+    {
+      "name": "--color-background-secondary",
+      "rule": 15,
+      "targets": [
+        "code",
+        "kbd",
+        "samp"
+      ],
+      "property": "background",
+      "value": "var(--color-background-secondary, Canvas)"
+    },
+    {
+      "name": "--color-border-primary",
+      "rule": 16,
+      "targets": [
+        "kbd"
+      ],
+      "property": "border",
+      "value": "1px solid var(--color-border-primary, GrayText)"
+    },
+    {
+      "name": "--layout-spacing-1rem",
+      "rule": 17,
+      "targets": [
+        "pre"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-1rem, 1rem)"
+    },
+    {
+      "name": "--layout-border-radius-md",
+      "rule": 17,
+      "targets": [
+        "pre"
+      ],
+      "property": "border-radius",
+      "value": "var(--layout-border-radius-md, 0.375rem)"
+    },
+    {
+      "name": "--color-background-secondary",
+      "rule": 17,
+      "targets": [
+        "pre"
+      ],
+      "property": "background",
+      "value": "var(--color-background-secondary, Canvas)"
+    },
+    {
+      "name": "--layout-border-radius-sm",
+      "rule": 19,
+      "targets": [
+        "mark"
+      ],
+      "property": "border-radius",
+      "value": "var(--layout-border-radius-sm, 0.125rem)"
+    },
+    {
+      "name": "--color-warning-100",
+      "rule": 19,
+      "targets": [
+        "mark"
+      ],
+      "property": "background",
+      "value": "var(--color-warning-100, Mark)"
+    },
+    {
+      "name": "--color-text-secondary",
+      "rule": 23,
+      "targets": [
+        "s",
+        "del"
+      ],
+      "property": "color",
+      "value": "var(--color-text-secondary, GrayText)"
+    },
+    {
+      "name": "--color-success-100",
+      "rule": 24,
+      "targets": [
+        "ins"
+      ],
+      "property": "background",
+      "value": "var(--color-success-100, Canvas)"
+    },
+    {
+      "name": "--layout-spacing-1rem",
+      "rule": 25,
+      "targets": [
+        "blockquote"
+      ],
+      "property": "padding-inline-start",
+      "value": "var(--layout-spacing-1rem, 1rem)"
+    },
+    {
+      "name": "--color-border-accent",
+      "rule": 25,
+      "targets": [
+        "blockquote"
+      ],
+      "property": "border-inline-start",
+      "value": "4px solid var(--color-border-accent, GrayText)"
+    },
+    {
+      "name": "--color-text-secondary",
+      "rule": 25,
+      "targets": [
+        "blockquote"
+      ],
+      "property": "color",
+      "value": "var(--color-text-secondary, GrayText)"
+    },
+    {
+      "name": "--color-border-secondary",
+      "rule": 26,
+      "targets": [
+        "hr"
+      ],
+      "property": "border-block-start",
+      "value": "1px solid var(--color-border-secondary, GrayText)"
+    },
+    {
+      "name": "--layout-spacing-2rem",
+      "rule": 26,
+      "targets": [
+        "hr"
+      ],
+      "property": "margin-block",
+      "value": "var(--layout-spacing-2rem, 2rem)"
+    },
+    {
+      "name": "--layout-spacing-1.5rem",
+      "rule": 27,
+      "targets": [
+        "ul",
+        "ol",
+        "menu"
+      ],
+      "property": "padding-inline-start",
+      "value": "var(--layout-spacing-1.5rem, 1.5rem)"
+    },
+    {
+      "name": "--layout-spacing-0.25rem",
+      "rule": 28,
+      "targets": [
+        "li + li"
+      ],
+      "property": "margin-block-start",
+      "value": "var(--layout-spacing-0.25rem, 0.25rem)"
+    },
+    {
+      "name": "--color-text-secondary",
+      "rule": 29,
+      "targets": [
+        "li"
+      ],
+      "pseudo": "::marker",
+      "property": "color",
+      "value": "var(--color-text-secondary, GrayText)"
+    },
+    {
+      "name": "--typography-font-weight-semibold",
+      "rule": 30,
+      "targets": [
+        "dt"
+      ],
+      "property": "font-weight",
+      "value": "var(--typography-font-weight-semibold, 600)"
+    },
+    {
+      "name": "--layout-spacing-1.5rem",
+      "rule": 31,
+      "targets": [
+        "dd"
+      ],
+      "property": "margin-inline-start",
+      "value": "var(--layout-spacing-1.5rem, 1.5rem)"
+    },
+    {
+      "name": "--layout-spacing-0.5rem",
+      "rule": 31,
+      "targets": [
+        "dd"
+      ],
+      "property": "margin-block-end",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem)"
+    },
+    {
+      "name": "--layout-spacing-0.5rem",
+      "rule": 33,
+      "targets": [
+        "caption"
+      ],
+      "property": "padding-block",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem)"
+    },
+    {
+      "name": "--color-text-secondary",
+      "rule": 33,
+      "targets": [
+        "caption"
+      ],
+      "property": "color",
+      "value": "var(--color-text-secondary, GrayText)"
+    },
+    {
+      "name": "--layout-spacing-0.5rem",
+      "rule": 34,
+      "targets": [
+        "th",
+        "td"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-0.75rem, 0.75rem)"
+    },
+    {
+      "name": "--layout-spacing-0.75rem",
+      "rule": 34,
+      "targets": [
+        "th",
+        "td"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-0.75rem, 0.75rem)"
+    },
+    {
+      "name": "--color-border-secondary",
+      "rule": 34,
+      "targets": [
+        "th",
+        "td"
+      ],
+      "property": "border-block-end",
+      "value": "1px solid var(--color-border-secondary, GrayText)"
+    },
+    {
+      "name": "--typography-font-weight-semibold",
+      "rule": 35,
+      "targets": [
+        "th"
+      ],
+      "property": "font-weight",
+      "value": "var(--typography-font-weight-semibold, 600)"
+    },
+    {
+      "name": "--color-background-secondary",
+      "rule": 35,
+      "targets": [
+        "th"
+      ],
+      "property": "background",
+      "value": "var(--color-background-secondary, Canvas)"
+    },
+    {
+      "name": "--layout-spacing-0.5rem",
+      "rule": 40,
+      "targets": [
+        "figcaption"
+      ],
+      "property": "margin-block-start",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem)"
+    },
+    {
+      "name": "--color-text-secondary",
+      "rule": 40,
+      "targets": [
+        "figcaption"
+      ],
+      "property": "color",
+      "value": "var(--color-text-secondary, GrayText)"
+    },
+    {
+      "name": "--layout-spacing-0.5rem",
+      "rule": 42,
+      "targets": [
+        "input:not([type])",
+        "input[type=\"text\"]",
+        "input[type=\"search\"]",
+        "input[type=\"tel\"]",
+        "input[type=\"url\"]",
+        "input[type=\"email\"]",
+        "input[type=\"password\"]",
+        "input[type=\"date\"]",
+        "input[type=\"month\"]",
+        "input[type=\"week\"]",
+        "input[type=\"time\"]",
+        "input[type=\"datetime-local\"]",
+        "input[type=\"number\"]",
+        "select",
+        "textarea"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-0.75rem, 0.75rem)"
+    },
+    {
+      "name": "--layout-spacing-0.75rem",
+      "rule": 42,
+      "targets": [
+        "input:not([type])",
+        "input[type=\"text\"]",
+        "input[type=\"search\"]",
+        "input[type=\"tel\"]",
+        "input[type=\"url\"]",
+        "input[type=\"email\"]",
+        "input[type=\"password\"]",
+        "input[type=\"date\"]",
+        "input[type=\"month\"]",
+        "input[type=\"week\"]",
+        "input[type=\"time\"]",
+        "input[type=\"datetime-local\"]",
+        "input[type=\"number\"]",
+        "select",
+        "textarea"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-0.75rem, 0.75rem)"
+    },
+    {
+      "name": "--color-border-primary",
+      "rule": 42,
+      "targets": [
+        "input:not([type])",
+        "input[type=\"text\"]",
+        "input[type=\"search\"]",
+        "input[type=\"tel\"]",
+        "input[type=\"url\"]",
+        "input[type=\"email\"]",
+        "input[type=\"password\"]",
+        "input[type=\"date\"]",
+        "input[type=\"month\"]",
+        "input[type=\"week\"]",
+        "input[type=\"time\"]",
+        "input[type=\"datetime-local\"]",
+        "input[type=\"number\"]",
+        "select",
+        "textarea"
+      ],
+      "property": "border",
+      "value": "1px solid var(--color-border-primary, GrayText)"
+    },
+    {
+      "name": "--layout-border-radius-md",
+      "rule": 42,
+      "targets": [
+        "input:not([type])",
+        "input[type=\"text\"]",
+        "input[type=\"search\"]",
+        "input[type=\"tel\"]",
+        "input[type=\"url\"]",
+        "input[type=\"email\"]",
+        "input[type=\"password\"]",
+        "input[type=\"date\"]",
+        "input[type=\"month\"]",
+        "input[type=\"week\"]",
+        "input[type=\"time\"]",
+        "input[type=\"datetime-local\"]",
+        "input[type=\"number\"]",
+        "select",
+        "textarea"
+      ],
+      "property": "border-radius",
+      "value": "var(--layout-border-radius-md, 0.375rem)"
+    },
+    {
+      "name": "--color-background-primary",
+      "rule": 42,
+      "targets": [
+        "input:not([type])",
+        "input[type=\"text\"]",
+        "input[type=\"search\"]",
+        "input[type=\"tel\"]",
+        "input[type=\"url\"]",
+        "input[type=\"email\"]",
+        "input[type=\"password\"]",
+        "input[type=\"date\"]",
+        "input[type=\"month\"]",
+        "input[type=\"week\"]",
+        "input[type=\"time\"]",
+        "input[type=\"datetime-local\"]",
+        "input[type=\"number\"]",
+        "select",
+        "textarea"
+      ],
+      "property": "background",
+      "value": "var(--color-background-primary, Field)"
+    },
+    {
+      "name": "--motion-duration-150",
+      "rule": 42,
+      "targets": [
+        "input:not([type])",
+        "input[type=\"text\"]",
+        "input[type=\"search\"]",
+        "input[type=\"tel\"]",
+        "input[type=\"url\"]",
+        "input[type=\"email\"]",
+        "input[type=\"password\"]",
+        "input[type=\"date\"]",
+        "input[type=\"month\"]",
+        "input[type=\"week\"]",
+        "input[type=\"time\"]",
+        "input[type=\"datetime-local\"]",
+        "input[type=\"number\"]",
+        "select",
+        "textarea"
+      ],
+      "property": "transition",
+      "value": "border-color var(--motion-duration-150, 150ms) ease"
+    },
+    {
+      "name": "--color-danger-500",
+      "rule": 43,
+      "targets": [
+        "input",
+        "select",
+        "textarea"
+      ],
+      "state": ":user-invalid",
+      "property": "border-color",
+      "value": "var(--color-danger-500, Red)"
+    },
+    {
+      "name": "--layout-spacing-0.5rem",
+      "rule": 45,
+      "targets": [
+        "button",
+        "input[type=\"submit\"]",
+        "input[type=\"reset\"]",
+        "input[type=\"button\"]"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)"
+    },
+    {
+      "name": "--layout-spacing-1rem",
+      "rule": 45,
+      "targets": [
+        "button",
+        "input[type=\"submit\"]",
+        "input[type=\"reset\"]",
+        "input[type=\"button\"]"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)"
+    },
+    {
+      "name": "--layout-border-radius-md",
+      "rule": 45,
+      "targets": [
+        "button",
+        "input[type=\"submit\"]",
+        "input[type=\"reset\"]",
+        "input[type=\"button\"]"
+      ],
+      "property": "border-radius",
+      "value": "var(--layout-border-radius-md, 0.375rem)"
+    },
+    {
+      "name": "--color-primary-600",
+      "rule": 45,
+      "targets": [
+        "button",
+        "input[type=\"submit\"]",
+        "input[type=\"reset\"]",
+        "input[type=\"button\"]"
+      ],
+      "property": "background",
+      "value": "var(--color-primary-600, ButtonFace)"
+    },
+    {
+      "name": "--color-on-primary",
+      "rule": 45,
+      "targets": [
+        "button",
+        "input[type=\"submit\"]",
+        "input[type=\"reset\"]",
+        "input[type=\"button\"]"
+      ],
+      "property": "color",
+      "value": "var(--color-on-primary, ButtonText)"
+    },
+    {
+      "name": "--typography-font-weight-medium",
+      "rule": 45,
+      "targets": [
+        "button",
+        "input[type=\"submit\"]",
+        "input[type=\"reset\"]",
+        "input[type=\"button\"]"
+      ],
+      "property": "font-weight",
+      "value": "var(--typography-font-weight-medium, 500)"
+    },
+    {
+      "name": "--layout-spacing-0.75rem",
+      "rule": 46,
+      "targets": [
+        "input[type=\"file\"]"
+      ],
+      "pseudo": "::file-selector-button",
+      "property": "margin-inline-end",
+      "value": "var(--layout-spacing-0.75rem, 0.75rem)"
+    },
+    {
+      "name": "--layout-spacing-0.5rem",
+      "rule": 46,
+      "targets": [
+        "input[type=\"file\"]"
+      ],
+      "pseudo": "::file-selector-button",
+      "property": "padding",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)"
+    },
+    {
+      "name": "--layout-spacing-1rem",
+      "rule": 46,
+      "targets": [
+        "input[type=\"file\"]"
+      ],
+      "pseudo": "::file-selector-button",
+      "property": "padding",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)"
+    },
+    {
+      "name": "--layout-border-radius-md",
+      "rule": 46,
+      "targets": [
+        "input[type=\"file\"]"
+      ],
+      "pseudo": "::file-selector-button",
+      "property": "border-radius",
+      "value": "var(--layout-border-radius-md, 0.375rem)"
+    },
+    {
+      "name": "--color-primary-600",
+      "rule": 46,
+      "targets": [
+        "input[type=\"file\"]"
+      ],
+      "pseudo": "::file-selector-button",
+      "property": "background",
+      "value": "var(--color-primary-600, ButtonFace)"
+    },
+    {
+      "name": "--color-on-primary",
+      "rule": 46,
+      "targets": [
+        "input[type=\"file\"]"
+      ],
+      "pseudo": "::file-selector-button",
+      "property": "color",
+      "value": "var(--color-on-primary, ButtonText)"
+    },
+    {
+      "name": "--color-primary-700",
+      "rule": 47,
+      "targets": [
+        "button",
+        "input[type=\"submit\"]",
+        "input[type=\"reset\"]",
+        "input[type=\"button\"]"
+      ],
+      "state": ":hover:not(:disabled)",
+      "property": "background",
+      "value": "var(--color-primary-700, ButtonFace)"
+    },
+    {
+      "name": "--color-primary-600",
+      "rule": 48,
+      "targets": [
+        "input[type=\"checkbox\"]",
+        "input[type=\"radio\"]",
+        "input[type=\"range\"]",
+        "progress",
+        "meter"
+      ],
+      "property": "accent-color",
+      "value": "var(--color-primary-600, AccentColor)"
+    },
+    {
+      "name": "--typography-font-weight-medium",
+      "rule": 49,
+      "targets": [
+        "label"
+      ],
+      "property": "font-weight",
+      "value": "var(--typography-font-weight-medium, 500)"
+    },
+    {
+      "name": "--layout-spacing-1rem",
+      "rule": 50,
+      "targets": [
+        "fieldset"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-1rem, 1rem)"
+    },
+    {
+      "name": "--color-border-secondary",
+      "rule": 50,
+      "targets": [
+        "fieldset"
+      ],
+      "property": "border",
+      "value": "1px solid var(--color-border-secondary, GrayText)"
+    },
+    {
+      "name": "--layout-border-radius-lg",
+      "rule": 50,
+      "targets": [
+        "fieldset"
+      ],
+      "property": "border-radius",
+      "value": "var(--layout-border-radius-lg, 0.5rem)"
+    },
+    {
+      "name": "--layout-spacing-0.25rem",
+      "rule": 51,
+      "targets": [
+        "legend"
+      ],
+      "property": "padding-inline",
+      "value": "var(--layout-spacing-0.25rem, 0.25rem)"
+    },
+    {
+      "name": "--typography-font-weight-semibold",
+      "rule": 51,
+      "targets": [
+        "legend"
+      ],
+      "property": "font-weight",
+      "value": "var(--typography-font-weight-semibold, 600)"
+    },
+    {
+      "name": "--layout-spacing-0.5rem",
+      "rule": 52,
+      "targets": [
+        "details"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)"
+    },
+    {
+      "name": "--layout-spacing-1rem",
+      "rule": 52,
+      "targets": [
+        "details"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)"
+    },
+    {
+      "name": "--color-border-secondary",
+      "rule": 52,
+      "targets": [
+        "details"
+      ],
+      "property": "border",
+      "value": "1px solid var(--color-border-secondary, GrayText)"
+    },
+    {
+      "name": "--layout-border-radius-md",
+      "rule": 52,
+      "targets": [
+        "details"
+      ],
+      "property": "border-radius",
+      "value": "var(--layout-border-radius-md, 0.375rem)"
+    },
+    {
+      "name": "--typography-font-weight-medium",
+      "rule": 53,
+      "targets": [
+        "summary"
+      ],
+      "property": "font-weight",
+      "value": "var(--typography-font-weight-medium, 500)"
+    },
+    {
+      "name": "--layout-spacing-0.5rem",
+      "rule": 54,
+      "targets": [
+        "details[open] > summary"
+      ],
+      "property": "margin-block-end",
+      "value": "var(--layout-spacing-0.5rem, 0.5rem)"
+    },
+    {
+      "name": "--layout-spacing-1.5rem",
+      "rule": 55,
+      "targets": [
+        "dialog"
+      ],
+      "property": "padding",
+      "value": "var(--layout-spacing-1.5rem, 1.5rem)"
+    },
+    {
+      "name": "--color-border-secondary",
+      "rule": 55,
+      "targets": [
+        "dialog"
+      ],
+      "property": "border",
+      "value": "1px solid var(--color-border-secondary, GrayText)"
+    },
+    {
+      "name": "--layout-border-radius-xl",
+      "rule": 55,
+      "targets": [
+        "dialog"
+      ],
+      "property": "border-radius",
+      "value": "var(--layout-border-radius-xl, 0.75rem)"
+    },
+    {
+      "name": "--color-background-raised",
+      "rule": 55,
+      "targets": [
+        "dialog"
+      ],
+      "property": "background",
+      "value": "var(--color-background-raised, Canvas)"
+    },
+    {
+      "name": "--color-text-primary",
+      "rule": 55,
+      "targets": [
+        "dialog"
+      ],
+      "property": "color",
+      "value": "var(--color-text-primary, CanvasText)"
+    },
+    {
+      "name": "--elevation-modal",
+      "rule": 55,
+      "targets": [
+        "dialog"
+      ],
+      "property": "box-shadow",
+      "value": "var(--elevation-modal, none)"
+    },
+    {
+      "name": "--color-backdrop",
+      "rule": 56,
+      "targets": [
+        "dialog"
+      ],
+      "pseudo": "::backdrop",
+      "property": "background",
+      "value": "var(--color-backdrop, rgb(0 0 0 / 0.6))"
+    }
+  ],
+  "proposedCoverage": [
+    {
+      "family": "typography",
+      "priority": "P0",
+      "content": [
+        "text",
+        "headings",
+        "caption",
+        "code"
+      ],
+      "required": [
+        "font family including mono",
+        "size",
+        "weight",
+        "line height",
+        "tracking"
+      ],
+      "next": [
+        "body/heading/caption/code presets",
+        "relative small-text scale"
+      ]
+    },
+    {
+      "family": "color",
+      "priority": "P0",
+      "content": [
+        "text",
+        "links",
+        "surfaces",
+        "controls",
+        "validation"
+      ],
+      "required": [
+        "text",
+        "background",
+        "border",
+        "accent",
+        "on-accent",
+        "danger",
+        "backdrop"
+      ],
+      "next": [
+        "visited/active links",
+        "selection",
+        "placeholder",
+        "readonly"
+      ]
+    },
+    {
+      "family": "spacing",
+      "priority": "P0",
+      "content": [
+        "lists",
+        "tables",
+        "forms",
+        "disclosures"
+      ],
+      "required": [
+        "block rhythm",
+        "inline indentation",
+        "padding",
+        "gap"
+      ],
+      "next": [
+        "logical spacing names without decimal punctuation",
+        "compact/comfortable density"
+      ]
+    },
+    {
+      "family": "border",
+      "priority": "P1",
+      "content": [
+        "controls",
+        "table cells",
+        "separators",
+        "code"
+      ],
+      "required": [
+        "radius"
+      ],
+      "next": [
+        "width/style",
+        "focus width/offset",
+        "separator width"
+      ]
+    },
+    {
+      "family": "state-motion",
+      "priority": "P1",
+      "content": [
+        "interactive controls",
+        "validation",
+        "dialog"
+      ],
+      "required": [
+        "disabled opacity",
+        "transition duration"
+      ],
+      "next": [
+        "active/hover/focus/invalid/readonly",
+        "easing",
+        "reduced-motion policy"
+      ]
+    },
+    {
+      "family": "layout-media",
+      "priority": "P1",
+      "content": [
+        "image",
+        "video",
+        "canvas",
+        "svg",
+        "dialog"
+      ],
+      "required": [
+        "modal elevation"
+      ],
+      "next": [
+        "content width",
+        "dialog width",
+        "aspect ratio",
+        "object fit",
+        "overlay stacking"
+      ]
+    },
+    {
+      "family": "foreign-service",
+      "priority": "P2",
+      "content": [
+        "svg/math roots",
+        "metadata",
+        "raw text"
+      ],
+      "required": [],
+      "next": [
+        "namespace-specific contract only when needed; no fabricated visual controls for metadata"
+      ]
+    }
+  ]
+}
