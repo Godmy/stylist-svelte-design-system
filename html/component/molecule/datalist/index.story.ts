@@ -1,6 +1,6 @@
 import HtmlDatalist from './index.svelte';
 import type { RecipeHtmlDatalist } from '../../../interface/recipe/datalist';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<datalist>`: Container for options for combo box control. */
 export default {

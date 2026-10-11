@@ -1,6 +1,6 @@
 import HtmlOl from './index.svelte';
 import type { RecipeHtmlOl } from '../../../interface/recipe/ol';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<ol>`: Ordered list. */
 export default {

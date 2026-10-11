@@ -1,6 +1,6 @@
 import HtmlVar from './index.svelte';
 import type { RecipeHtmlVar } from '../../../interface/recipe/var';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<var>`: Variable. */
 export default {

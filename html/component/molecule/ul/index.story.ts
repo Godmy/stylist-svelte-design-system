@@ -1,6 +1,6 @@
 import HtmlUl from './index.svelte';
 import type { RecipeHtmlUl } from '../../../interface/recipe/ul';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<ul>`: List. */
 export default {

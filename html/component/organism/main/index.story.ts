@@ -1,6 +1,6 @@
 import HtmlMain from './index.svelte';
 import type { RecipeHtmlMain } from '../../../interface/recipe/main';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<main>`: Container for the dominant contents of the document. */
 export default {

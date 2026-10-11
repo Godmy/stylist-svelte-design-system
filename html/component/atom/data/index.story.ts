@@ -1,6 +1,6 @@
 import HtmlData from './index.svelte';
 import type { RecipeHtmlData } from '../../../interface/recipe/data';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<data>`: Machine-readable equivalent. */
 export default {

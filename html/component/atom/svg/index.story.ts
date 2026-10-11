@@ -1,6 +1,6 @@
 import HtmlSvg from './index.svelte';
 import type { RecipeHtmlSvg } from '../../../interface/recipe/svg';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<svg>`: SVG root. SVG children are not HtmlNode tags, so index.story.svelte draws them. */
 export default {

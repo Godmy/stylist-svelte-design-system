@@ -1,6 +1,6 @@
 import HtmlFigcaption from './index.svelte';
 import type { RecipeHtmlFigcaption } from '../../../interface/recipe/figcaption';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<figcaption>`: Caption for figure. */
 export default {

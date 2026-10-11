@@ -1,6 +1,6 @@
 import HtmlA from './index.svelte';
 import type { RecipeHtmlA } from '../../../interface/recipe/a';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<a>`: Hyperlink. */
 export default {

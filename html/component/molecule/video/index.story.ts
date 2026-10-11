@@ -1,6 +1,6 @@
 import HtmlVideo from './index.svelte';
 import type { RecipeHtmlVideo } from '../../../interface/recipe/video';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<video>`: Video player. */
 export default {

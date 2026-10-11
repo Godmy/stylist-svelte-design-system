@@ -1,6 +1,6 @@
 import HtmlSource from './index.svelte';
 import type { RecipeHtmlSource } from '../../../interface/recipe/source';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<source>`: Image source for img or media source for video or audio. */
 export default {

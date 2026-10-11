@@ -1,6 +1,6 @@
 import HtmlH6 from './index.svelte';
 import type { RecipeHtmlH6 } from '../../../interface/recipe/h6';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<h6>`: Heading. */
 export default {

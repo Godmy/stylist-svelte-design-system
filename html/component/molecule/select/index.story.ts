@@ -1,6 +1,6 @@
 import HtmlSelect from './index.svelte';
 import type { RecipeHtmlSelect } from '../../../interface/recipe/select';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<select>`: List box control. */
 export default {

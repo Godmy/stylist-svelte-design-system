@@ -1,6 +1,6 @@
 import HtmlScript from './index.svelte';
 import type { RecipeHtmlScript } from '../../../interface/recipe/script';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<script>`: Embedded script. */
 export default {

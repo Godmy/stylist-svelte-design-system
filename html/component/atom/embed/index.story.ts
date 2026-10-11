@@ -1,6 +1,6 @@
 import HtmlEmbed from './index.svelte';
 import type { RecipeHtmlEmbed } from '../../../interface/recipe/embed';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<embed>`: Plugin. */
 export default {

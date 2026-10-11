@@ -1,6 +1,6 @@
 import HtmlOption from './index.svelte';
 import type { RecipeHtmlOption } from '../../../interface/recipe/option';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<option>`: Option in a list box or combo box control. */
 export default {

@@ -1,6 +1,6 @@
 import HtmlOptgroup from './index.svelte';
 import type { RecipeHtmlOptgroup } from '../../../interface/recipe/optgroup';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<optgroup>`: Group of options in a list box. */
 export default {

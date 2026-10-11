@@ -1,6 +1,6 @@
 import HtmlMeter from './index.svelte';
 import type { RecipeHtmlMeter } from '../../../interface/recipe/meter';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<meter>`: Gauge. */
 export default {

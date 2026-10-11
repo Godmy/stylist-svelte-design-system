@@ -1,6 +1,6 @@
 import HtmlInputImage from './index.svelte';
 import type { RecipeHtmlInputImage } from '../../../interface/recipe/input-image';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<input type="image">`: Form control. */
 export default {

@@ -1,6 +1,6 @@
 import HtmlInputFile from './index.svelte';
 import type { RecipeHtmlInputFile } from '../../../interface/recipe/input-file';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<input type="file">`: Form control. */
 export default {

@@ -1,6 +1,6 @@
 import HtmlSummary from './index.svelte';
 import type { RecipeHtmlSummary } from '../../../interface/recipe/summary';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<summary>`: Caption for details. */
 export default {

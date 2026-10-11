@@ -1,6 +1,6 @@
 import HtmlOutput from './index.svelte';
 import type { RecipeHtmlOutput } from '../../../interface/recipe/output';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<output>`: Calculated output value. */
 export default {

@@ -1,6 +1,6 @@
 import HtmlCite from './index.svelte';
 import type { RecipeHtmlCite } from '../../../interface/recipe/cite';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<cite>`: Title of a work. */
 export default {

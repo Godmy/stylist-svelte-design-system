@@ -1,6 +1,6 @@
 import HtmlProgress from './index.svelte';
 import type { RecipeHtmlProgress } from '../../../interface/recipe/progress';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<progress>`: Progress bar. */
 export default {

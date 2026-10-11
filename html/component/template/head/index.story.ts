@@ -1,6 +1,6 @@
 import HtmlHead from './index.svelte';
 import type { RecipeHtmlHead } from '../../../interface/recipe/head';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<head>`: Container for document metadata. */
 export default {

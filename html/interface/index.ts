@@ -1,7 +1,8 @@
 /** AREA: STYLIST CODER MODEL -> AUTO-GENERATED */
 export type {
 	ContractHtmlComponent,
-	ContractHtmlComposite
+	ContractHtmlComposite,
+	ContractStory
 } from './contract';
 export type {
 	RecipeHtmlA,
@@ -144,4 +145,7 @@ export type {
 	RecipeHtmlVideo,
 	RecipeHtmlWbr
 } from './recipe';
-export type { SlotHtmlText } from './slot';
+export type {
+	SlotHtmlText,
+	SlotStoryControl
+} from './slot';

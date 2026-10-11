@@ -1,6 +1,6 @@
 import HtmlInputReset from './index.svelte';
 import type { RecipeHtmlInputReset } from '../../../interface/recipe/input-reset';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<input type="reset">`: Form control. */
 export default {

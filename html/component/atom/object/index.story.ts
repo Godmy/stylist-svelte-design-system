@@ -1,6 +1,6 @@
 import HtmlObject from './index.svelte';
 import type { RecipeHtmlObject } from '../../../interface/recipe/object';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<object>`: Image, child navigable, or plugin. */
 export default {

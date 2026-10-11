@@ -1,6 +1,6 @@
 import HtmlI from './index.svelte';
 import type { RecipeHtmlI } from '../../../interface/recipe/i';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<i>`: Alternate voice. */
 export default {

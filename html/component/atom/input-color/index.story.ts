@@ -1,6 +1,6 @@
 import HtmlInputColor from './index.svelte';
 import type { RecipeHtmlInputColor } from '../../../interface/recipe/input-color';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<input type="color">`: Form control. */
 export default {

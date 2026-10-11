@@ -1,6 +1,6 @@
 import HtmlInputRadio from './index.svelte';
 import type { RecipeHtmlInputRadio } from '../../../interface/recipe/input-radio';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<input type="radio">`: Form control. */
 export default {

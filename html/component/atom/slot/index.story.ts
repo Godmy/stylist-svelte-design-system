@@ -1,6 +1,6 @@
 import HtmlSlot from './index.svelte';
 import type { RecipeHtmlSlot } from '../../../interface/recipe/slot';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<slot>`: Shadow tree slot. */
 export default {

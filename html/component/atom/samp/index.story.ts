@@ -1,6 +1,6 @@
 import HtmlSamp from './index.svelte';
 import type { RecipeHtmlSamp } from '../../../interface/recipe/samp';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<samp>`: Computer output. */
 export default {

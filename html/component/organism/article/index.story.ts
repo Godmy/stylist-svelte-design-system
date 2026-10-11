@@ -1,6 +1,6 @@
 import HtmlArticle from './index.svelte';
 import type { RecipeHtmlArticle } from '../../../interface/recipe/article';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<article>`: Self-contained syndicatable or reusable composition. */
 export default {

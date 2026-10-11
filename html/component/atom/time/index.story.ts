@@ -1,6 +1,6 @@
 import HtmlTime from './index.svelte';
 import type { RecipeHtmlTime } from '../../../interface/recipe/time';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<time>`: Machine-readable equivalent of date- or time-related data. */
 export default {

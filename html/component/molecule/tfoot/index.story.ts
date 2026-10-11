@@ -1,6 +1,6 @@
 import HtmlTfoot from './index.svelte';
 import type { RecipeHtmlTfoot } from '../../../interface/recipe/tfoot';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<tfoot>`: Group of footer rows in a table. */
 export default {

@@ -1,6 +1,6 @@
 import HtmlBase from './index.svelte';
 import type { RecipeHtmlBase } from '../../../interface/recipe/base';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<base>`: Base URL and default target navigable for hyperlinks and forms. */
 export default {

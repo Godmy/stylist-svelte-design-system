@@ -1,6 +1,6 @@
 import HtmlTemplate from './index.svelte';
 import type { RecipeHtmlTemplate } from '../../../interface/recipe/template';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<template>`: Template. */
 export default {

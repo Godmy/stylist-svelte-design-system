@@ -1,6 +1,6 @@
 import HtmlThead from './index.svelte';
 import type { RecipeHtmlThead } from '../../../interface/recipe/thead';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<thead>`: Group of heading rows in a table. */
 export default {

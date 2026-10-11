@@ -1,6 +1,6 @@
 import HtmlInputDatetimeLocal from './index.svelte';
 import type { RecipeHtmlInputDatetimeLocal } from '../../../interface/recipe/input-datetime-local';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<input type="datetime-local">`: Form control. */
 export default {

@@ -1,6 +1,6 @@
 import HtmlInputDate from './index.svelte';
 import type { RecipeHtmlInputDate } from '../../../interface/recipe/input-date';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<input type="date">`: Form control. */
 export default {

@@ -1,6 +1,6 @@
 import HtmlForm from './index.svelte';
 import type { RecipeHtmlForm } from '../../../interface/recipe/form';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<form>`: User-submittable form. */
 export default {

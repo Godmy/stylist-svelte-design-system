@@ -1,6 +1,6 @@
 import HtmlDel from './index.svelte';
 import type { RecipeHtmlDel } from '../../../interface/recipe/del';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<del>`: A removal from the document. */
 export default {

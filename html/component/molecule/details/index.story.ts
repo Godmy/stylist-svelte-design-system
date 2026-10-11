@@ -1,6 +1,6 @@
 import HtmlDetails from './index.svelte';
 import type { RecipeHtmlDetails } from '../../../interface/recipe/details';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<details>`: Disclosure control for hiding details. */
 export default {

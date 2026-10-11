@@ -1,6 +1,6 @@
 import HtmlBody from './index.svelte';
 import type { RecipeHtmlBody } from '../../../interface/recipe/body';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<body>`: Document body. */
 export default {

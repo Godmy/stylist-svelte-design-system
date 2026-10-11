@@ -1,6 +1,6 @@
 import HtmlFieldset from './index.svelte';
 import type { RecipeHtmlFieldset } from '../../../interface/recipe/fieldset';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<fieldset>`: Group of form controls. */
 export default {

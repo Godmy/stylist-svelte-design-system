@@ -1,6 +1,6 @@
 import HtmlPre from './index.svelte';
 import type { RecipeHtmlPre } from '../../../interface/recipe/pre';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<pre>`: Block of preformatted text. */
 export default {

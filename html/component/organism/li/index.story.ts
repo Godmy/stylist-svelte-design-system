@@ -1,6 +1,6 @@
 import HtmlLi from './index.svelte';
 import type { RecipeHtmlLi } from '../../../interface/recipe/li';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<li>`: List item. */
 export default {

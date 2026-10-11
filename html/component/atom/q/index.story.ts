@@ -1,6 +1,6 @@
 import HtmlQ from './index.svelte';
 import type { RecipeHtmlQ } from '../../../interface/recipe/q';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<q>`: Quotation. */
 export default {

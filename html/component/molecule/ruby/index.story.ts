@@ -1,6 +1,6 @@
 import HtmlRuby from './index.svelte';
 import type { RecipeHtmlRuby } from '../../../interface/recipe/ruby';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<ruby>`: Ruby annotation(s). */
 export default {

@@ -1,6 +1,6 @@
 import HtmlMenu from './index.svelte';
 import type { RecipeHtmlMenu } from '../../../interface/recipe/menu';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<menu>`: Menu of commands. */
 export default {

@@ -1,6 +1,6 @@
 import HtmlSup from './index.svelte';
 import type { RecipeHtmlSup } from '../../../interface/recipe/sup';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<sup>`: Superscript. */
 export default {

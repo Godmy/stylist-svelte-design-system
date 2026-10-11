@@ -1,6 +1,6 @@
 import HtmlBlockquote from './index.svelte';
 import type { RecipeHtmlBlockquote } from '../../../interface/recipe/blockquote';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<blockquote>`: A section quoted from another source. */
 export default {

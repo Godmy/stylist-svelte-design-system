@@ -1,6 +1,6 @@
 import HtmlAddress from './index.svelte';
 import type { RecipeHtmlAddress } from '../../../interface/recipe/address';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<address>`: Contact information for a page or article element. */
 export default {

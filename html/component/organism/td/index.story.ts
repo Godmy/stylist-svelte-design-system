@@ -1,6 +1,6 @@
 import HtmlTd from './index.svelte';
 import type { RecipeHtmlTd } from '../../../interface/recipe/td';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<td>`: Table cell. */
 export default {

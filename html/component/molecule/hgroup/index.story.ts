@@ -1,6 +1,6 @@
 import HtmlHgroup from './index.svelte';
 import type { RecipeHtmlHgroup } from '../../../interface/recipe/hgroup';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<hgroup>`: Heading container. */
 export default {

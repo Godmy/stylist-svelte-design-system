@@ -1,6 +1,6 @@
 import HtmlInputSubmit from './index.svelte';
 import type { RecipeHtmlInputSubmit } from '../../../interface/recipe/input-submit';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<input type="submit">`: Form control. */
 export default {

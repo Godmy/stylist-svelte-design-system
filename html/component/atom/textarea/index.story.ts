@@ -1,6 +1,6 @@
 import HtmlTextarea from './index.svelte';
 import type { RecipeHtmlTextarea } from '../../../interface/recipe/textarea';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<textarea>`: Multiline text controls. */
 export default {

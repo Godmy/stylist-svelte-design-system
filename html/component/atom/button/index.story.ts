@@ -1,6 +1,6 @@
 import HtmlButton from './index.svelte';
 import type { RecipeHtmlButton } from '../../../interface/recipe/button';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<button>`: Button control. */
 export default {

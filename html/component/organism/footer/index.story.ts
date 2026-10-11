@@ -1,6 +1,6 @@
 import HtmlFooter from './index.svelte';
 import type { RecipeHtmlFooter } from '../../../interface/recipe/footer';
-import type { ContractStory } from '$stylist/domain/interface/contract/story';
+import type { ContractStory } from '../../../interface/contract/story';
 
 /** `<footer>`: Footer for a page or section. */
 export default {
