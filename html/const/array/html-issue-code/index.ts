@@ -9,5 +9,6 @@ export const HTML_ISSUE_CODE = [
 	'wrong-order',
 	'duplicate-child',
 	'forbidden-descendant',
-	'attribute-required'
+	'attribute-required',
+	'duplicate-outlet'
 ] as const;

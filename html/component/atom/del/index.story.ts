@@ -8,7 +8,13 @@ export default {
 	args: { datetime: '2026-10-10' },
 	controls: {
 		cite: { type: 'text' },
-		datetime: { type: 'text' }
+		datetime: { type: 'text' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	content: [{ kind: 'text', value: 'Removed text' }]
 } satisfies ContractStory<RecipeHtmlDel>;

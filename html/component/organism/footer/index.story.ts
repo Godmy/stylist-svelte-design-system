@@ -11,10 +11,19 @@ export default {
 			tag: 'p',
 			children: [
 				{
-					kind: 'text',
-					value: 'A paragraph of text that wraps across several lines when the preview is narrow.'
+					kind: 'element',
+					tag: 'small',
+					children: [{ kind: 'text', value: '© 2026 Example. All rights reserved.' }]
 				}
 			]
 		}
-	]
+	],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlFooter>;

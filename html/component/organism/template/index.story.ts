@@ -6,7 +6,13 @@ import type { ContractStory } from '../../../interface/contract/story';
 export default {
 	component: HtmlTemplate,
 	controls: {
-		shadowrootmode: { type: 'text' }
+		shadowrootmode: { type: 'text' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	content: [
 		{

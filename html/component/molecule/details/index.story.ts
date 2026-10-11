@@ -8,7 +8,13 @@ export default {
 	args: { open: true },
 	controls: {
 		name: { type: 'text' },
-		open: { type: 'boolean' }
+		open: { type: 'boolean' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	presets: { Closed: { open: false } },
 	content: [

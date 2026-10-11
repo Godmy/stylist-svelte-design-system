@@ -18,7 +18,13 @@ export default {
 		required: { type: 'boolean' },
 		rows: { type: 'number' },
 		wrap: { type: 'select', options: ['soft', 'hard'] },
-		value: { type: 'text' }
+		value: { type: 'text' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	presets: { Disabled: { disabled: true }, Required: { required: true } }
 } satisfies ContractStory<RecipeHtmlTextarea>;

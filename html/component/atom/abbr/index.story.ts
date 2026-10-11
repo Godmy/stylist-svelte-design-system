@@ -6,5 +6,13 @@ import type { ContractStory } from '../../../interface/contract/story';
 export default {
 	component: HtmlAbbr,
 	args: { title: 'HyperText Markup Language' },
-	content: [{ kind: 'text', value: 'HTML' }]
+	content: [{ kind: 'text', value: 'HTML' }],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlAbbr>;

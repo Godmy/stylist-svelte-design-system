@@ -10,7 +10,13 @@ export default {
 		checked: { type: 'boolean' },
 		value: { type: 'text' },
 		required: { type: 'boolean' },
-		disabled: { type: 'boolean' }
+		disabled: { type: 'boolean' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	presets: { Disabled: { disabled: true } }
 } satisfies ContractStory<RecipeHtmlInputRadio>;

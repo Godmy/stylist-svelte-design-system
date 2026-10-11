@@ -18,6 +18,12 @@ export interface ContractStory<TArgs extends object = Record<string, unknown>> {
 	presets?: Record<string, Partial<TArgs>>;
 	/** Children snippet content as an HTML tree, rendered with the html `Node`. */
 	content?: readonly HtmlNode[];
+	/**
+	 * Surrounding markup for elements that need a parent (`td`, `li`, `option`, …): a tree
+	 * with exactly one outlet node, where the host renders `component` with args and content.
+	 * The tree with the story element substituted must pass `checkHtmlNode`.
+	 */
+	context?: HtmlNode;
 	/** `padded` (default), `centered` or `fullscreen` (no padding, full height). */
 	layout?: 'padded' | 'centered' | 'fullscreen';
 }

@@ -16,7 +16,13 @@ export default {
 		name: { type: 'text' },
 		novalidate: { type: 'boolean' },
 		rel: { type: 'text' },
-		target: { type: 'select', options: ['_self', '_blank', '_parent', '_top'] }
+		target: { type: 'select', options: ['_self', '_blank', '_parent', '_top'] },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	content: [
 		{

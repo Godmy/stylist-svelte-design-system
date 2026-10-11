@@ -6,17 +6,32 @@ import type { ContractStory } from '../../../interface/contract/story';
 export default {
 	component: HtmlDatalist,
 	content: [
-		{
-			kind: 'element',
-			tag: 'option',
-			attrs: { value: 'Chrome' },
-			children: [{ kind: 'text', value: 'Chrome' }]
-		},
-		{
-			kind: 'element',
-			tag: 'option',
-			attrs: { value: 'Firefox' },
-			children: [{ kind: 'text', value: 'Firefox' }]
-		}
-	]
+		{ kind: 'element', tag: 'option', attrs: { value: 'Chrome' } },
+		{ kind: 'element', tag: 'option', attrs: { value: 'Firefox' } },
+		{ kind: 'element', tag: 'option', attrs: { value: 'Safari' } }
+	],
+	args: { id: 'browsers' },
+	context: {
+		kind: 'element',
+		tag: 'p',
+		children: [
+			{
+				kind: 'element',
+				tag: 'label',
+				children: [
+					{ kind: 'text', value: 'Browser ' },
+					{ kind: 'element', tag: 'input', attrs: { list: 'browsers', name: 'browser' } }
+				]
+			},
+			{ kind: 'outlet' }
+		]
+	},
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlDatalist>;

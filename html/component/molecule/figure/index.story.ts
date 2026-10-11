@@ -15,5 +15,13 @@ export default {
 			}
 		},
 		{ kind: 'element', tag: 'figcaption', children: [{ kind: 'text', value: 'Figure caption' }] }
-	]
+	],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlFigure>;

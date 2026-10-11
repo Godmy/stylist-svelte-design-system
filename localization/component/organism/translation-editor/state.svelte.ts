@@ -1,14 +1,15 @@
 import type { TranslatableText } from '$stylist/localization/type/object/translatable-text';
 import type { RecipeTranslationEditor } from '$stylist/localization/interface/recipe/translation-editor';
 
-export function createTranslationEditorState(props: RecipeTranslationEditor) {
-	const texts = props.texts ?? [];
-	const locales = props.locales ?? [];
-	const defaultLocale = props.defaultLocale ?? 'en';
-	const currentLocale = props.currentLocale ?? 'en';
-	const showKeyColumn = props.showKeyColumn ?? true;
-	const showContextColumn = props.showContextColumn ?? true;
-	const showStatusColumn = props.showStatusColumn ?? true;
+export function createTranslationEditorState(getProps: () => RecipeTranslationEditor) {
+	const props = $derived(getProps());
+	const texts = $derived(props.texts ?? []);
+	const locales = $derived(props.locales ?? []);
+	const defaultLocale = $derived(props.defaultLocale ?? 'en');
+	const currentLocale = $derived(props.currentLocale ?? 'en');
+	const showKeyColumn = $derived(props.showKeyColumn ?? true);
+	const showContextColumn = $derived(props.showContextColumn ?? true);
+	const showStatusColumn = $derived(props.showStatusColumn ?? true);
 
 	let editingId = $state<string | null>(null);
 	let editedValue = $state('');

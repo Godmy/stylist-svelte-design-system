@@ -11,7 +11,13 @@ export default {
 		min: { type: 'number' },
 		max: { type: 'number' },
 		step: { type: 'number' },
-		disabled: { type: 'boolean' }
+		disabled: { type: 'boolean' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	presets: { Disabled: { disabled: true } }
 } satisfies ContractStory<RecipeHtmlInputRange>;

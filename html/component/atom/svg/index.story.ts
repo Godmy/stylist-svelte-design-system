@@ -14,6 +14,9 @@ export default {
 			type: 'select',
 			options: ['xMidYMid meet', 'xMidYMid slice', 'none']
 		},
-		color: { type: 'color' }
+		color: { type: 'color' },
+		// Global attributes
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		class: { type: 'text' }
 	}
 } satisfies ContractStory<RecipeHtmlSvg>;

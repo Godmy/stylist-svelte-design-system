@@ -3,5 +3,6 @@ export interface ContractDesignTokenStyleRule {
 	target: string | readonly string[];
 	state?: string;
 	pseudo?: string;
+	media?: string;
 	declarations: Readonly<Record<string, string>>;
 }

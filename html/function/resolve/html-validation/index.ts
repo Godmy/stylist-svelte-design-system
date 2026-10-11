@@ -8,7 +8,7 @@ export function resolveHtmlValidation(node: HtmlNode): HtmlValidationResult {
 	const issues = checkHtmlNode(node);
 	const pending: HtmlValidationResult['pending'] = [];
 	const visit = (current: HtmlNode, path: number[]) => {
-		if (current.kind === 'text') return;
+		if (current.kind !== 'element') return;
 		const spec = HTML_ELEMENT[current.tag];
 		if (!spec) return;
 		pending.push({

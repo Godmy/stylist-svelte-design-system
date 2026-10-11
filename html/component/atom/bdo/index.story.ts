@@ -6,5 +6,13 @@ import type { ContractStory } from '../../../interface/contract/story';
 export default {
 	component: HtmlBdo,
 	args: { dir: 'rtl' },
-	content: [{ kind: 'text', value: 'Right to left' }]
+	content: [{ kind: 'text', value: 'Right to left' }],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlBdo>;

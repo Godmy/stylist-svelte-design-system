@@ -12,7 +12,13 @@ export default {
 		max: { type: 'number' },
 		low: { type: 'number' },
 		high: { type: 'number' },
-		optimum: { type: 'number' }
+		optimum: { type: 'number' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
-	content: [{ kind: 'text', value: 'Gauge' }]
+	content: [{ kind: 'text', value: '60%' }]
 } satisfies ContractStory<RecipeHtmlMeter>;

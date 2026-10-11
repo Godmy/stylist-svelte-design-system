@@ -13,7 +13,13 @@ export default {
 		step: { type: 'text' },
 		readonly: { type: 'boolean' },
 		required: { type: 'boolean' },
-		disabled: { type: 'boolean' }
+		disabled: { type: 'boolean' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	presets: { Disabled: { disabled: true }, Required: { required: true } }
 } satisfies ContractStory<RecipeHtmlInputMonth>;

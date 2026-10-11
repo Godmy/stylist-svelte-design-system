@@ -13,6 +13,7 @@ export function resolveStyleTokenUsage(
 				targets: typeof rule.target === 'string' ? [rule.target] : [...rule.target],
 				state: rule.state,
 				pseudo: rule.pseudo,
+				media: rule.media,
 				property,
 				value
 			}))

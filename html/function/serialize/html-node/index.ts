@@ -3,11 +3,15 @@ import type { HtmlNode } from '../../../type/alias/html-node';
 import { serializeHtmlAttributes } from '../html-attributes';
 import { serializeHtmlRawText } from '../html-raw-text';
 
-/** Standalone HTML export, including html/head/body attributes. Does not execute scripts. */
+/**
+ * Standalone HTML export, including html/head/body attributes. Does not execute scripts.
+ * An outlet serializes to nothing: substitute it first (transformHtmlOutlet).
+ */
 export function serializeHtmlNode(node: HtmlNode): string {
 	const escape = (text: string) =>
 		text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 	if (node.kind === 'text') return escape(node.value);
+	if (node.kind === 'outlet') return '';
 	const spec = HTML_ELEMENT[node.tag];
 	if (!spec) throw new Error(`Unknown HTML element: ${node.tag}`);
 	const { text, value, ...rest } = node.attrs ?? {};

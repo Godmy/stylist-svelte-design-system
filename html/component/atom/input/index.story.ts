@@ -27,7 +27,13 @@ export default {
 		step: { type: 'text' },
 		type: { type: 'text' },
 		value: { type: 'text' },
-		width: { type: 'number' }
+		width: { type: 'number' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	presets: { Disabled: { disabled: true } }
 } satisfies ContractStory<RecipeHtmlInput>;

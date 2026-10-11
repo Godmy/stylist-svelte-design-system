@@ -9,5 +9,13 @@ export default {
 		{ kind: 'element', tag: 'li', children: [{ kind: 'text', value: 'Apples' }] },
 		{ kind: 'element', tag: 'li', children: [{ kind: 'text', value: 'Oranges' }] },
 		{ kind: 'element', tag: 'li', children: [{ kind: 'text', value: 'Pears' }] }
-	]
+	],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlUl>;

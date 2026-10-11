@@ -22,7 +22,13 @@ export default {
 				'strict-origin-when-cross-origin',
 				'unsafe-url'
 			]
-		}
+		},
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	content: [{ kind: 'text', value: 'Read the guide' }]
 } satisfies ContractStory<RecipeHtmlA>;

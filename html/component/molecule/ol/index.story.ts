@@ -9,7 +9,13 @@ export default {
 	controls: {
 		reversed: { type: 'boolean' },
 		start: { type: 'number' },
-		type: { type: 'select', options: ['1', 'a', 'A', 'i', 'I'] }
+		type: { type: 'select', options: ['1', 'a', 'A', 'i', 'I'] },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	content: [
 		{ kind: 'element', tag: 'li', children: [{ kind: 'text', value: 'First step' }] },

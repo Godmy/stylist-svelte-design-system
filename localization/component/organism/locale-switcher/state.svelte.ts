@@ -6,7 +6,8 @@ import {
 import type { SlotLocaleSwitcherLocale as LocaleSwitcherLocale } from '$stylist/localization/interface/slot/locale-switcher-locale';
 import type { RecipeLocaleSwitcher } from '$stylist/localization/interface/recipe/locale-switcher';
 
-export function createLocaleSwitcherState(props: RecipeLocaleSwitcher) {
+export function createLocaleSwitcherState(getProps: () => RecipeLocaleSwitcher) {
+	const props = $derived(getProps());
 	const locales = $derived(props.locales ?? []);
 	const currentLocale = $derived(props.currentLocale);
 	const timezoneOptions = $derived(props.timezoneOptions ?? []);

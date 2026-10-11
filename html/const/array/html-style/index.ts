@@ -1,3 +1,5 @@
+import { TYPOGRAPHY_PRESET } from '$stylist/typography/const/preset/typography';
+
 /**
  * Base skin of the html domain, ordered as in the stylesheet. Rules group elements by
  * registry category (`#heading`, `#interactive`, `#form-associated`, ...); tags appear only
@@ -8,10 +10,9 @@ export const HTML_STYLE = [
 	{
 		target: '@scope',
 		declarations: {
-			'font-family': 'var(--typography-font-family, system-ui, sans-serif)',
-			'font-size': 'var(--typography-font-size-4, 1rem)',
-			'line-height': 'var(--typography-line-height-normal, 1.5)',
-			color: 'var(--color-text-primary, CanvasText)'
+			...TYPOGRAPHY_PRESET.body,
+			color: 'var(--color-text-primary, CanvasText)',
+			background: 'var(--color-background-primary, Canvas)'
 		}
 	},
 	{
@@ -37,9 +38,7 @@ export const HTML_STYLE = [
 		target: '#heading',
 		declarations: {
 			'margin-block': 'var(--layout-spacing-1.5rem, 1.5rem) var(--layout-spacing-0.5rem, 0.5rem)',
-			'font-weight': 'var(--typography-font-weight-semibold, 600)',
-			'line-height': 'var(--typography-line-height-tight, 1.25)',
-			'letter-spacing': 'var(--typography-letter-spacing-narrow, -0.01em)',
+			...TYPOGRAPHY_PRESET.heading,
 			'text-wrap': 'balance'
 		}
 	},
@@ -77,8 +76,8 @@ export const HTML_STYLE = [
 		target: ['#interactive', 'summary', '[tabindex]'],
 		state: ':focus-visible',
 		declarations: {
-			outline: '2px solid var(--color-primary-500, Highlight)',
-			'outline-offset': '2px'
+			outline: 'var(--focus-width, 2px) solid var(--color-primary-500, Highlight)',
+			'outline-offset': 'var(--focus-offset, 2px)'
 		}
 	},
 	{
@@ -90,8 +89,7 @@ export const HTML_STYLE = [
 	{
 		target: ['code', 'kbd', 'samp', 'pre'],
 		declarations: {
-			'font-family': 'var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace)',
-			'font-size': '0.875em'
+			...TYPOGRAPHY_PRESET.code
 		}
 	},
 	{
@@ -105,8 +103,8 @@ export const HTML_STYLE = [
 	{
 		target: 'kbd',
 		declarations: {
-			border: '1px solid var(--color-border-primary, GrayText)',
-			'border-block-end-width': '2px'
+			border: 'var(--border-width-thin, 1px) solid var(--color-border-primary, GrayText)',
+			'border-block-end-width': 'var(--border-width-medium, 2px)'
 		}
 	},
 	{
@@ -135,7 +133,7 @@ export const HTML_STYLE = [
 		target: 'abbr[title]',
 		declarations: { 'text-decoration': 'underline dotted', cursor: 'help' }
 	},
-	{ target: 'small', declarations: { 'font-size': '0.875em' } },
+	{ target: 'small', declarations: { 'font-size': 'var(--font-relative-small, 0.875em)' } },
 	{ target: ['sub', 'sup'], declarations: { 'line-height': '0' } },
 	{
 		target: ['s', 'del'],
@@ -153,7 +151,8 @@ export const HTML_STYLE = [
 		declarations: {
 			'margin-inline': '0',
 			'padding-inline-start': 'var(--layout-spacing-1rem, 1rem)',
-			'border-inline-start': '4px solid var(--color-border-accent, GrayText)',
+			'border-inline-start':
+				'var(--border-width-thick, 4px) solid var(--color-border-accent, GrayText)',
 			color: 'var(--color-text-secondary, GrayText)'
 		}
 	},
@@ -161,7 +160,8 @@ export const HTML_STYLE = [
 		target: 'hr',
 		declarations: {
 			border: '0',
-			'border-block-start': '1px solid var(--color-border-secondary, GrayText)',
+			'border-block-start':
+				'var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)',
 			'margin-block': 'var(--layout-spacing-2rem, 2rem)'
 		}
 	},
@@ -200,6 +200,7 @@ export const HTML_STYLE = [
 	{
 		target: 'caption',
 		declarations: {
+			...TYPOGRAPHY_PRESET.caption,
 			'caption-side': 'top',
 			'padding-block': 'var(--layout-spacing-0.5rem, 0.5rem)',
 			'text-align': 'start',
@@ -209,8 +210,9 @@ export const HTML_STYLE = [
 	{
 		target: ['th', 'td'],
 		declarations: {
-			padding: 'var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-0.75rem, 0.75rem)',
-			'border-block-end': '1px solid var(--color-border-secondary, GrayText)',
+			padding: 'var(--density-block, 0.5rem) var(--density-inline, 0.75rem)',
+			'border-block-end':
+				'var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)',
 			'text-align': 'start',
 			'vertical-align': 'top'
 		}
@@ -233,7 +235,7 @@ export const HTML_STYLE = [
 		target: 'figcaption',
 		declarations: {
 			'margin-block-start': 'var(--layout-spacing-0.5rem, 0.5rem)',
-			'font-size': '0.875em',
+			...TYPOGRAPHY_PRESET.caption,
 			color: 'var(--color-text-secondary, GrayText)'
 		}
 	},
@@ -260,12 +262,12 @@ export const HTML_STYLE = [
 			'textarea'
 		],
 		declarations: {
-			padding: 'var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-0.75rem, 0.75rem)',
-			border: '1px solid var(--color-border-primary, GrayText)',
+			padding: 'var(--density-block, 0.5rem) var(--density-inline, 0.75rem)',
+			border: 'var(--border-width-thin, 1px) solid var(--color-border-primary, GrayText)',
 			'border-radius': 'var(--layout-border-radius-md, 0.375rem)',
 			background: 'var(--color-background-primary, Field)',
 			color: 'inherit',
-			transition: 'border-color var(--motion-duration-150, 150ms) ease'
+			transition: 'border-color var(--motion-duration-150, 150ms) var(--motion-easing-ease, ease)'
 		}
 	},
 	{
@@ -277,8 +279,8 @@ export const HTML_STYLE = [
 	{
 		target: ['button', 'input[type="submit"]', 'input[type="reset"]', 'input[type="button"]'],
 		declarations: {
-			padding: 'var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)',
-			border: '1px solid transparent',
+			padding: 'var(--density-block, 0.5rem) var(--density-inline, 0.75rem)',
+			border: 'var(--border-width-thin, 1px) solid transparent',
 			'border-radius': 'var(--layout-border-radius-md, 0.375rem)',
 			background: 'var(--color-primary-600, ButtonFace)',
 			color: 'var(--color-on-primary, ButtonText)',
@@ -292,7 +294,7 @@ export const HTML_STYLE = [
 		declarations: {
 			'margin-inline-end': 'var(--layout-spacing-0.75rem, 0.75rem)',
 			padding: 'var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)',
-			border: '1px solid transparent',
+			border: 'var(--border-width-thin, 1px) solid transparent',
 			'border-radius': 'var(--layout-border-radius-md, 0.375rem)',
 			background: 'var(--color-primary-600, ButtonFace)',
 			color: 'var(--color-on-primary, ButtonText)',
@@ -324,7 +326,7 @@ export const HTML_STYLE = [
 		declarations: {
 			'margin-inline': '0',
 			padding: 'var(--layout-spacing-1rem, 1rem)',
-			border: '1px solid var(--color-border-secondary, GrayText)',
+			border: 'var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)',
 			'border-radius': 'var(--layout-border-radius-lg, 0.5rem)'
 		}
 	},
@@ -339,7 +341,7 @@ export const HTML_STYLE = [
 		target: 'details',
 		declarations: {
 			padding: 'var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)',
-			border: '1px solid var(--color-border-secondary, GrayText)',
+			border: 'var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)',
 			'border-radius': 'var(--layout-border-radius-md, 0.375rem)'
 		}
 	},
@@ -357,18 +359,55 @@ export const HTML_STYLE = [
 	{
 		target: 'dialog',
 		declarations: {
-			'max-width': 'min(32rem, calc(100vw - 2rem))',
+			'max-width': 'min(var(--content-dialog, 32rem), calc(100vw - var(--content-gutter, 2rem)))',
 			padding: 'var(--layout-spacing-1.5rem, 1.5rem)',
-			border: '1px solid var(--color-border-secondary, GrayText)',
+			border: 'var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)',
 			'border-radius': 'var(--layout-border-radius-xl, 0.75rem)',
 			background: 'var(--color-background-raised, Canvas)',
 			color: 'var(--color-text-primary, CanvasText)',
-			'box-shadow': 'var(--elevation-modal, none)'
+			'box-shadow': 'var(--elevation-modal, none)',
+			'z-index': 'var(--layout-z-index-modal, 1400)'
 		}
 	},
 	{
 		target: 'dialog',
 		pseudo: '::backdrop',
 		declarations: { background: 'var(--color-backdrop, rgb(0 0 0 / 0.6))' }
+	},
+	{
+		target: ['button', 'input[type="submit"]', 'input[type="reset"]', 'input[type="button"]'],
+		state: ':active:not(:disabled)',
+		declarations: { background: 'var(--color-primary-800, ButtonFace)' }
+	},
+	{
+		target: ['input', 'textarea'],
+		pseudo: '::placeholder',
+		declarations: {
+			color: 'var(--color-text-tertiary, GrayText)',
+			opacity: 'var(--opacity-100, 1)'
+		}
+	},
+	{
+		target: ['input[readonly]', 'textarea[readonly]'],
+		state: ':not(:disabled)',
+		declarations: { background: 'var(--color-background-secondary, Field)' }
+	},
+	{
+		target: 'option',
+		state: ':checked',
+		declarations: {
+			background: 'var(--color-primary-600, Highlight)',
+			color: 'var(--color-on-primary, HighlightText)'
+		}
+	},
+	{
+		target: 'a[href]',
+		state: ':active',
+		declarations: { color: 'var(--color-primary-800, LinkText)' }
+	},
+	{
+		target: ['input', 'select', 'textarea'],
+		media: '(prefers-reduced-motion: reduce)',
+		declarations: { 'transition-duration': 'var(--motion-duration-0, 0ms)' }
 	}
 ] as const;

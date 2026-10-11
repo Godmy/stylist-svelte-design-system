@@ -1,11 +1,69 @@
 /** AREA: STYLIST CODER MODEL -> AUTO-GENERATED */
 export {
+	COLORS_SCALES_AMBER,
+	COLORS_SCALES_BLUE,
+	COLORS_SCALES_GRAY,
+	COLORS_SCALES_GREEN,
+	COLORS_SCALES_NEUTRAL,
+	COLORS_SCALES_ORANGE,
+	COLORS_SCALES_RED,
+	COLORS_SCALES_SLATE,
+	COLORS_SCALES_TEAL,
+	DESIGN_TOKEN_CONTENT_SIZE,
+	DESIGN_TOKEN_DENSITY,
+	DESIGN_TOKEN_FOCUS,
 	DESIGN_TOKEN_HTML_REQUIREMENT,
-	DESIGN_TOKEN_HTML_SUPPLEMENT
+	DESIGN_TOKEN_HTML_SUPPLEMENT,
+	GRADIENT_CUSTOM,
+	GRADIENT_LINEAR,
+	GRADIENT_RADIAL,
+	RECORD_ELEVATION,
+	RECORD_SPACING,
+	TOKEN_ANIMATION,
+	TOKEN_BORDER_RADIUS,
+	TOKEN_BORDER_WIDTH,
+	TOKEN_COLOR,
+	TOKEN_COLOR_TONE,
+	TOKEN_DIRECTION,
+	TOKEN_DURATION,
+	TOKEN_EASING,
+	TOKEN_FONT_FAMILY,
+	TOKEN_FONT_SIZE,
+	TOKEN_FONT_SIZE_RELATIVE,
+	TOKEN_FONT_WEIGHT,
+	TOKEN_LETTER_SPACING,
+	TOKEN_LINE_HEIGHT,
+	TOKEN_OPACITY,
+	TOKEN_SHAPE,
+	TOKEN_SIZE,
+	TOKEN_SIZE_PX,
+	TOKEN_SIZE_REM,
+	TOKEN_TOKEN_VALUE,
+	TOKEN_TRANSITION,
+	TOKEN_Z_INDEX
 } from './const';
 export {
 	checkStyleTokenCoverage,
 	resolveStyleTokenUsage
 } from './function';
-export type { DesignTokenUsage } from './type';
+export type {
+	DesignTokenUsage,
+	TokenAnimation,
+	TokenColor,
+	TokenColorTone,
+	TokenDirection,
+	TokenDuration,
+	TokenEasing,
+	TokenFontFamily,
+	TokenFontSize,
+	TokenFontWeight,
+	TokenLetterSpacing,
+	TokenLineHeight,
+	TokenOpacity,
+	TokenShape,
+	TokenSize,
+	TokenSizeRem,
+	TokenTokenValue,
+	TokenZIndex
+} from './type';
 export type { ContractDesignTokenStyleRule } from './interface';

@@ -5,16 +5,21 @@ import type { ContractStory } from '../../../interface/contract/story';
 /** `<dt>`: Legend for corresponding dd element(s). */
 export default {
 	component: HtmlDt,
-	content: [
-		{
-			kind: 'element',
-			tag: 'p',
-			children: [
-				{
-					kind: 'text',
-					value: 'A paragraph of text that wraps across several lines when the preview is narrow.'
-				}
-			]
-		}
-	]
+	content: [{ kind: 'text', value: 'Term' }],
+	context: {
+		kind: 'element',
+		tag: 'dl',
+		children: [
+			{ kind: 'outlet' },
+			{ kind: 'element', tag: 'dd', children: [{ kind: 'text', value: 'Definition of the term.' }] }
+		]
+	},
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlDt>;

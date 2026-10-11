@@ -6,15 +6,19 @@ import type { ContractStory } from '../../../interface/contract/story';
 export default {
 	component: HtmlSection,
 	content: [
+		{ kind: 'element', tag: 'h2', children: [{ kind: 'text', value: 'Section heading' }] },
 		{
 			kind: 'element',
 			tag: 'p',
-			children: [
-				{
-					kind: 'text',
-					value: 'A paragraph of text that wraps across several lines when the preview is narrow.'
-				}
-			]
+			children: [{ kind: 'text', value: 'Sections group related content under a heading.' }]
 		}
-	]
+	],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlSection>;

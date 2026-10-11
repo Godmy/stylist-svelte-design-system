@@ -37,7 +37,8 @@ export function serializeHtmlStylesheet(
 						`\t\t${property}: ${value.replace(/var\((--[\w.-]+)/g, (_, name: string) => `var(${name.replaceAll('.', '\\.')}`)};`
 				)
 				.join('\n');
-			return `\t${list.join(',\n\t')} {\n${declarations}\n\t}`;
+			const css = `\t${list.join(',\n\t')} {\n${declarations}\n\t}`;
+			return rule.media ? `\t@media ${rule.media} {\n${css}\n\t}` : css;
 		})
 		.join('\n');
 	return `@layer ${layer} {\n${body}\n}\n`;

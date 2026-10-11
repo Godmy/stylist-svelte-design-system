@@ -162,14 +162,19 @@ export {
 	checkHtmlRawText,
 	createHtmlBlock,
 	createHtmlBlockList,
+	createHtmlStoryNode,
 	resolveHtmlAddress,
 	resolveHtmlStyleSelector,
+	resolveHtmlText,
 	resolveHtmlValidation,
 	serializeHtmlAttributes,
 	serializeHtmlDocument,
+	serializeHtmlMarkup,
 	serializeHtmlNode,
 	serializeHtmlRawText,
-	serializeHtmlStylesheet
+	serializeHtmlStylesheet,
+	transformHtmlOutlet,
+	transformHtmlText
 } from './function';
 export type {
 	HtmlAttributeValue,
@@ -183,6 +188,7 @@ export type {
 	HtmlNamespace,
 	HtmlNode,
 	HtmlNodeIssue,
+	HtmlOutletNode,
 	HtmlRender,
 	HtmlStyleRule,
 	HtmlTag,

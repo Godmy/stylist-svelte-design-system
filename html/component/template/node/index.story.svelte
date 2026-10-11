@@ -3,9 +3,6 @@
 	import type { RecipeHtmlNode } from '../../../interface/recipe/node';
 	import { checkHtmlNode } from '../../../function/check/html-node';
 	import { createHtmlBlockList } from '../../../function/create/html-block-list';
-	import { serializeHtmlStylesheet } from '../../../function/serialize/html-stylesheet';
-	import HtmlHead from '../head/index.svelte';
-	import HtmlStyle from '../../atom/style/index.svelte';
 
 	// Render of index.story.ts: the tree comes from the story args.
 	let { node }: RecipeHtmlNode = $props();
@@ -13,14 +10,10 @@
 	const issues = $derived(checkHtmlNode(node));
 	const blocks = createHtmlBlockList();
 	const composites = blocks.filter((block) => 'accepts' in block).length;
-	// The html skin: theme tokens through registry categories, scoped to the preview.
-	const skin = serializeHtmlStylesheet();
 </script>
 
-<HtmlHead><HtmlStyle text={skin} /></HtmlHead>
-
 <section class="html-node-story">
-	<div class="html-node-story__preview" data-html-skin>
+	<div class="html-node-story__preview">
 		<Node {node} />
 	</div>
 	<aside class="html-node-story__panel">

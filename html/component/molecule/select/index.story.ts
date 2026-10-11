@@ -11,7 +11,13 @@ export default {
 		multiple: { type: 'boolean' },
 		name: { type: 'text' },
 		required: { type: 'boolean' },
-		size: { type: 'number' }
+		size: { type: 'number' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	presets: { Disabled: { disabled: true }, Required: { required: true } },
 	content: [

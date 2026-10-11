@@ -6,7 +6,14 @@ import type { ContractStory } from '../../../interface/contract/story';
 export default {
 	component: HtmlLi,
 	controls: {
-		value: { type: 'number' }
+		value: { type: 'number' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
-	content: [{ kind: 'text', value: 'List item' }]
+	content: [{ kind: 'text', value: 'List item' }],
+	context: { kind: 'element', tag: 'ul', children: [{ kind: 'outlet' }] }
 } satisfies ContractStory<RecipeHtmlLi>;

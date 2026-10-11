@@ -9,5 +9,6 @@ export type HtmlStyleRule = {
 	readonly state?: string;
 	/** Pseudo-element appended after `:where()`, e.g. `::marker`, `::backdrop`. */
 	readonly pseudo?: string;
+	readonly media?: string;
 	readonly declarations: Readonly<Record<string, string>>;
 };

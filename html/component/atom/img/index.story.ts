@@ -28,6 +28,12 @@ export default {
 			]
 		},
 		decoding: { type: 'select', options: ['sync', 'async', 'auto'] },
-		loading: { type: 'select', options: ['eager', 'lazy'] }
+		loading: { type: 'select', options: ['eager', 'lazy'] },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	}
 } satisfies ContractStory<RecipeHtmlImg>;

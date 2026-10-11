@@ -7,6 +7,11 @@ export default {
 	component: HtmlMath,
 	args: { dir: 'ltr' },
 	controls: {
-		dir: { type: 'select', options: ['ltr', 'rtl'] }
+		dir: { type: 'select', options: ['ltr', 'rtl'] },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	}
 } satisfies ContractStory<RecipeHtmlMath>;

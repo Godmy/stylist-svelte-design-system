@@ -14,5 +14,13 @@ export default {
 				{ kind: 'element', tag: 'input', attrs: { type: 'search', name: 'q' } }
 			]
 		}
-	]
+	],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlSearch>;

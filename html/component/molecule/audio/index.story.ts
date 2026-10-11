@@ -13,6 +13,23 @@ export default {
 		autoplay: { type: 'boolean' },
 		loop: { type: 'boolean' },
 		muted: { type: 'boolean' },
-		controls: { type: 'boolean' }
-	}
+		controls: { type: 'boolean' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	},
+	// CC0 sample media from MDN interactive examples.
+	content: [
+		{
+			kind: 'element',
+			tag: 'source',
+			attrs: {
+				src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3',
+				type: 'audio/mpeg'
+			}
+		}
+	]
 } satisfies ContractStory<RecipeHtmlAudio>;

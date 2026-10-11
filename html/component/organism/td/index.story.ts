@@ -8,18 +8,24 @@ export default {
 	args: { colspan: 1 },
 	controls: {
 		colspan: { type: 'number' },
-		rowspan: { type: 'number' }
+		rowspan: { type: 'number' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
-	content: [
-		{
-			kind: 'element',
-			tag: 'p',
-			children: [
-				{
-					kind: 'text',
-					value: 'A paragraph of text that wraps across several lines when the preview is narrow.'
-				}
-			]
-		}
-	]
+	content: [{ kind: 'text', value: 'Cell' }],
+	context: {
+		kind: 'element',
+		tag: 'table',
+		children: [
+			{
+				kind: 'element',
+				tag: 'tbody',
+				children: [{ kind: 'element', tag: 'tr', children: [{ kind: 'outlet' }] }]
+			}
+		]
+	}
 } satisfies ContractStory<RecipeHtmlTd>;

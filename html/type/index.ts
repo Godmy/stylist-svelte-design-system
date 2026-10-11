@@ -15,6 +15,7 @@ export type {
 	HtmlElementNode,
 	HtmlElementSpec,
 	HtmlNodeIssue,
+	HtmlOutletNode,
 	HtmlStyleRule,
 	HtmlTextNode,
 	HtmlValidationContext,

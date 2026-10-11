@@ -14,5 +14,13 @@ export default {
 		{ kind: 'element', tag: 'rp', children: [{ kind: 'text', value: '(' }] },
 		{ kind: 'element', tag: 'rt', children: [{ kind: 'text', value: 'ji' }] },
 		{ kind: 'element', tag: 'rp', children: [{ kind: 'text', value: ')' }] }
-	]
+	],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlRuby>;

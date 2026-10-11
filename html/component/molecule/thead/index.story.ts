@@ -15,5 +15,14 @@ export default {
 				{ kind: 'element', tag: 'th', children: [{ kind: 'text', value: 'Header 0.3' }] }
 			]
 		}
-	]
+	],
+	context: { kind: 'element', tag: 'table', children: [{ kind: 'outlet' }] },
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlThead>;

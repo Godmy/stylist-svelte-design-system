@@ -10,18 +10,24 @@ export default {
 		colspan: { type: 'number' },
 		rowspan: { type: 'number' },
 		scope: { type: 'select', options: ['row', 'col', 'rowgroup', 'colgroup'] },
-		abbr: { type: 'text' }
+		abbr: { type: 'text' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
-	content: [
-		{
-			kind: 'element',
-			tag: 'p',
-			children: [
-				{
-					kind: 'text',
-					value: 'A paragraph of text that wraps across several lines when the preview is narrow.'
-				}
-			]
-		}
-	]
+	content: [{ kind: 'text', value: 'Header' }],
+	context: {
+		kind: 'element',
+		tag: 'table',
+		children: [
+			{
+				kind: 'element',
+				tag: 'thead',
+				children: [{ kind: 'element', tag: 'tr', children: [{ kind: 'outlet' }] }]
+			}
+		]
+	}
 } satisfies ContractStory<RecipeHtmlTh>;

@@ -6,7 +6,7 @@
 	let { onTranslationChange, onSave, onImport, onExport, ...stateProps }: RecipeTranslationEditor =
 		$props();
 
-	const state = createTranslationEditorState(stateProps);
+	const state = createTranslationEditorState(() => stateProps);
 </script>
 
 <div class={state.rootClass} {...state.restProps}>

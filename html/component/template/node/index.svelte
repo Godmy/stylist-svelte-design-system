@@ -143,7 +143,7 @@
 	import InputReset from '../../atom/input-reset/index.svelte';
 	import InputButton from '../../atom/input-button/index.svelte';
 
-	let { node }: RecipeHtmlNode = $props();
+	let { node, outlet }: RecipeHtmlNode = $props();
 
 	// Composite dispatch: tag (or `input-<type>` trait) -> leaf/composite component.
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any -- each entry has its own recipe
@@ -288,7 +288,7 @@
 	};
 
 	const view = $derived.by(() => {
-		if (node.kind === 'text') return null;
+		if (node.kind !== 'element') return null;
 		const attrs: Record<string, unknown> = { ...node.attrs };
 		if (node.id) attrs['data-html-node'] = node.id;
 		const type = node.tag === 'input' ? String(attrs.type ?? '').toLowerCase() : '';
@@ -318,10 +318,10 @@
 	});
 </script>
 
-{#if node.kind === 'text'}{node.value}{:else if view?.Element}
+{#if node.kind === 'text'}{node.value}{:else if node.kind === 'outlet'}{@render outlet?.()}{:else if view?.Element}
 	{#if view.children.length}
 		<view.Element {...view.attrs}>
-			{#each view.children as child, index (index)}<Node node={child} />{/each}
+			{#each view.children as child, index (index)}<Node node={child} {outlet} />{/each}
 		</view.Element>
 	{:else}
 		<view.Element {...view.attrs} />

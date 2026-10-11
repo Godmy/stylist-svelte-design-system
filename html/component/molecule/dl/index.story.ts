@@ -10,5 +10,13 @@ export default {
 		{ kind: 'element', tag: 'dd', children: [{ kind: 'text', value: 'Definition of the term.' }] },
 		{ kind: 'element', tag: 'dt', children: [{ kind: 'text', value: 'Another term' }] },
 		{ kind: 'element', tag: 'dd', children: [{ kind: 'text', value: 'Its definition.' }] }
-	]
+	],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlDl>;

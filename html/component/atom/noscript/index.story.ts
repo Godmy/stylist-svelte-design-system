@@ -11,5 +11,13 @@ export default {
 			tag: 'p',
 			children: [{ kind: 'text', value: 'Shown only when scripting is disabled.' }]
 		}
-	]
+	],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlNoscript>;

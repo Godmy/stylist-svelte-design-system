@@ -5,6 +5,7 @@ export type DesignTokenUsage = {
 	targets: readonly string[];
 	state?: string;
 	pseudo?: string;
+	media?: string;
 	property: string;
 	value: string;
 };

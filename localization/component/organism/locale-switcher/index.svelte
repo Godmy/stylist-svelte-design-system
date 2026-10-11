@@ -6,7 +6,7 @@
 
 	let { onLocaleChange, onTimezoneChange, ...stateProps }: RecipeLocaleSwitcher = $props();
 
-	const state = createLocaleSwitcherState(stateProps);
+	const state = createLocaleSwitcherState(() => stateProps);
 </script>
 
 <div class={state.rootClass} {...state.restProps}>

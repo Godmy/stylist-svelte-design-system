@@ -6,7 +6,13 @@ import type { ContractStory } from '../../../interface/contract/story';
 export default {
 	component: HtmlBlockquote,
 	controls: {
-		cite: { type: 'text' }
+		cite: { type: 'text' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	content: [
 		{

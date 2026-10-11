@@ -1,49 +1,40 @@
-# Design-token: контракт покрытия HTML
+# Design-token: определения и покрытие HTML skin
 
-Домен содержит определения и аудит потребностей токенов. Он не управляет темой и не зависит от runtime HTML или sandbox. Существующие значения шкал пока принадлежат theme; копий палитр и шкал здесь нет. Перенос их реализации требует отдельной согласованной миграции зависимостей.
+Обновлено 2026-10-11. Общие шкалы перенесены из theme вместе с зависимыми Token* типами. Их единственный физический владелец — design-token. Runtime этого домена не импортирует theme/html/sandbox; интеграционные тесты могут читать их.
 
-## Текущее наблюдаемое покрытие
+## Наблюдаемое покрытие
 
-`data/json/html-requirement/index.json` — снимок текущего `html/const/array/html-style`: 57 правил, 93 ссылки `var()`, 43 уникальных имени. Для каждой ссылки сохранены selector targets, state, pseudo-element, CSS property и исходное значение. `const/record/html-requirement` предоставляет снимок как данные библиотеки.
+HTML_STYLE содержит 63 правила, 128 ссылок var() и 60 уникальных имён. JSON snapshot содержит selector/state/pseudo/media/property/value для каждой ссылки. Light и dark emitters покрывают 60/60 имён без supplement и без разрешённого gap mono. Тесты также проверяют значения family, color, spacing, density, focus и duration, а stylesheet — строгий CSS parser.
 
-`function/resolve/style-token-usage` извлекает эти связи из переданных правил. `function/check/style-token-coverage` сравнивает потребности с переменными, выданными любым provider; fallback не считается определённым токеном. Тест проверяет точное соответствие снимка живому HTML_STYLE, поэтому изменение соседней сессией skin делает устаревание карты заметным.
+TOKEN_FONT_FAMILY.mono имеет одного владельца; ManagerThemeCSS выдаёт --font-mono напрямую из него. DESIGN_TOKEN_HTML_SUPPLEMENT сохранён как совместимый preset, производный от того же определения, и больше не является обязательным исправлением provider.
 
-Светлая и тёмная тема сейчас выдают 42/43 требуемых переменных. `--font-mono` отсутствует. `const/preset/html-supplement` определяет это значение и закрывает текущий пробел при явном подключении. Наличие preset не означает, что песочница автоматически его подключила.
+## Ответственность доменов
 
-Пример интеграции там, где устанавливаются CSS-переменные окружения:
+- design-token: palette/scales, font family/size/weight/line-height/tracking, spacing/size, radius/border/focus, opacity, duration/easing/transition, gradients/elevation/z-index, density/content presets, независимый аудит потребителей.
+- theme: light/dark и схемы брендов, semantic assignments, runtime CSS emitter, provider/context/storage и выбор темы. THEME_LAYOUT, INTERACTION_MOTION и LAYOUT_ELEVATION_SEMANTIC используют определения design-token.
+- typography: SlotTypography и CSS presets body/heading/caption/code. Skin использует эти presets. Theme не импортирует typography: дополнительная обратная зависимость не введена.
+- html: native wrappers, дерево/context/outlet и skin. Scope, @layer html, :where(), fallbacks и экранирование точек в CSS variable names сохранены.
+- sandbox/domain: отдельный serializable ContractPreviewEnvironment, controls и iframe применение; settings не spread-ятся в args HTML-компонента. sandbox/token остаётся владельцем существующего редактора токенов библиотеки.
 
-```ts
-const vars = {
-  ...DESIGN_TOKEN_HTML_SUPPLEMENT,
-  ...ManagerThemeCSS.convertToCSSVars(theme)
-};
-ManagerThemeCSS.setVars(vars, previewRoot);
-```
+## Реальные потребители
 
-Theme overrides идут последними. HTML skin остаётся потребителем `var(--name, fallback)`. Контракт story `args/controls` описывает props компонента; CSS-переменные окружения нельзя молча передавать туда как новые HTML-атрибуты. Общие theme/token controls должны настраивать корень preview. Нативные `class`/`style` остаются возможностью локального переопределения.
+| Семейство       | Подключено                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Typography      | body/heading/caption/code presets; sans/serif/mono, size/weight/line-height/tracking; font controls меняют preview scope |
+| Colors          | text/background/border/accent/on-accent/error/backdrop; light/dark, links hover/active, placeholder, selected option     |
+| Spacing/density | существующая шкала с совместимыми именами; compact/comfortable padding для таблиц, полей и кнопок                        |
+| Border/focus    | thin/medium/thick, radius, focus-visible width/offset                                                                    |
+| States/motion   | hover/active/focus-visible/disabled/user-invalid/readonly/selected/placeholder; duration/easing и prefers-reduced-motion |
+| Layout          | dialog width/gutter, modal shadow/z-index/backdrop; открытие dialog по-прежнему native, open не означает showModal       |
 
-## Какое покрытие следует предусмотреть
+Структурные auto/100%/inherit и native behavior не превращены в отдельные токены. Media aspect-ratio/object-fit и внутренние SVG/MathML tokens отложены: текущие stories не имеют соответствующего настраиваемого HtmlNode-контракта. Foreign custom renders и metadata не получают фиктивных appearance controls.
 
-| Содержимое внутри HTML | Сейчас используется | Требуется дальше |
-|---|---|---|
-| Текст, заголовки, подписи | family, size, weight, line-height, letter-spacing, text colors | Пресеты body/heading/caption/code; шрифт mono; относительная шкала small/figcaption; underline thickness/offset |
-| Списки и вложенная композиция | spacing, marker color, блоковый ритм | Плотность compact/comfortable, gap и logical indentation без индивидуальной палитры на каждый тег |
-| Таблицы | cell padding, borders, caption/text colors, header weight/background | Токены ширины границы; density; caption preset. caption-side, align и collapse — настройки композиции, не шкала значений темы |
-| Поля и кнопки | text/background/border/accent/on-primary, radius, spacing | Placeholder, readonly, active, selected; общие focus width/offset и размеры элементов. Проверка доступности отдельна от наличия токенов |
-| Disclosure, dialog | spacing, radius, modal elevation, backdrop | Semantic content/dialog widths, overlay stacking, состояния, easing и reduced-motion. showModal/open — native behavior, не токены |
-| Изображения, video, canvas, SVG root | Ограничение max-width и auto height задано структурно | Пресеты aspect ratio/object-fit/content width при появлении API медиа; не превращать auto/100%/inherit в токены без причины |
-| Metadata, raw-text, foreign content | Служебные элементы не требуют своего визуального набора | Не добавлять фиктивные font controls к base/meta/script. SVG/MathML требуют отдельного контракта для содержимого, не одной общей HTML-шкалы |
+## Preview: порядок и reset
 
-`proposedCoverage` в JSON — предположение о необходимых семействах и приоритетах, а не реализованные значения. P0: typography/color/spacing, P1: border/state-motion/layout-media, P2: особые namespace и служебные случаи. Токены представляют повторяемое дизайн-решение; структурные CSS-значения и native behavior остаются в своих контрактах.
+Родительская тема зеркалируется существующим viewport protocol на documentElement iframe. Явный preview mode устанавливает light/dark variables на skin root. Font/size/line-height/density overrides идут последними. Пустые настройки наследуют текущую тему; effect cleanup снимает старые variables при reset, смене настроек и отключении skin.
 
-## Границы доменов и дальнейшая миграция
+Skin включается только у visual HTML stories, переключается в native mode и не оформляет shell или stories других доменов. Node custom render использует host skin, без собственного независимого stylesheet. Standalone /preview использует собственный ThemeProvider и не ожидает parent для ready.
 
-- design-token: общие шкалы, типы значений, metadata и аудит потребителей; без provider/storage/переключателей темы.
-- theme: тематические назначения и значения, light/dark, применение переменных, context и storage.
-- typography и остальные компонентные домены: contracts/recipes оформления и семантические presets, собираемые из общих токенов.
-- html: категории, native элементы и открытая композиция; skin использует CSS-переменные.
-- sandbox/token: UI для просмотра и настройки; не владелец базовых определений.
+## Проверки и генерация
 
-Сначала перенести из theme базовые шкалы font/size/weight/line-height/spacing/radius/opacity/motion с полной картой потребителей. Затем обновить theme и component imports. Не копировать определения, не вводить зависимость design-token от theme. Текущая связь с theme есть только в тесте интеграции. Отступы с точкой в имени сохраняются совместимыми; переименование требует синхронной миграции эмиттера и всех потребителей.
-
-Текущее покрытие — покрытие имён переменных, не всех CSS-параметров, UI-состояний, браузеров или доступности. Обновление снимка: `node scripts/write-design-token-coverage.mjs`. Проверка: `yarn exec vitest run --config scripts/design-token-vitest.config.mjs --configLoader native`.
+Snapshot обновляется `node scripts/write-design-token-coverage.mjs`; native resolver maintenance script использует реальные module owners. Source tests и проверка CSS не требуют generated barrels. Перенесённые определения и новые preview components требуют человеческой регенерации `yarn stylist:index` / `yarn stylist:manifest` из lankatour.ru по AGENTS.md. До неё public root exports и полная integration остаются pending.

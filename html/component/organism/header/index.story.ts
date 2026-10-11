@@ -6,15 +6,19 @@ import type { ContractStory } from '../../../interface/contract/story';
 export default {
 	component: HtmlHeader,
 	content: [
+		{ kind: 'element', tag: 'h1', children: [{ kind: 'text', value: 'Site name' }] },
 		{
 			kind: 'element',
 			tag: 'p',
-			children: [
-				{
-					kind: 'text',
-					value: 'A paragraph of text that wraps across several lines when the preview is narrow.'
-				}
-			]
+			children: [{ kind: 'text', value: 'Introductory content and navigation aids.' }]
 		}
-	]
+	],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlHeader>;

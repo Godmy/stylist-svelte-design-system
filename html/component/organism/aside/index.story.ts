@@ -6,15 +6,19 @@ import type { ContractStory } from '../../../interface/contract/story';
 export default {
 	component: HtmlAside,
 	content: [
+		{ kind: 'element', tag: 'h2', children: [{ kind: 'text', value: 'Related' }] },
 		{
 			kind: 'element',
 			tag: 'p',
-			children: [
-				{
-					kind: 'text',
-					value: 'A paragraph of text that wraps across several lines when the preview is narrow.'
-				}
-			]
+			children: [{ kind: 'text', value: 'Content tangential to the main text: notes, links, ads.' }]
 		}
-	]
+	],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlAside>;

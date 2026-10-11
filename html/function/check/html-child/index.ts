@@ -36,6 +36,9 @@ export function checkHtmlChild(
 		accepts = [...other, '#flow'];
 	}
 	if (accepts.length === 0) return false;
+	// An outlet stands for an element supplied later: valid where some element is accepted.
+	if (child.kind === 'outlet')
+		return node.tag !== 'svg' && node.tag !== 'math' && accepts.some((token) => token !== '#text');
 	if (child.kind === 'text') {
 		if (/^[\t\n\f\r ]*$/.test(child.value)) return true;
 		return ['#text', '#phrasing', '#flow', '#any'].some((token) => accepts.includes(token));

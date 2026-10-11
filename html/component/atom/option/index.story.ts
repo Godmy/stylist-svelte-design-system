@@ -9,8 +9,15 @@ export default {
 		disabled: { type: 'boolean' },
 		label: { type: 'text' },
 		selected: { type: 'boolean' },
-		value: { type: 'text' }
+		value: { type: 'text' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	presets: { Disabled: { disabled: true } },
-	content: [{ kind: 'text', value: 'Option' }]
+	content: [{ kind: 'text', value: 'Option' }],
+	context: { kind: 'element', tag: 'select', children: [{ kind: 'outlet' }] }
 } satisfies ContractStory<RecipeHtmlOption>;

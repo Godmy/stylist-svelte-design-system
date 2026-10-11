@@ -7,7 +7,13 @@ export default {
 	component: HtmlFieldset,
 	controls: {
 		disabled: { type: 'boolean' },
-		name: { type: 'text' }
+		name: { type: 'text' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	presets: { Disabled: { disabled: true } },
 	content: [

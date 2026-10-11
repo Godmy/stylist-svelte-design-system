@@ -6,10 +6,38 @@ import type { ContractStory } from '../../../interface/contract/story';
 export default {
 	component: HtmlColgroup,
 	controls: {
-		span: { type: 'number' }
+		span: { type: 'number' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	},
 	content: [
 		{ kind: 'element', tag: 'col', attrs: { span: 2 } },
 		{ kind: 'element', tag: 'col' }
-	]
+	],
+	context: {
+		kind: 'element',
+		tag: 'table',
+		children: [
+			{ kind: 'outlet' },
+			{
+				kind: 'element',
+				tag: 'tbody',
+				children: [
+					{
+						kind: 'element',
+						tag: 'tr',
+						children: [
+							{ kind: 'element', tag: 'td', children: [{ kind: 'text', value: 'Cell 1.1' }] },
+							{ kind: 'element', tag: 'td', children: [{ kind: 'text', value: 'Cell 1.2' }] },
+							{ kind: 'element', tag: 'td', children: [{ kind: 'text', value: 'Cell 1.3' }] }
+						]
+					}
+				]
+			}
+		]
+	}
 } satisfies ContractStory<RecipeHtmlColgroup>;

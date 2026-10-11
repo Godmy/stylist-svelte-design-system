@@ -7,6 +7,10 @@ import { DESIGN_TOKEN_HTML_SUPPLEMENT } from '../../../const/preset/html-supplem
 import { DESIGN_TOKEN_HTML_REQUIREMENT } from '../../../const/record/html-requirement';
 import { resolveStyleTokenUsage } from '../../../function/resolve/style-token-usage';
 import { checkStyleTokenCoverage } from '../../../function/check/style-token-coverage';
+import { TOKEN_FONT_FAMILY } from '../../../const/object/font-family';
+import { TOKEN_DURATION } from '../../../const/object/duration';
+import { DESIGN_TOKEN_DENSITY } from '../../../const/preset/density';
+import { DESIGN_TOKEN_FOCUS } from '../../../const/preset/focus';
 
 describe('design-token HTML demand', () => {
 	it('keeps the demand snapshot in sync with live HTML selectors, states and values', () => {
@@ -17,17 +21,22 @@ describe('design-token HTML demand', () => {
 	it.each([
 		['light', THEME_MODE_LIGHT],
 		['dark', THEME_MODE_DARK]
-	] as const)(
-		'%s theme emits all current requirements except the declared mono gap',
-		(_, theme) => {
-			const variables = ManagerThemeCSS.convertToCSSVars(theme);
-			expect(checkStyleTokenCoverage(HTML_STYLE, variables).missing).toEqual(['--font-mono']);
-			expect(
-				checkStyleTokenCoverage(HTML_STYLE, { ...DESIGN_TOKEN_HTML_SUPPLEMENT, ...variables })
-					.missing
-			).toEqual([]);
-		}
-	);
+	] as const)('%s theme emits every current requirement including mono', (_, theme) => {
+		const variables = ManagerThemeCSS.convertToCSSVars(theme);
+		expect(checkStyleTokenCoverage(HTML_STYLE, variables).missing).toEqual([]);
+		expect(variables['--font-mono']).toBe(TOKEN_FONT_FAMILY.mono);
+		expect(variables['--font-sans']).toBe(TOKEN_FONT_FAMILY.sans);
+		expect(variables['--font-serif']).toBe(TOKEN_FONT_FAMILY.serif);
+		expect(variables['--typography-font-family']).toBe(theme.typography.fontFamily);
+		expect(variables['--color-primary-600']).toBe(theme.colors.primary[600]);
+		expect(variables['--focus-width']).toBe(DESIGN_TOKEN_FOCUS.width);
+		expect(variables['--density-block']).toBe(DESIGN_TOKEN_DENSITY.comfortable.block);
+		expect(variables['--motion-duration-150']).toBe(TOKEN_DURATION[150]);
+		expect(variables['--layout-spacing-0.5rem']).toBe('0.5rem');
+		expect(
+			checkStyleTokenCoverage(HTML_STYLE, { ...DESIGN_TOKEN_HTML_SUPPLEMENT, ...variables }).missing
+		).toEqual([]);
+	});
 	it('tracks nested fallbacks and escaped names independently of theme', () => {
 		const rules = [
 			{

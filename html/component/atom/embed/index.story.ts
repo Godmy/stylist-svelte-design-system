@@ -15,6 +15,12 @@ export default {
 		src: { type: 'text' },
 		type: { type: 'text' },
 		width: { type: 'number' },
-		height: { type: 'number' }
+		height: { type: 'number' },
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
 	}
 } satisfies ContractStory<RecipeHtmlEmbed>;

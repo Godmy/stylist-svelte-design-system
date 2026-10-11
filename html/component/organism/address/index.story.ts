@@ -5,5 +5,13 @@ import type { ContractStory } from '../../../interface/contract/story';
 /** `<address>`: Contact information for a page or article element. */
 export default {
 	component: HtmlAddress,
-	content: [{ kind: 'text', value: 'Jane Doe, 1 Example Street, Tbilisi' }]
+	content: [{ kind: 'text', value: 'Jane Doe, 1 Example Street, Tbilisi' }],
+	controls: {
+		// Global attributes
+		title: { type: 'text' },
+		lang: { type: 'select', options: ['en', 'ru', 'ka', 'ar'] },
+		dir: { type: 'select', options: ['ltr', 'rtl', 'auto'] },
+		hidden: { type: 'boolean' },
+		class: { type: 'text' }
+	}
 } satisfies ContractStory<RecipeHtmlAddress>;

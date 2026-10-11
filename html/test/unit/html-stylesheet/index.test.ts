@@ -11,8 +11,6 @@ import { serializeHtmlStylesheet } from '../../../function/serialize/html-styles
 describe('html skin', () => {
 	const rules: readonly HtmlStyleRule[] = HTML_STYLE;
 	const css = serializeHtmlStylesheet();
-	/** Tokens the theme does not emit yet; components already read them with fallbacks. */
-	const pending = ['--font-mono'];
 
 	it('is valid CSS for a strict parser', () => {
 		expect(() =>
@@ -38,7 +36,7 @@ describe('html skin', () => {
 		expect(used.length).toBeGreaterThan(50);
 		for (const [, escaped, comma] of used) {
 			const name = escaped.replaceAll('\\', '');
-			expect(name in vars || pending.includes(name), name).toBe(true);
+			expect(name in vars, name).toBe(true);
 			expect(comma, `${name} has no fallback`).toBe(',');
 		}
 	});
