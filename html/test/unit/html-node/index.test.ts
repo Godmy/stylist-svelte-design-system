@@ -64,6 +64,19 @@ describe('html composition', () => {
 			]);
 			expect(checkHtmlNode(el('th', el('span'), text('Tea')))).toEqual([]);
 		});
+		it.each(['hidden', 'HIDDEN', 'HiDdEn'])('treats input type %s as non-interactive', (type) => {
+			const input: HtmlNode = { kind: 'element', tag: 'input', attrs: { type } };
+			expect(checkHtmlNode(el('button', input))).toEqual([]);
+		});
+		it.each(['text', 'TEXT', 'unknown'])(
+			'still forbids interactive input type %s in button',
+			(type) => {
+				const input: HtmlNode = { kind: 'element', tag: 'input', attrs: { type } };
+				expect(checkHtmlNode(el('button', input)).map((issue) => issue.code)).toContain(
+					'forbidden-descendant'
+				);
+			}
+		);
 
 		it('reports raw text that contains its closing delimiter', () => {
 			const style = el('style', text('a{}</style><b>x</b>'));

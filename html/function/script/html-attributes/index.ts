@@ -8,6 +8,17 @@ import { HTML_BOOLEAN_ATTRIBUTE } from '../../../const/array/html-boolean-attrib
 export function applyHtmlAttributes(target: Element, attrs: Record<string, unknown>): () => void {
 	const restore: (() => void)[] = [];
 	for (const [name, value] of Object.entries(attrs)) {
+		if (name.startsWith('on') && name in target && (typeof value === 'function' || value == null)) {
+			// Native IDL setters preserve handler semantics (return values, `this`,
+			// and body handlers that reflect the owning Window) without a copied event list.
+			const handlers = target as unknown as Record<string, unknown>;
+			const previous = handlers[name];
+			handlers[name] = value ?? null;
+			restore.push(() => {
+				handlers[name] = previous;
+			});
+			continue;
+		}
 		if (name.startsWith('on') && typeof value === 'function') {
 			const type = name.slice(2);
 			const listener = value as EventListener;

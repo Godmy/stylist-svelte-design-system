@@ -4,6 +4,8 @@ import { SvelteMap } from 'svelte/reactivity';
 import Node from '../../../component/template/node/index.svelte';
 import Style from '../../../component/atom/style/index.svelte';
 import Script from '../../../component/atom/script/index.svelte';
+import Radio from '../../../component/atom/input-radio/index.svelte';
+import Body from '../../../component/template/body/index.svelte';
 import hydration from '../../../data/json/html-hydration-sample/index.json';
 import { HTML_ELEMENT } from '../../../const/record/html-element';
 import { HTML_INPUT_TYPE } from '../../../const/array/html-input-type';
@@ -199,5 +201,214 @@ describe('HTML coverage and regressions', () => {
 		expect(html).toContain('aria-hidden="false"');
 		expect(html).toContain('<style>body { color: red; }</style>');
 		expect(html).toContain('<textarea>hello &amp; goodbye</textarea>');
+	});
+	it.each(['checked', 'defaultChecked'])('preserves native radio %s without group', (prop) => {
+		const target = render(el('input', [], { type: 'radio', value: 'a', [prop]: true }));
+		const native = document.createElement('input');
+		native.type = 'radio';
+		if (prop === 'checked') native.checked = true;
+		else native.defaultChecked = true;
+		expect(target.querySelector('input')!.checked).toBe(native.checked);
+	});
+	it('updates explicit radio checked without replacing the input', () => {
+		const target = document.createElement('div');
+		document.body.append(target);
+		const state = new SvelteMap([['checked', true]]);
+		flushSync(() =>
+			instances.push(
+				mount(Radio, {
+					target,
+					props: {
+						get checked() {
+							return state.get('checked');
+						}
+					}
+				})
+			)
+		);
+		const input = target.querySelector('input')!;
+		flushSync(() => state.set('checked', false));
+		expect(input.checked).toBe(false);
+		expect(target.querySelector('input')).toBe(input);
+		flushSync(() => state.set('checked', true));
+		expect(input.checked).toBe(true);
+	});
+	it('binds a radio group starting at undefined and updates sibling radios', () => {
+		const target = document.createElement('div');
+		document.body.append(target);
+		const state = new SvelteMap<string, unknown>([['group', undefined]]);
+		for (const value of ['a', 'b'])
+			flushSync(() =>
+				instances.push(
+					mount(Radio, {
+						target,
+						props: {
+							name: 'library-group',
+							value,
+							get group() {
+								return state.get('group');
+							},
+							set group(next) {
+								state.set('group', next);
+							}
+						}
+					})
+				)
+			);
+		const [a, b] = target.querySelectorAll('input');
+		flushSync(() => a.click());
+		expect(state.get('group')).toBe('a');
+		expect([a.checked, b.checked]).toEqual([true, false]);
+		flushSync(() => state.set('group', 'b'));
+		expect([a.checked, b.checked]).toEqual([false, true]);
+	});
+	it.each(['online', 'resize', 'hashchange'])(
+		'reflects body %s to Window and restores cleanup',
+		async (type) => {
+			const key = `on${type}`;
+			const handlers = document.body as unknown as Record<string, unknown>;
+			const previous = handlers[key];
+			let nativeCalls = 0,
+				libraryCalls = 0;
+			const nativeContext: { receiver?: Window; target?: EventTarget | null } = {};
+			handlers[key] = function (this: Window, event: Event) {
+				nativeContext.receiver = this;
+				nativeContext.target = event.currentTarget;
+				nativeCalls++;
+			};
+			window.dispatchEvent(new Event(type));
+			const original = handlers[key];
+			const target = document.createElement('div');
+			document.body.append(target);
+			let instance: ReturnType<typeof mount> | undefined;
+			try {
+				flushSync(
+					() =>
+						(instance = mount(Body, {
+							target,
+							props: {
+								[key]: function (this: Window, event: Event) {
+									expect(this === nativeContext.receiver).toBe(true);
+									expect(event.currentTarget === nativeContext.target).toBe(true);
+									libraryCalls++;
+								}
+							}
+						}))
+				);
+				window.dispatchEvent(new Event(type));
+				expect(nativeCalls).toBe(1);
+				expect(libraryCalls).toBe(1);
+				await unmount(instance!);
+				instance = undefined;
+				expect(handlers[key]).toBe(original);
+				window.dispatchEvent(new Event(type));
+				expect(nativeCalls).toBe(2);
+				expect(libraryCalls).toBe(1);
+			} finally {
+				if (instance) await unmount(instance);
+				handlers[key] = previous;
+			}
+		}
+	);
+	it('preserves native event return values and restores prior handlers', () => {
+		const native = document.createElement('button');
+		native.onclick = () => false;
+		const library = document.createElement('button');
+		const old = () => undefined;
+		library.onclick = old;
+		const undo = applyHtmlAttributes(library, { onclick: () => false });
+		const a = new MouseEvent('click', { cancelable: true });
+		const b = new MouseEvent('click', { cancelable: true });
+		native.dispatchEvent(a);
+		library.dispatchEvent(b);
+		expect(b.defaultPrevented).toBe(a.defaultPrevented);
+		undo();
+		expect(library.onclick).toBe(old);
+	});
+	it('replaces and clears a body handler on update, then restores the previous handler', async () => {
+		const previous = document.body.ononline;
+		const target = document.createElement('div');
+		document.body.append(target);
+		let first = 0,
+			second = 0;
+		const state = new SvelteMap<string, (() => void) | null>([['handler', () => first++]]);
+		let instance: ReturnType<typeof mount> | undefined;
+		try {
+			flushSync(
+				() =>
+					(instance = mount(Body, {
+						target,
+						props: {
+							get ononline() {
+								return state.get('handler');
+							}
+						}
+					}))
+			);
+			window.dispatchEvent(new Event('online'));
+			flushSync(() => state.set('handler', () => second++));
+			window.dispatchEvent(new Event('online'));
+			flushSync(() => state.set('handler', null));
+			window.dispatchEvent(new Event('online'));
+			expect([first, second]).toEqual([1, 1]);
+			await unmount(instance!);
+			instance = undefined;
+			expect(document.body.ononline).toBe(previous);
+		} finally {
+			if (instance) await unmount(instance);
+			document.body.ononline = previous;
+		}
+	});
+	it('keeps custom on* listeners working and removes them on cleanup', () => {
+		const target = document.createElement('div');
+		let calls = 0;
+		const undo = applyHtmlAttributes(target, { oncustom: () => calls++ });
+		target.dispatchEvent(new Event('custom'));
+		undo();
+		target.dispatchEvent(new Event('custom'));
+		expect(calls).toBe(1);
+	});
+	it('groups direct table rows without mutating input or merging explicit sections', () => {
+		const row = () => el('tr', [el('td', [text('x')])]);
+		const node = el('table', [row(), text('\n'), el('template'), row(), el('tfoot', [row()])]);
+		const original = structuredClone(node);
+		const target = render(node);
+		const native = document.createElement('div');
+		native.innerHTML =
+			'<table><tr><td>x</td></tr>\n<template></template><tr><td>x</td></tr><tfoot><tr><td>x</td></tr></tfoot></table>';
+		for (const selector of ['table > tbody', 'table > tbody > tr', 'table > tfoot > tr'])
+			expect(target.querySelectorAll(selector).length).toBe(
+				native.querySelectorAll(selector).length
+			);
+		expect(node).toEqual(original);
+	});
+	it('hydrates direct rows through an explicit tbody without recovery and updates in place', () => {
+		const target = document.createElement('div');
+		document.body.append(target);
+		// Node SSR emitted by Svelte 5.57.2 (runes:true, dev:false). The native parser
+		// must see the same section boundaries as the client, including hydration markers.
+		target.innerHTML =
+			'<!--[--><!--[2--><!--[0--><!--[--><table><!--[--><!--[2--><!--[0--><!--[--><tbody><!--[--><!--[2--><!--[0--><!--[--><tr><!--[--><!--[2--><!--[0--><!--[--><td><!--[--><!--[0-->x<!--]--><!--]--><!----></td><!--]--><!--]--><!--]--><!--]--><!----></tr><!--]--><!--]--><!--]--><!--]--><!----></tbody><!--]--><!--]--><!--]--><!--]--><!----></table><!--]--><!--]--><!--]--><!--]-->';
+		const table = target.querySelector('table')!;
+		const row = target.querySelector('tr')!;
+		const state = new SvelteMap([['node', el('table', [el('tr', [el('td', [text('x')])])])]]);
+		flushSync(() =>
+			instances.push(
+				hydrate(Node, {
+					target,
+					recover: false,
+					props: {
+						get node() {
+							return state.get('node')!;
+						}
+					}
+				})
+			)
+		);
+		expect(target.querySelector('table')).toBe(table);
+		expect(target.querySelector('tr')).toBe(row);
+		flushSync(() => state.set('node', el('table', [el('tr', [el('td', [text('updated')])])])));
+		expect(target.querySelector('tr')).toBe(row);
+		expect(row.textContent).toBe('updated');
 	});
 });

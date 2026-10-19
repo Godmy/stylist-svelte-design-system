@@ -150,7 +150,7 @@ export function checkHtmlConstraints(
 	};
 	const isInteractive = (child: HtmlElementNode) => {
 		if (child.tag === 'a') return child.attrs?.href != null;
-		if (child.tag === 'input') return child.attrs?.type !== 'hidden';
+		if (child.tag === 'input') return String(child.attrs?.type ?? '').toLowerCase() !== 'hidden';
 		if (child.tag === 'audio' || child.tag === 'video')
 			return child.attrs?.controls != null && child.attrs.controls !== false;
 		if (child.tag === 'img') return child.attrs?.usemap != null;

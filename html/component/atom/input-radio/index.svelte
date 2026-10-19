@@ -4,4 +4,9 @@
 	let { element = $bindable(null), group = $bindable(), ...rest }: RecipeHtmlInputRadio = $props();
 </script>
 
-<input bind:this={element} {...rest} type="radio" bind:group />
+{#if group === undefined && ('checked' in rest || 'defaultChecked' in rest)}
+	<!-- Explicit native checked/defaultChecked works without a group binding. -->
+	<input bind:this={element} {...rest} type="radio" />
+{:else}
+	<input bind:this={element} {...rest} type="radio" bind:group />
+{/if}

@@ -294,7 +294,29 @@
 		const type = node.tag === 'input' ? String(attrs.type ?? '').toLowerCase() : '';
 		const trait = (HTML_INPUT_TYPE as readonly string[]).includes(type) ? `input-${type}` : '';
 		const spec = HTML_ELEMENT[node.tag];
-		const children = node.children ?? [];
+		let children = node.children ?? [];
+		if (node.tag === 'table') {
+			// HTML parsing inserts tbody around direct rows. Emit the same structure
+			// before SSR so hydration markers and the client tree stay in agreement.
+			const normalized: typeof children = [];
+			let rows: typeof children = [];
+			for (const child of children) {
+				if (child.kind === 'element' && child.tag === 'tr') {
+					if (!rows.length) normalized.push({ kind: 'element', tag: 'tbody', children: rows });
+					rows.push(child);
+				} else if (
+					rows.length &&
+					((child.kind === 'text' && /^[\t\n\f\r ]*$/.test(child.value)) ||
+						(child.kind === 'element' && ['script', 'template'].includes(child.tag)))
+				) {
+					rows.push(child);
+				} else {
+					rows = [];
+					normalized.push(child);
+				}
+			}
+			children = normalized;
+		}
 		const text = children.map((child) => (child.kind === 'text' ? child.value : '')).join('');
 		// Explicit props take precedence; otherwise derive content from text children.
 		if ((spec?.content === 'raw-text' || node.tag === 'title') && attrs.text === undefined)
