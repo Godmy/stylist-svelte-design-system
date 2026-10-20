@@ -11,6 +11,10 @@ import type { SlotStoryControl } from '../../slot/story-control';
 export interface ContractStory<TArgs extends object = Record<string, unknown>> {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any -- any component's props are the story args
 	component: Component<any>;
+	/** Heading of the sandbox story panel; the family name when omitted. */
+	title?: string;
+	/** Short note shown under the title in the sandbox story panel. */
+	description?: string;
 	/** Values the story starts with. */
 	args?: Partial<TArgs>;
 	controls?: { [K in keyof TArgs & string]?: SlotStoryControl };
