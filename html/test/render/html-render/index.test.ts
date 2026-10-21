@@ -326,7 +326,8 @@ describe('HTML coverage and regressions', () => {
 		expect(library.onclick).toBe(old);
 	});
 	it('replaces and clears a body handler on update, then restores the previous handler', async () => {
-		const previous = document.body.ononline;
+		const body = document.body as HTMLBodyElement;
+		const previous = body.ononline;
 		const target = document.createElement('div');
 		document.body.append(target);
 		let first = 0,
@@ -353,10 +354,10 @@ describe('HTML coverage and regressions', () => {
 			expect([first, second]).toEqual([1, 1]);
 			await unmount(instance!);
 			instance = undefined;
-			expect(document.body.ononline).toBe(previous);
+			expect(body.ononline).toBe(previous);
 		} finally {
 			if (instance) await unmount(instance);
-			document.body.ononline = previous;
+			body.ononline = previous;
 		}
 	});
 	it('keeps custom on* listeners working and removes them on cleanup', () => {
