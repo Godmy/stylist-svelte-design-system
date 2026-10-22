@@ -2,7 +2,7 @@
 	import type { RecipeLocaleSwitcher } from '$stylist/localization/interface/recipe/locale-switcher';
 	import BaseIcon from '$stylist/svg/component/atom/icon/index.svelte';
 	import BaseFlag from '$stylist/svg/component/atom/flag/index.svelte';
-	import createLocaleSwitcherState from './state.svelte';
+	import createLocaleSwitcherState from '$stylist/localization/component/organism/locale-switcher/state.svelte';
 
 	let { onLocaleChange, onTimezoneChange, ...stateProps }: RecipeLocaleSwitcher = $props();
 

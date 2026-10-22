@@ -1,4 +1,4 @@
-import CountryFlag from './index.svelte';
+import CountryFlag from '$stylist/localization/component/atom/country-flag/index.svelte';
 import type { RecipeCountryFlag } from '$stylist/localization/interface/recipe/country-flag';
 import type { ContractStory } from '$stylist/html/interface/contract/story';
 

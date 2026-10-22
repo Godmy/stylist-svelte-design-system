@@ -1,6 +1,6 @@
 <script lang="ts">
 	import BaseIcon from '$stylist/svg/component/atom/icon/index.svelte';
-	import { createTranslationEditorState } from './state.svelte';
+	import { createTranslationEditorState } from '$stylist/localization/component/organism/translation-editor/state.svelte';
 	import type { RecipeTranslationEditor } from '$stylist/localization/interface/recipe/translation-editor';
 
 	let { onTranslationChange, onSave, onImport, onExport, ...stateProps }: RecipeTranslationEditor =

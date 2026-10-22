@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LanguageSelector from './index.svelte';
+	import LanguageSelector from '$stylist/localization/component/organism/language-selector/index.svelte';
 	import type { RecipeLanguageSelector } from '$stylist/localization/interface/recipe/language-selector';
 
 	// Render of index.story.ts: the selected language is local state fed back through onLanguageChange.

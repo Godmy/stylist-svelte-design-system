@@ -1,4 +1,4 @@
-import LanguageSelector from './index.svelte';
+import LanguageSelector from '$stylist/localization/component/organism/language-selector/index.svelte';
 import type { RecipeLanguageSelector } from '$stylist/localization/interface/recipe/language-selector';
 import type { ContractStory } from '$stylist/html/interface/contract/story';
 import { TOKEN_COLOR_TONE } from '$stylist/design-token/const/array/color-tone';

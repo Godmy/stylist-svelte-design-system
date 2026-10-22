@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LocaleSwitcher from './index.svelte';
+	import LocaleSwitcher from '$stylist/localization/component/organism/locale-switcher/index.svelte';
 	import type { RecipeLocaleSwitcher } from '$stylist/localization/interface/recipe/locale-switcher';
 
 	// Render of index.story.ts: the locale and timezone are local state fed back through the change callbacks.

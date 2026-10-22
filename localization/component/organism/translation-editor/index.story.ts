@@ -1,4 +1,4 @@
-import TranslationEditor from './index.svelte';
+import TranslationEditor from '$stylist/localization/component/organism/translation-editor/index.svelte';
 import type { RecipeTranslationEditor } from '$stylist/localization/interface/recipe/translation-editor';
 import type { ContractStory } from '$stylist/html/interface/contract/story';
 

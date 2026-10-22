@@ -1,4 +1,4 @@
-import LocaleSwitcher from './index.svelte';
+import LocaleSwitcher from '$stylist/localization/component/organism/locale-switcher/index.svelte';
 import type { RecipeLocaleSwitcher } from '$stylist/localization/interface/recipe/locale-switcher';
 import type { ContractStory } from '$stylist/html/interface/contract/story';
 
