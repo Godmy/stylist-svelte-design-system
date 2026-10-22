@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { RecipeHtmlRawText } from '../../../interface/recipe/raw-text';
-	import { serializeHtmlRawText } from '../../../function/serialize/html-raw-text';
-	import { applyHtmlAttributes } from '../../../function/script/html-attributes';
+	import type { RecipeHtmlRawText } from '$stylist/html/interface/recipe/raw-text';
+	import { serializeHtmlRawText } from '$stylist/html/function/serialize/html-raw-text';
+	import { applyHtmlAttributes } from '$stylist/html/function/script/html-attributes';
 	let { tag, text = '', element = $bindable(null), ...rest }: RecipeHtmlRawText = $props();
 	let anchor: HTMLTemplateElement;
 	const markup = $derived(serializeHtmlRawText(tag, text, rest));

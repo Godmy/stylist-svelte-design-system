@@ -1,6 +1,6 @@
-import HtmlSmall from './index.svelte';
-import type { RecipeHtmlSmall } from '../../../interface/recipe/small';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlSmall from '$stylist/html/component/atom/small/index.svelte';
+import type { RecipeHtmlSmall } from '$stylist/html/interface/recipe/small';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<small>`: Side comment. */
 export default {

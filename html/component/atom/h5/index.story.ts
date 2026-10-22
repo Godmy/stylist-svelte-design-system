@@ -1,6 +1,6 @@
-import HtmlH5 from './index.svelte';
-import type { RecipeHtmlH5 } from '../../../interface/recipe/h5';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlH5 from '$stylist/html/component/atom/h5/index.svelte';
+import type { RecipeHtmlH5 } from '$stylist/html/interface/recipe/h5';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<h5>`: Heading. */
 export default {

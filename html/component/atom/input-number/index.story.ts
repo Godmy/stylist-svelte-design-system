@@ -1,6 +1,6 @@
-import HtmlInputNumber from './index.svelte';
-import type { RecipeHtmlInputNumber } from '../../../interface/recipe/input-number';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlInputNumber from '$stylist/html/component/atom/input-number/index.svelte';
+import type { RecipeHtmlInputNumber } from '$stylist/html/interface/recipe/input-number';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<input type="number">`: Form control. */
 export default {

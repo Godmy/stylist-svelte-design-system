@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlSlot } from '../../../interface/recipe/slot';
+	import type { RecipeHtmlSlot } from '$stylist/html/interface/recipe/slot';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlSlot = $props();
 </script>

@@ -1,6 +1,6 @@
-import HtmlHtml from './index.svelte';
-import type { RecipeHtmlHtml } from '../../../interface/recipe/html';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlHtml from '$stylist/html/component/page/html/index.svelte';
+import type { RecipeHtmlHtml } from '$stylist/html/interface/recipe/html';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<html>`: Root element. */
 export default {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlCite } from '../../../interface/recipe/cite';
+	import type { RecipeHtmlCite } from '$stylist/html/interface/recipe/cite';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlCite = $props();
 </script>

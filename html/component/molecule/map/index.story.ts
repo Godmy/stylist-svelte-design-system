@@ -1,6 +1,6 @@
-import HtmlMap from './index.svelte';
-import type { RecipeHtmlMap } from '../../../interface/recipe/map';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlMap from '$stylist/html/component/molecule/map/index.svelte';
+import type { RecipeHtmlMap } from '$stylist/html/interface/recipe/map';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<map>`: Image map. */
 export default {

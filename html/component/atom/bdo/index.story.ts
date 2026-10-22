@@ -1,6 +1,6 @@
-import HtmlBdo from './index.svelte';
-import type { RecipeHtmlBdo } from '../../../interface/recipe/bdo';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlBdo from '$stylist/html/component/atom/bdo/index.svelte';
+import type { RecipeHtmlBdo } from '$stylist/html/interface/recipe/bdo';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<bdo>`: Text directionality formatting. */
 export default {

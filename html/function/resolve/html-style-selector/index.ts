@@ -1,6 +1,6 @@
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import { HTML_INTERACTIVE_CONDITION } from '../../../const/record/html-interactive-condition';
-import type { HtmlElementSpec } from '../../../type/struct/html-element-spec';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import { HTML_INTERACTIVE_CONDITION } from '$stylist/html/const/record/html-interactive-condition';
+import type { HtmlElementSpec } from '$stylist/html/type/struct/html-element-spec';
 
 /**
  * Selectors of one style target: `#<category>` expands to every html-namespace element of

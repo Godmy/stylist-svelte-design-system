@@ -1,6 +1,6 @@
-import HtmlPicture from './index.svelte';
-import type { RecipeHtmlPicture } from '../../../interface/recipe/picture';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlPicture from '$stylist/html/component/molecule/picture/index.svelte';
+import type { RecipeHtmlPicture } from '$stylist/html/interface/recipe/picture';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<picture>`: Image. */
 export default {

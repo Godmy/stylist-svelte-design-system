@@ -1,4 +1,4 @@
-import type { HtmlNode } from '../../../type/alias/html-node';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
 
 /** Sets the value of every text node; meant for trees where resolveHtmlText found one. */
 export function transformHtmlText(nodes: readonly HtmlNode[], value: string): HtmlNode[] {

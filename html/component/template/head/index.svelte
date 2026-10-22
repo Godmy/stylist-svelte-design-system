@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { RecipeHtmlHead } from '../../../interface/recipe/head';
-	import { applyHtmlAttributes } from '../../../function/script/html-attributes';
+	import type { RecipeHtmlHead } from '$stylist/html/interface/recipe/head';
+	import { applyHtmlAttributes } from '$stylist/html/function/script/html-attributes';
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- bindable output: the existing document node
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlHead = $props();

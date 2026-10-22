@@ -1,6 +1,6 @@
-import HtmlCode from './index.svelte';
-import type { RecipeHtmlCode } from '../../../interface/recipe/code';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlCode from '$stylist/html/component/atom/code/index.svelte';
+import type { RecipeHtmlCode } from '$stylist/html/interface/recipe/code';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<code>`: Computer code. */
 export default {

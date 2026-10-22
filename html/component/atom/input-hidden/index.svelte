@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlInputHidden } from '../../../interface/recipe/input-hidden';
+	import type { RecipeHtmlInputHidden } from '$stylist/html/interface/recipe/input-hidden';
 
 	let { element = $bindable(null), ...rest }: RecipeHtmlInputHidden = $props();
 </script>

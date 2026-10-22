@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlDialog } from '../../../interface/recipe/dialog';
+	import type { RecipeHtmlDialog } from '$stylist/html/interface/recipe/dialog';
 
 	let {
 		element = $bindable(null),

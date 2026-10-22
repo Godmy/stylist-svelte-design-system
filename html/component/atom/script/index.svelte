@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { RecipeHtmlScript } from '../../../interface/recipe/script';
-	import RawText from '../raw-text/index.svelte';
+	import type { RecipeHtmlScript } from '$stylist/html/interface/recipe/script';
+	import RawText from '$stylist/html/component/atom/raw-text/index.svelte';
 
 	let { element = $bindable(null), text = '', ...rest }: RecipeHtmlScript = $props();
 </script>

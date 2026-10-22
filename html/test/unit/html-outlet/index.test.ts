@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import { checkHtmlNode } from '../../../function/check/html-node';
-import { serializeHtmlNode } from '../../../function/serialize/html-node';
-import { transformHtmlOutlet } from '../../../function/transform/html-outlet';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import { checkHtmlNode } from '$stylist/html/function/check/html-node';
+import { serializeHtmlNode } from '$stylist/html/function/serialize/html-node';
+import { transformHtmlOutlet } from '$stylist/html/function/transform/html-outlet';
 
 describe('html outlet', () => {
 	const outlet: HtmlNode = { kind: 'outlet' };

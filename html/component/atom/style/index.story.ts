@@ -1,6 +1,6 @@
-import HtmlStyle from './index.svelte';
-import type { RecipeHtmlStyle } from '../../../interface/recipe/style';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlStyle from '$stylist/html/component/atom/style/index.svelte';
+import type { RecipeHtmlStyle } from '$stylist/html/interface/recipe/style';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<style>`: Embedded styling information. */
 export default {

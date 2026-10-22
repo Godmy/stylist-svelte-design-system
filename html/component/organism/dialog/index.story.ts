@@ -1,6 +1,6 @@
-import HtmlDialog from './index.svelte';
-import type { RecipeHtmlDialog } from '../../../interface/recipe/dialog';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlDialog from '$stylist/html/component/organism/dialog/index.svelte';
+import type { RecipeHtmlDialog } from '$stylist/html/interface/recipe/dialog';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<dialog>`: Dialog box or window. */
 export default {

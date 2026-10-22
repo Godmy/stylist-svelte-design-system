@@ -1,9 +1,9 @@
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import type { ContractStory } from '../../../interface/contract/story';
-import type { HtmlAttributeValue } from '../../../type/alias/html-attribute-value';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import type { HtmlTag } from '../../../type/alias/html-tag';
-import { transformHtmlOutlet } from '../../transform/html-outlet';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
+import type { HtmlAttributeValue } from '$stylist/html/type/alias/html-attribute-value';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import type { HtmlTag } from '$stylist/html/type/alias/html-tag';
+import { transformHtmlOutlet } from '$stylist/html/function/transform/html-outlet';
 
 /**
  * Tree of an html story: its element (tag from the component family, scalar args as

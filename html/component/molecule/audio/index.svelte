@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlAudio } from '../../../interface/recipe/audio';
+	import type { RecipeHtmlAudio } from '$stylist/html/interface/recipe/audio';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlAudio = $props();
 </script>

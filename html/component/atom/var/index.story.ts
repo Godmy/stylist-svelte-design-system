@@ -1,6 +1,6 @@
-import HtmlVar from './index.svelte';
-import type { RecipeHtmlVar } from '../../../interface/recipe/var';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlVar from '$stylist/html/component/atom/var/index.svelte';
+import type { RecipeHtmlVar } from '$stylist/html/interface/recipe/var';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<var>`: Variable. */
 export default {

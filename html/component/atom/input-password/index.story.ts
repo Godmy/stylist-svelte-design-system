@@ -1,6 +1,6 @@
-import HtmlInputPassword from './index.svelte';
-import type { RecipeHtmlInputPassword } from '../../../interface/recipe/input-password';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlInputPassword from '$stylist/html/component/atom/input-password/index.svelte';
+import type { RecipeHtmlInputPassword } from '$stylist/html/interface/recipe/input-password';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<input type="password">`: Form control. */
 export default {

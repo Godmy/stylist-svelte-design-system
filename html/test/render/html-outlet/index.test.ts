@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { createRawSnippet, flushSync, mount, unmount } from 'svelte';
-import Node from '../../../component/template/node/index.svelte';
-import type { HtmlNode } from '../../../type/alias/html-node';
+import Node from '$stylist/html/component/template/node/index.svelte';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
 
 describe('Node outlet', () => {
 	const instances: ReturnType<typeof mount>[] = [];

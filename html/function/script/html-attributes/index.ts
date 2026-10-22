@@ -1,5 +1,5 @@
-import type { HtmlAttributeValue } from '../../../type/alias/html-attribute-value';
-import { HTML_BOOLEAN_ATTRIBUTE } from '../../../const/array/html-boolean-attribute';
+import type { HtmlAttributeValue } from '$stylist/html/type/alias/html-attribute-value';
+import { HTML_BOOLEAN_ATTRIBUTE } from '$stylist/html/const/array/html-boolean-attribute';
 
 /**
  * Applies attributes and `on*` handlers to an existing node (`<html>`, `<body>`),

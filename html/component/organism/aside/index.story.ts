@@ -1,6 +1,6 @@
-import HtmlAside from './index.svelte';
-import type { RecipeHtmlAside } from '../../../interface/recipe/aside';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlAside from '$stylist/html/component/organism/aside/index.svelte';
+import type { RecipeHtmlAside } from '$stylist/html/interface/recipe/aside';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<aside>`: Sidebar for tangentially related content. */
 export default {

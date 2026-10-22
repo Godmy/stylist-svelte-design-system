@@ -1,6 +1,6 @@
-import HtmlMeta from './index.svelte';
-import type { RecipeHtmlMeta } from '../../../interface/recipe/meta';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlMeta from '$stylist/html/component/atom/meta/index.svelte';
+import type { RecipeHtmlMeta } from '$stylist/html/interface/recipe/meta';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<meta>`: Text metadata. */
 export default {

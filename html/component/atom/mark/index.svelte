@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlMark } from '../../../interface/recipe/mark';
+	import type { RecipeHtmlMark } from '$stylist/html/interface/recipe/mark';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlMark = $props();
 </script>

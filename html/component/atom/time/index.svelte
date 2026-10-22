@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlTime } from '../../../interface/recipe/time';
+	import type { RecipeHtmlTime } from '$stylist/html/interface/recipe/time';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlTime = $props();
 </script>

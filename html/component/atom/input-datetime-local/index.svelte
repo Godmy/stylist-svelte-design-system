@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlInputDatetimeLocal } from '../../../interface/recipe/input-datetime-local';
+	import type { RecipeHtmlInputDatetimeLocal } from '$stylist/html/interface/recipe/input-datetime-local';
 
 	let {
 		element = $bindable(null),

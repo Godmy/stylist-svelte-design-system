@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlInputCheckbox } from '../../../interface/recipe/input-checkbox';
+	import type { RecipeHtmlInputCheckbox } from '$stylist/html/interface/recipe/input-checkbox';
 
 	let {
 		element = $bindable(null),

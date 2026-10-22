@@ -1,4 +1,4 @@
-import { TOKEN_SIZE_REM } from '../../array/size-rem';
+import { TOKEN_SIZE_REM } from '$stylist/design-token/const/array/size-rem';
 
 export const RECORD_SPACING = Object.fromEntries(
 	TOKEN_SIZE_REM.map((size) => [size, size] as const)

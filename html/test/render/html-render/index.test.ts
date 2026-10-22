@@ -1,22 +1,22 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { flushSync, hydrate, mount, unmount } from 'svelte';
 import { SvelteMap } from 'svelte/reactivity';
-import Node from '../../../component/template/node/index.svelte';
-import Style from '../../../component/atom/style/index.svelte';
-import Script from '../../../component/atom/script/index.svelte';
-import Radio from '../../../component/atom/input-radio/index.svelte';
-import Body from '../../../component/template/body/index.svelte';
-import hydration from '../../../data/json/html-hydration-sample/index.json';
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import { HTML_INPUT_TYPE } from '../../../const/array/html-input-type';
-import snapshot from '../../../data/json/html-spec-snapshot/index.json';
-import { applyHtmlAttributes } from '../../../function/script/html-attributes';
-import { serializeHtmlDocument } from '../../../function/serialize/html-document';
-import { checkHtmlNode } from '../../../function/check/html-node';
-import { resolveHtmlValidation } from '../../../function/resolve/html-validation';
-import type { HtmlElementNode } from '../../../type/struct/html-element-node';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import type { HtmlTag } from '../../../type/alias/html-tag';
+import Node from '$stylist/html/component/template/node/index.svelte';
+import Style from '$stylist/html/component/atom/style/index.svelte';
+import Script from '$stylist/html/component/atom/script/index.svelte';
+import Radio from '$stylist/html/component/atom/input-radio/index.svelte';
+import Body from '$stylist/html/component/template/body/index.svelte';
+import hydration from '$stylist/html/data/json/html-hydration-sample/index.json';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import { HTML_INPUT_TYPE } from '$stylist/html/const/array/html-input-type';
+import snapshot from '$stylist/html/data/json/html-spec-snapshot/index.json';
+import { applyHtmlAttributes } from '$stylist/html/function/script/html-attributes';
+import { serializeHtmlDocument } from '$stylist/html/function/serialize/html-document';
+import { checkHtmlNode } from '$stylist/html/function/check/html-node';
+import { resolveHtmlValidation } from '$stylist/html/function/resolve/html-validation';
+import type { HtmlElementNode } from '$stylist/html/type/struct/html-element-node';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import type { HtmlTag } from '$stylist/html/type/alias/html-tag';
 
 describe('HTML coverage and regressions', () => {
 	const instances: ReturnType<typeof mount>[] = [];

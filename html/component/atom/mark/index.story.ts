@@ -1,6 +1,6 @@
-import HtmlMark from './index.svelte';
-import type { RecipeHtmlMark } from '../../../interface/recipe/mark';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlMark from '$stylist/html/component/atom/mark/index.svelte';
+import type { RecipeHtmlMark } from '$stylist/html/interface/recipe/mark';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<mark>`: Highlight. */
 export default {

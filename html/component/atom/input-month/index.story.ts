@@ -1,6 +1,6 @@
-import HtmlInputMonth from './index.svelte';
-import type { RecipeHtmlInputMonth } from '../../../interface/recipe/input-month';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlInputMonth from '$stylist/html/component/atom/input-month/index.svelte';
+import type { RecipeHtmlInputMonth } from '$stylist/html/interface/recipe/input-month';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<input type="month">`: Form control. */
 export default {

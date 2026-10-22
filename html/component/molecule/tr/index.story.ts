@@ -1,6 +1,6 @@
-import HtmlTr from './index.svelte';
-import type { RecipeHtmlTr } from '../../../interface/recipe/tr';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlTr from '$stylist/html/component/molecule/tr/index.svelte';
+import type { RecipeHtmlTr } from '$stylist/html/interface/recipe/tr';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<tr>`: Table row. */
 export default {

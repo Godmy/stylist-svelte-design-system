@@ -1,7 +1,7 @@
-import { HTML_STYLE } from '../../../const/array/html-style';
-import { HTML_SKIN_SCOPE } from '../../../const/value/html-skin-scope';
-import type { HtmlStyleRule } from '../../../type/struct/html-style-rule';
-import { resolveHtmlStyleSelector } from '../../resolve/html-style-selector';
+import { HTML_STYLE } from '$stylist/html/const/array/html-style';
+import { HTML_SKIN_SCOPE } from '$stylist/html/const/value/html-skin-scope';
+import type { HtmlStyleRule } from '$stylist/html/type/struct/html-style-rule';
+import { resolveHtmlStyleSelector } from '$stylist/html/function/resolve/html-style-selector';
 
 /**
  * CSS of the html skin. Rules sit in `@layer <layer>` and inside `:where()`, so they have

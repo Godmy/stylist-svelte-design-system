@@ -3,10 +3,10 @@ import postcss from 'postcss';
 import { describe, expect, it } from 'vitest';
 import { ManagerThemeCSS } from '$stylist/theme/class/manager/theme-css';
 import { THEME_MODE_LIGHT } from '$stylist/theme/const/record/theme-mode-light';
-import { HTML_STYLE } from '../../../const/array/html-style';
-import type { HtmlStyleRule } from '../../../type/struct/html-style-rule';
-import { resolveHtmlStyleSelector } from '../../../function/resolve/html-style-selector';
-import { serializeHtmlStylesheet } from '../../../function/serialize/html-stylesheet';
+import { HTML_STYLE } from '$stylist/html/const/array/html-style';
+import type { HtmlStyleRule } from '$stylist/html/type/struct/html-style-rule';
+import { resolveHtmlStyleSelector } from '$stylist/html/function/resolve/html-style-selector';
+import { serializeHtmlStylesheet } from '$stylist/html/function/serialize/html-stylesheet';
 
 describe('html skin', () => {
 	const rules: readonly HtmlStyleRule[] = HTML_STYLE;

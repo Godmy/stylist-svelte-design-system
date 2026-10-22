@@ -1,6 +1,6 @@
-import HtmlRt from './index.svelte';
-import type { RecipeHtmlRt } from '../../../interface/recipe/rt';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlRt from '$stylist/html/component/atom/rt/index.svelte';
+import type { RecipeHtmlRt } from '$stylist/html/interface/recipe/rt';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<rt>`: Ruby annotation text. */
 export default {

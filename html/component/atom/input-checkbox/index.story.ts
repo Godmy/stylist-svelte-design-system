@@ -1,6 +1,6 @@
-import HtmlInputCheckbox from './index.svelte';
-import type { RecipeHtmlInputCheckbox } from '../../../interface/recipe/input-checkbox';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlInputCheckbox from '$stylist/html/component/atom/input-checkbox/index.svelte';
+import type { RecipeHtmlInputCheckbox } from '$stylist/html/interface/recipe/input-checkbox';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<input type="checkbox">`: Form control. */
 export default {

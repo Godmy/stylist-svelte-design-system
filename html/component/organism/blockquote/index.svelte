@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlBlockquote } from '../../../interface/recipe/blockquote';
+	import type { RecipeHtmlBlockquote } from '$stylist/html/interface/recipe/blockquote';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlBlockquote = $props();
 </script>

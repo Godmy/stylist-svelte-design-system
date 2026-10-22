@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlNav } from '../../../interface/recipe/nav';
+	import type { RecipeHtmlNav } from '$stylist/html/interface/recipe/nav';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlNav = $props();
 </script>

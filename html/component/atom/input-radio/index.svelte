@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlInputRadio } from '../../../interface/recipe/input-radio';
+	import type { RecipeHtmlInputRadio } from '$stylist/html/interface/recipe/input-radio';
 
 	let { element = $bindable(null), group = $bindable(), ...rest }: RecipeHtmlInputRadio = $props();
 </script>

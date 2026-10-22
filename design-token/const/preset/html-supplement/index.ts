@@ -1,4 +1,4 @@
-import { TOKEN_FONT_FAMILY } from '../../object/font-family';
+import { TOKEN_FONT_FAMILY } from '$stylist/design-token/const/object/font-family';
 
 /** Compatibility preset derived from the same definition the theme emitter uses. */
 export const DESIGN_TOKEN_HTML_SUPPLEMENT = {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlCol } from '../../../interface/recipe/col';
+	import type { RecipeHtmlCol } from '$stylist/html/interface/recipe/col';
 
 	let { element = $bindable(null), ...rest }: RecipeHtmlCol = $props();
 </script>

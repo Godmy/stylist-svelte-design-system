@@ -1,6 +1,6 @@
-import HtmlNav from './index.svelte';
-import type { RecipeHtmlNav } from '../../../interface/recipe/nav';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlNav from '$stylist/html/component/organism/nav/index.svelte';
+import type { RecipeHtmlNav } from '$stylist/html/interface/recipe/nav';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<nav>`: Section with navigational links. */
 export default {

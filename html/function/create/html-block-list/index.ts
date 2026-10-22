@@ -1,9 +1,9 @@
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import { HTML_INPUT_TYPE } from '../../../const/array/html-input-type';
-import type { HtmlTag } from '../../../type/alias/html-tag';
-import type { ContractHtmlComponent } from '../../../interface/contract/html-component';
-import type { ContractHtmlComposite } from '../../../interface/contract/html-composite';
-import { createHtmlBlock } from '../html-block';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import { HTML_INPUT_TYPE } from '$stylist/html/const/array/html-input-type';
+import type { HtmlTag } from '$stylist/html/type/alias/html-tag';
+import type { ContractHtmlComponent } from '$stylist/html/interface/contract/html-component';
+import type { ContractHtmlComposite } from '$stylist/html/interface/contract/html-composite';
+import { createHtmlBlock } from '$stylist/html/function/create/html-block';
 
 /** Full Scratch palette of the html domain: every element plus every `input` trait. */
 export function createHtmlBlockList(): (ContractHtmlComponent | ContractHtmlComposite)[] {

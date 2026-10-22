@@ -1,6 +1,6 @@
-import HtmlSection from './index.svelte';
-import type { RecipeHtmlSection } from '../../../interface/recipe/section';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlSection from '$stylist/html/component/organism/section/index.svelte';
+import type { RecipeHtmlSection } from '$stylist/html/interface/recipe/section';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<section>`: Generic document or application section. */
 export default {

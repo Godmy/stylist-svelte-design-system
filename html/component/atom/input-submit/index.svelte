@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlInputSubmit } from '../../../interface/recipe/input-submit';
+	import type { RecipeHtmlInputSubmit } from '$stylist/html/interface/recipe/input-submit';
 
 	let { element = $bindable(null), ...rest }: RecipeHtmlInputSubmit = $props();
 </script>

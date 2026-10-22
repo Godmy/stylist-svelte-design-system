@@ -1,6 +1,6 @@
-import HtmlInputTel from './index.svelte';
-import type { RecipeHtmlInputTel } from '../../../interface/recipe/input-tel';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlInputTel from '$stylist/html/component/atom/input-tel/index.svelte';
+import type { RecipeHtmlInputTel } from '$stylist/html/interface/recipe/input-tel';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<input type="tel">`: Form control. */
 export default {

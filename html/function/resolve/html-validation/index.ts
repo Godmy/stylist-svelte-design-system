@@ -1,7 +1,7 @@
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import type { HtmlValidationResult } from '../../../type/struct/html-validation-result';
-import { checkHtmlNode } from '../../check/html-node';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import type { HtmlValidationResult } from '$stylist/html/type/struct/html-validation-result';
+import { checkHtmlNode } from '$stylist/html/function/check/html-node';
 
 /** No false claim of full WHATWG conformance: structural success remains unchecked. */
 export function resolveHtmlValidation(node: HtmlNode): HtmlValidationResult {

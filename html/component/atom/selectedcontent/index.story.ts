@@ -1,6 +1,6 @@
-import HtmlSelectedcontent from './index.svelte';
-import type { RecipeHtmlSelectedcontent } from '../../../interface/recipe/selectedcontent';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlSelectedcontent from '$stylist/html/component/atom/selectedcontent/index.svelte';
+import type { RecipeHtmlSelectedcontent } from '$stylist/html/interface/recipe/selectedcontent';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<selectedcontent>`: Mirrors content from an option. */
 export default {

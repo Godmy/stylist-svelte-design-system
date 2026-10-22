@@ -1,6 +1,6 @@
-import HtmlIns from './index.svelte';
-import type { RecipeHtmlIns } from '../../../interface/recipe/ins';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlIns from '$stylist/html/component/atom/ins/index.svelte';
+import type { RecipeHtmlIns } from '$stylist/html/interface/recipe/ins';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<ins>`: An addition to the document. */
 export default {

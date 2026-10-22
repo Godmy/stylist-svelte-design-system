@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlSvg } from '../../../interface/recipe/svg';
+	import type { RecipeHtmlSvg } from '$stylist/html/interface/recipe/svg';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlSvg = $props();
 </script>

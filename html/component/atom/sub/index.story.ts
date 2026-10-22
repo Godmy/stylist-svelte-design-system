@@ -1,6 +1,6 @@
-import HtmlSub from './index.svelte';
-import type { RecipeHtmlSub } from '../../../interface/recipe/sub';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlSub from '$stylist/html/component/atom/sub/index.svelte';
+import type { RecipeHtmlSub } from '$stylist/html/interface/recipe/sub';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<sub>`: Subscript. */
 export default {

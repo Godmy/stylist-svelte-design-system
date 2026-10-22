@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlOptgroup } from '../../../interface/recipe/optgroup';
+	import type { RecipeHtmlOptgroup } from '$stylist/html/interface/recipe/optgroup';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlOptgroup = $props();
 </script>

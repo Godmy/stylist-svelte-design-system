@@ -1,9 +1,9 @@
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import type { HtmlTag } from '../../../type/alias/html-tag';
-import type { HtmlElementSpec } from '../../../type/struct/html-element-spec';
-import type { ContractHtmlComponent } from '../../../interface/contract/html-component';
-import type { ContractHtmlComposite } from '../../../interface/contract/html-composite';
-import { resolveHtmlAddress } from '../../resolve/html-address';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import type { HtmlTag } from '$stylist/html/type/alias/html-tag';
+import type { HtmlElementSpec } from '$stylist/html/type/struct/html-element-spec';
+import type { ContractHtmlComponent } from '$stylist/html/interface/contract/html-component';
+import type { ContractHtmlComposite } from '$stylist/html/interface/contract/html-composite';
+import { resolveHtmlAddress } from '$stylist/html/function/resolve/html-address';
 
 /**
  * Scratch block of one element (or of an `input` trait): a leaf

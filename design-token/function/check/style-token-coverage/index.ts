@@ -1,5 +1,5 @@
-import type { ContractDesignTokenStyleRule } from '../../../interface/contract/style-rule';
-import { resolveStyleTokenUsage } from '../../resolve/style-token-usage';
+import type { ContractDesignTokenStyleRule } from '$stylist/design-token/interface/contract/style-rule';
+import { resolveStyleTokenUsage } from '$stylist/design-token/function/resolve/style-token-usage';
 
 /** Audits emitted names; CSS fallbacks never count as an emitted design token. */
 export function checkStyleTokenCoverage(

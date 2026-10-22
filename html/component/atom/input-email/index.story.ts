@@ -1,6 +1,6 @@
-import HtmlInputEmail from './index.svelte';
-import type { RecipeHtmlInputEmail } from '../../../interface/recipe/input-email';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlInputEmail from '$stylist/html/component/atom/input-email/index.svelte';
+import type { RecipeHtmlInputEmail } from '$stylist/html/interface/recipe/input-email';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<input type="email">`: Form control. */
 export default {

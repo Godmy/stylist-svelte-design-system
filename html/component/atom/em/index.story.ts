@@ -1,6 +1,6 @@
-import HtmlEm from './index.svelte';
-import type { RecipeHtmlEm } from '../../../interface/recipe/em';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlEm from '$stylist/html/component/atom/em/index.svelte';
+import type { RecipeHtmlEm } from '$stylist/html/interface/recipe/em';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<em>`: Stress emphasis. */
 export default {

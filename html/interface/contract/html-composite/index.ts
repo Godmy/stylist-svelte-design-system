@@ -1,5 +1,5 @@
-import type { HtmlContent } from '../../../type/alias/html-content';
-import type { ContractHtmlComponent } from '../html-component';
+import type { HtmlContent } from '$stylist/html/type/alias/html-content';
+import type { ContractHtmlComponent } from '$stylist/html/interface/contract/html-component';
 
 /** Composite pattern, Composite role: an HTML block with a children slot. */
 export interface ContractHtmlComposite extends ContractHtmlComponent {

@@ -1,6 +1,6 @@
-import HtmlB from './index.svelte';
-import type { RecipeHtmlB } from '../../../interface/recipe/b';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlB from '$stylist/html/component/atom/b/index.svelte';
+import type { RecipeHtmlB } from '$stylist/html/interface/recipe/b';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<b>`: Keywords. */
 export default {

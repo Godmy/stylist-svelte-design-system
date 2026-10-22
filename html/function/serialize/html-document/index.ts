@@ -1,6 +1,6 @@
-import type { HtmlElementNode } from '../../../type/struct/html-element-node';
-import { serializeHtmlNode } from '../html-node';
-import { checkHtmlNode } from '../../check/html-node';
+import type { HtmlElementNode } from '$stylist/html/type/struct/html-element-node';
+import { serializeHtmlNode } from '$stylist/html/function/serialize/html-node';
+import { checkHtmlNode } from '$stylist/html/function/check/html-node';
 
 /** Exports a full document after structural validation; further normative checks remain explicit. */
 export function serializeHtmlDocument(node: HtmlElementNode): string {

@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { serializeHtmlMarkup } from '../../../function/serialize/html-markup';
-import { resolveHtmlText } from '../../../function/resolve/html-text';
-import { transformHtmlText } from '../../../function/transform/html-text';
-import type { HtmlNode } from '../../../type/alias/html-node';
+import { serializeHtmlMarkup } from '$stylist/html/function/serialize/html-markup';
+import { resolveHtmlText } from '$stylist/html/function/resolve/html-text';
+import { transformHtmlText } from '$stylist/html/function/transform/html-text';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
 
 describe('editable HTML content', () => {
 	it('preserves spaces around inline elements in copied markup', () => {

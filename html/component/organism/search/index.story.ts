@@ -1,6 +1,6 @@
-import HtmlSearch from './index.svelte';
-import type { RecipeHtmlSearch } from '../../../interface/recipe/search';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlSearch from '$stylist/html/component/organism/search/index.svelte';
+import type { RecipeHtmlSearch } from '$stylist/html/interface/recipe/search';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<search>`: Container for search controls. */
 export default {

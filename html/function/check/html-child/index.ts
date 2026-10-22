@@ -1,9 +1,9 @@
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import type { HtmlTag } from '../../../type/alias/html-tag';
-import type { HtmlElementSpec } from '../../../type/struct/html-element-spec';
-import type { HtmlElementNode } from '../../../type/struct/html-element-node';
-import type { HtmlValidationContext } from '../../../type/struct/html-validation-context';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import type { HtmlTag } from '$stylist/html/type/alias/html-tag';
+import type { HtmlElementSpec } from '$stylist/html/type/struct/html-element-spec';
+import type { HtmlElementNode } from '$stylist/html/type/struct/html-element-node';
+import type { HtmlValidationContext } from '$stylist/html/type/struct/html-validation-context';
 
 /**
  * Structural content-model filter with ancestor context. `true` does not mean

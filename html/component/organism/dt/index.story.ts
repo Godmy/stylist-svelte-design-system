@@ -1,6 +1,6 @@
-import HtmlDt from './index.svelte';
-import type { RecipeHtmlDt } from '../../../interface/recipe/dt';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlDt from '$stylist/html/component/organism/dt/index.svelte';
+import type { RecipeHtmlDt } from '$stylist/html/interface/recipe/dt';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<dt>`: Legend for corresponding dd element(s). */
 export default {

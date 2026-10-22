@@ -1,4 +1,4 @@
-import { HTML_BOOLEAN_ATTRIBUTE } from '../../../const/array/html-boolean-attribute';
+import { HTML_BOOLEAN_ATTRIBUTE } from '$stylist/html/const/array/html-boolean-attribute';
 
 /** Serializes DOM attributes; event handlers and component-only props are omitted. */
 export function serializeHtmlAttributes(attrs: Record<string, unknown>): string {

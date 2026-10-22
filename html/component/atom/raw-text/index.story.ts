@@ -1,6 +1,6 @@
-import HtmlRawText from './index.svelte';
-import type { RecipeHtmlRawText } from '../../../interface/recipe/raw-text';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlRawText from '$stylist/html/component/atom/raw-text/index.svelte';
+import type { RecipeHtmlRawText } from '$stylist/html/interface/recipe/raw-text';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** Internal renderer of `<style>` and `<script>`: the whole element is serialized as raw text. */
 export default {

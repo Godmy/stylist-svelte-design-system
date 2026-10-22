@@ -1,4 +1,4 @@
-import type { HtmlIssueCode } from '../../alias/html-issue-code';
+import type { HtmlIssueCode } from '$stylist/html/type/alias/html-issue-code';
 
 /** Composition problem found in an HTML tree. */
 export type HtmlNodeIssue = {

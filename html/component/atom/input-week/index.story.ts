@@ -1,6 +1,6 @@
-import HtmlInputWeek from './index.svelte';
-import type { RecipeHtmlInputWeek } from '../../../interface/recipe/input-week';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlInputWeek from '$stylist/html/component/atom/input-week/index.svelte';
+import type { RecipeHtmlInputWeek } from '$stylist/html/interface/recipe/input-week';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<input type="week">`: Form control. */
 export default {

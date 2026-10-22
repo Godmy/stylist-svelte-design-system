@@ -1,8 +1,8 @@
-import HtmlNodeRenderer from './index.svelte';
-import type { RecipeHtmlNode } from '../../../interface/recipe/node';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import type { ContractStory } from '../../../interface/contract/story';
-import sample from '../../../data/json/html-node-sample/index.json';
+import HtmlNodeRenderer from '$stylist/html/component/template/node/index.svelte';
+import type { RecipeHtmlNode } from '$stylist/html/interface/recipe/node';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
+import sample from '$stylist/html/data/json/html-node-sample/index.json';
 
 /** Composite renderer: one HtmlNode tree, every element rendered by its html component. */
 export default {

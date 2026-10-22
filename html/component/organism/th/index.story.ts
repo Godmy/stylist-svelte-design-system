@@ -1,6 +1,6 @@
-import HtmlTh from './index.svelte';
-import type { RecipeHtmlTh } from '../../../interface/recipe/th';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlTh from '$stylist/html/component/organism/th/index.svelte';
+import type { RecipeHtmlTh } from '$stylist/html/interface/recipe/th';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<th>`: Table header cell. */
 export default {

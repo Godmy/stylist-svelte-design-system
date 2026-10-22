@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlSelect } from '../../../interface/recipe/select';
+	import type { RecipeHtmlSelect } from '$stylist/html/interface/recipe/select';
 
 	let {
 		element = $bindable(null),

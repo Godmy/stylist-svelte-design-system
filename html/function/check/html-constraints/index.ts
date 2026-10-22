@@ -1,7 +1,7 @@
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import type { HtmlElementNode } from '../../../type/struct/html-element-node';
-import type { HtmlNodeIssue } from '../../../type/struct/html-node-issue';
-import { checkHtmlRawText } from '../html-raw-text';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import type { HtmlElementNode } from '$stylist/html/type/struct/html-element-node';
+import type { HtmlNodeIssue } from '$stylist/html/type/struct/html-node-issue';
+import { checkHtmlRawText } from '$stylist/html/function/check/html-raw-text';
 
 /** Additional ordered/contextual constraints. The validation report records uncovered rules. */
 export function checkHtmlConstraints(

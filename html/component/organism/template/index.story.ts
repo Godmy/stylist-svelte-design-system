@@ -1,6 +1,6 @@
-import HtmlTemplate from './index.svelte';
-import type { RecipeHtmlTemplate } from '../../../interface/recipe/template';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlTemplate from '$stylist/html/component/organism/template/index.svelte';
+import type { RecipeHtmlTemplate } from '$stylist/html/interface/recipe/template';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<template>`: Template. */
 export default {

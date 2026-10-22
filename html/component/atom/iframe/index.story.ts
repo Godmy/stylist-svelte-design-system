@@ -1,6 +1,6 @@
-import HtmlIframe from './index.svelte';
-import type { RecipeHtmlIframe } from '../../../interface/recipe/iframe';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlIframe from '$stylist/html/component/atom/iframe/index.svelte';
+import type { RecipeHtmlIframe } from '$stylist/html/interface/recipe/iframe';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<iframe>`: Child navigable. */
 export default {

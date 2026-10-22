@@ -1,6 +1,6 @@
-import HtmlSpan from './index.svelte';
-import type { RecipeHtmlSpan } from '../../../interface/recipe/span';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlSpan from '$stylist/html/component/atom/span/index.svelte';
+import type { RecipeHtmlSpan } from '$stylist/html/interface/recipe/span';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<span>`: Generic phrasing container. */
 export default {

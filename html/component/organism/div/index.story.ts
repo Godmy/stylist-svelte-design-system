@@ -1,6 +1,6 @@
-import HtmlDiv from './index.svelte';
-import type { RecipeHtmlDiv } from '../../../interface/recipe/div';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlDiv from '$stylist/html/component/organism/div/index.svelte';
+import type { RecipeHtmlDiv } from '$stylist/html/interface/recipe/div';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<div>`: Generic flow container, or container for name-value groups in dl elements. */
 export default {

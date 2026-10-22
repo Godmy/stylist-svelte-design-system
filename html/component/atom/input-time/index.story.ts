@@ -1,6 +1,6 @@
-import HtmlInputTime from './index.svelte';
-import type { RecipeHtmlInputTime } from '../../../interface/recipe/input-time';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlInputTime from '$stylist/html/component/atom/input-time/index.svelte';
+import type { RecipeHtmlInputTime } from '$stylist/html/interface/recipe/input-time';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<input type="time">`: Form control. */
 export default {

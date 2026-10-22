@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlInputPassword } from '../../../interface/recipe/input-password';
+	import type { RecipeHtmlInputPassword } from '$stylist/html/interface/recipe/input-password';
 
 	let {
 		element = $bindable(null),

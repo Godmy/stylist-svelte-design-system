@@ -1,4 +1,4 @@
-import type { HtmlNodeIssue } from '../html-node-issue';
+import type { HtmlNodeIssue } from '$stylist/html/type/struct/html-node-issue';
 
 /** Explicitly separates known errors from conditions that require further verification. */
 export type HtmlValidationResult = {

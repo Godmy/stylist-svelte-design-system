@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlH6 } from '../../../interface/recipe/h6';
+	import type { RecipeHtmlH6 } from '$stylist/html/interface/recipe/h6';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlH6 = $props();
 </script>

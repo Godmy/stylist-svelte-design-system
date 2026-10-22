@@ -1,6 +1,6 @@
 <script lang="ts">
-	import HtmlSvg from './index.svelte';
-	import type { RecipeHtmlSvg } from '../../../interface/recipe/svg';
+	import HtmlSvg from '$stylist/html/component/atom/svg/index.svelte';
+	import type { RecipeHtmlSvg } from '$stylist/html/interface/recipe/svg';
 
 	// Render of index.story.ts: SVG content cannot be expressed as an HtmlNode tree.
 	let args: RecipeHtmlSvg = $props();

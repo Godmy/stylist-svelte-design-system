@@ -1,6 +1,6 @@
-import HtmlHr from './index.svelte';
-import type { RecipeHtmlHr } from '../../../interface/recipe/hr';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlHr from '$stylist/html/component/atom/hr/index.svelte';
+import type { RecipeHtmlHr } from '$stylist/html/interface/recipe/hr';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<hr>`: Thematic break. */
 export default {

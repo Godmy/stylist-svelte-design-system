@@ -1,7 +1,7 @@
-import type { HtmlBlockShape } from '../../../type/alias/html-block-shape';
-import type { HtmlLevel } from '../../../type/alias/html-level';
-import type { HtmlNamespace } from '../../../type/alias/html-namespace';
-import type { HtmlTag } from '../../../type/alias/html-tag';
+import type { HtmlBlockShape } from '$stylist/html/type/alias/html-block-shape';
+import type { HtmlLevel } from '$stylist/html/type/alias/html-level';
+import type { HtmlNamespace } from '$stylist/html/type/alias/html-namespace';
+import type { HtmlTag } from '$stylist/html/type/alias/html-tag';
 
 /**
  * Composite pattern, Component role: what every HTML block exposes to an editor

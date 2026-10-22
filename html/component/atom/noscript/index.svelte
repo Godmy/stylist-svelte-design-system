@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlNoscript } from '../../../interface/recipe/noscript';
+	import type { RecipeHtmlNoscript } from '$stylist/html/interface/recipe/noscript';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlNoscript = $props();
 </script>

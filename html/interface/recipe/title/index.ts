@@ -1,5 +1,5 @@
 import type { HTMLAttributes } from 'svelte/elements';
-import type { SlotHtmlText } from '../../slot/html-text';
+import type { SlotHtmlText } from '$stylist/html/interface/slot/html-text';
 
 /** `<title>`: Document title. */
 export interface RecipeHtmlTitle

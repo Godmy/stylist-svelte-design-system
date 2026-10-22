@@ -1,6 +1,6 @@
-import HtmlTbody from './index.svelte';
-import type { RecipeHtmlTbody } from '../../../interface/recipe/tbody';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlTbody from '$stylist/html/component/molecule/tbody/index.svelte';
+import type { RecipeHtmlTbody } from '$stylist/html/interface/recipe/tbody';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<tbody>`: Group of rows in a table. */
 export default {

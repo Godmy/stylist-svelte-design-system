@@ -1,6 +1,6 @@
-import HtmlInputSearch from './index.svelte';
-import type { RecipeHtmlInputSearch } from '../../../interface/recipe/input-search';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlInputSearch from '$stylist/html/component/atom/input-search/index.svelte';
+import type { RecipeHtmlInputSearch } from '$stylist/html/interface/recipe/input-search';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<input type="search">`: Form control. */
 export default {

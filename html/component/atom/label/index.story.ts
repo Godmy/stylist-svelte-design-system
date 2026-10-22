@@ -1,6 +1,6 @@
-import HtmlLabel from './index.svelte';
-import type { RecipeHtmlLabel } from '../../../interface/recipe/label';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlLabel from '$stylist/html/component/atom/label/index.svelte';
+import type { RecipeHtmlLabel } from '$stylist/html/interface/recipe/label';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<label>`: Caption for a form control. */
 export default {

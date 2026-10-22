@@ -1,6 +1,6 @@
-import HtmlInputRange from './index.svelte';
-import type { RecipeHtmlInputRange } from '../../../interface/recipe/input-range';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlInputRange from '$stylist/html/component/atom/input-range/index.svelte';
+import type { RecipeHtmlInputRange } from '$stylist/html/interface/recipe/input-range';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<input type="range">`: Form control. */
 export default {

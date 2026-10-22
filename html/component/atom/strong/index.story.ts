@@ -1,6 +1,6 @@
-import HtmlStrong from './index.svelte';
-import type { RecipeHtmlStrong } from '../../../interface/recipe/strong';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlStrong from '$stylist/html/component/atom/strong/index.svelte';
+import type { RecipeHtmlStrong } from '$stylist/html/interface/recipe/strong';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<strong>`: Importance. */
 export default {

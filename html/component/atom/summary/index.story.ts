@@ -1,6 +1,6 @@
-import HtmlSummary from './index.svelte';
-import type { RecipeHtmlSummary } from '../../../interface/recipe/summary';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlSummary from '$stylist/html/component/atom/summary/index.svelte';
+import type { RecipeHtmlSummary } from '$stylist/html/interface/recipe/summary';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<summary>`: Caption for details. */
 export default {

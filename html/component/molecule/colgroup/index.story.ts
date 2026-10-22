@@ -1,6 +1,6 @@
-import HtmlColgroup from './index.svelte';
-import type { RecipeHtmlColgroup } from '../../../interface/recipe/colgroup';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlColgroup from '$stylist/html/component/molecule/colgroup/index.svelte';
+import type { RecipeHtmlColgroup } from '$stylist/html/interface/recipe/colgroup';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<colgroup>`: Group of columns in a table. */
 export default {

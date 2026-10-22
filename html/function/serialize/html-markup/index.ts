@@ -1,5 +1,5 @@
-import type { HtmlNode } from '../../../type/alias/html-node';
-import { serializeHtmlNode } from '../html-node';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import { serializeHtmlNode } from '$stylist/html/function/serialize/html-node';
 
 /**
  * Readable HTML for inspection: one element per line, indented by two spaces. Elements

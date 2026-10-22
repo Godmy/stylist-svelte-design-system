@@ -1,6 +1,6 @@
-import HtmlDl from './index.svelte';
-import type { RecipeHtmlDl } from '../../../interface/recipe/dl';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlDl from '$stylist/html/component/molecule/dl/index.svelte';
+import type { RecipeHtmlDl } from '$stylist/html/interface/recipe/dl';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<dl>`: Association list consisting of zero or more name-value groups. */
 export default {

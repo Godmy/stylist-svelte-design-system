@@ -1,6 +1,6 @@
-import HtmlNoscript from './index.svelte';
-import type { RecipeHtmlNoscript } from '../../../interface/recipe/noscript';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlNoscript from '$stylist/html/component/atom/noscript/index.svelte';
+import type { RecipeHtmlNoscript } from '$stylist/html/interface/recipe/noscript';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<noscript>`: Fallback content for script. */
 export default {

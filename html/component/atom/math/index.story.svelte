@@ -1,6 +1,6 @@
 <script lang="ts">
-	import HtmlMath from './index.svelte';
-	import type { RecipeHtmlMath } from '../../../interface/recipe/math';
+	import HtmlMath from '$stylist/html/component/atom/math/index.svelte';
+	import type { RecipeHtmlMath } from '$stylist/html/interface/recipe/math';
 
 	// Render of index.story.ts: MathML content cannot be expressed as an HtmlNode tree.
 	let args: RecipeHtmlMath = $props();

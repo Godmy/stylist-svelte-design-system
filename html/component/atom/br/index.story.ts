@@ -1,6 +1,6 @@
-import HtmlBr from './index.svelte';
-import type { RecipeHtmlBr } from '../../../interface/recipe/br';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlBr from '$stylist/html/component/atom/br/index.svelte';
+import type { RecipeHtmlBr } from '$stylist/html/interface/recipe/br';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<br>`: Line break, e.g. in poem or postal address. */
 export default {

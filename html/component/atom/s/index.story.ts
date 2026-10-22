@@ -1,6 +1,6 @@
-import HtmlS from './index.svelte';
-import type { RecipeHtmlS } from '../../../interface/recipe/s';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlS from '$stylist/html/component/atom/s/index.svelte';
+import type { RecipeHtmlS } from '$stylist/html/interface/recipe/s';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<s>`: Inaccurate text. */
 export default {

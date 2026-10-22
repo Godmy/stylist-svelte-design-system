@@ -1,6 +1,6 @@
-import HtmlLegend from './index.svelte';
-import type { RecipeHtmlLegend } from '../../../interface/recipe/legend';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlLegend from '$stylist/html/component/atom/legend/index.svelte';
+import type { RecipeHtmlLegend } from '$stylist/html/interface/recipe/legend';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<legend>`: Caption for fieldset. */
 export default {

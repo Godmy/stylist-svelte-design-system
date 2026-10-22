@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlInputMonth } from '../../../interface/recipe/input-month';
+	import type { RecipeHtmlInputMonth } from '$stylist/html/interface/recipe/input-month';
 
 	let { element = $bindable(null), value = $bindable(), ...rest }: RecipeHtmlInputMonth = $props();
 </script>

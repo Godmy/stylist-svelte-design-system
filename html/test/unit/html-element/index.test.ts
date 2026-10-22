@@ -1,13 +1,13 @@
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import { HTML_INPUT_TYPE } from '../../../const/array/html-input-type';
-import type { HtmlTag } from '../../../type/alias/html-tag';
-import type { HtmlElementSpec } from '../../../type/struct/html-element-spec';
-import { createHtmlBlock } from '../../../function/create/html-block';
-import { createHtmlBlockList } from '../../../function/create/html-block-list';
-import { resolveHtmlAddress } from '../../../function/resolve/html-address';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import { HTML_INPUT_TYPE } from '$stylist/html/const/array/html-input-type';
+import type { HtmlTag } from '$stylist/html/type/alias/html-tag';
+import type { HtmlElementSpec } from '$stylist/html/type/struct/html-element-spec';
+import { createHtmlBlock } from '$stylist/html/function/create/html-block';
+import { createHtmlBlockList } from '$stylist/html/function/create/html-block-list';
+import { resolveHtmlAddress } from '$stylist/html/function/resolve/html-address';
 
 describe('html registry', () => {
 	const registry: Record<HtmlTag, HtmlElementSpec> = HTML_ELEMENT;

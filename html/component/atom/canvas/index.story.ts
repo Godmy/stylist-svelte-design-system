@@ -1,6 +1,6 @@
-import HtmlCanvas from './index.svelte';
-import type { RecipeHtmlCanvas } from '../../../interface/recipe/canvas';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlCanvas from '$stylist/html/component/atom/canvas/index.svelte';
+import type { RecipeHtmlCanvas } from '$stylist/html/interface/recipe/canvas';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<canvas>`: Scriptable bitmap canvas. */
 export default {

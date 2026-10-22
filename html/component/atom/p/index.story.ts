@@ -1,6 +1,6 @@
-import HtmlP from './index.svelte';
-import type { RecipeHtmlP } from '../../../interface/recipe/p';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlP from '$stylist/html/component/atom/p/index.svelte';
+import type { RecipeHtmlP } from '$stylist/html/interface/recipe/p';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<p>`: Paragraph. */
 export default {

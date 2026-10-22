@@ -1,6 +1,6 @@
-import HtmlAudio from './index.svelte';
-import type { RecipeHtmlAudio } from '../../../interface/recipe/audio';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlAudio from '$stylist/html/component/molecule/audio/index.svelte';
+import type { RecipeHtmlAudio } from '$stylist/html/interface/recipe/audio';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<audio>`: Audio player. */
 export default {

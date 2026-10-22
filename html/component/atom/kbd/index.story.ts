@@ -1,6 +1,6 @@
-import HtmlKbd from './index.svelte';
-import type { RecipeHtmlKbd } from '../../../interface/recipe/kbd';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlKbd from '$stylist/html/component/atom/kbd/index.svelte';
+import type { RecipeHtmlKbd } from '$stylist/html/interface/recipe/kbd';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<kbd>`: User input. */
 export default {

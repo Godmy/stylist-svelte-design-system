@@ -1,5 +1,5 @@
 import type { HTMLStyleAttributes } from 'svelte/elements';
-import type { SlotHtmlText } from '../../slot/html-text';
+import type { SlotHtmlText } from '$stylist/html/interface/slot/html-text';
 
 /** `<style>`: Embedded styling information. */
 export interface RecipeHtmlStyle extends Omit<HTMLStyleAttributes, 'children'>, SlotHtmlText {

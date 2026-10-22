@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Node from './index.svelte';
-	import type { RecipeHtmlNode } from '../../../interface/recipe/node';
-	import { checkHtmlNode } from '../../../function/check/html-node';
-	import { createHtmlBlockList } from '../../../function/create/html-block-list';
+	import Node from '$stylist/html/component/template/node/index.svelte';
+	import type { RecipeHtmlNode } from '$stylist/html/interface/recipe/node';
+	import { checkHtmlNode } from '$stylist/html/function/check/html-node';
+	import { createHtmlBlockList } from '$stylist/html/function/create/html-block-list';
 
 	// Render of index.story.ts: the tree comes from the story args.
 	let { node }: RecipeHtmlNode = $props();

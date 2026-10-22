@@ -1,6 +1,6 @@
-import HtmlWbr from './index.svelte';
-import type { RecipeHtmlWbr } from '../../../interface/recipe/wbr';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlWbr from '$stylist/html/component/atom/wbr/index.svelte';
+import type { RecipeHtmlWbr } from '$stylist/html/interface/recipe/wbr';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<wbr>`: Line breaking opportunity. */
 export default {

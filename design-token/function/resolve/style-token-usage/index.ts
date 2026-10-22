@@ -1,5 +1,5 @@
-import type { ContractDesignTokenStyleRule } from '../../../interface/contract/style-rule';
-import type { DesignTokenUsage } from '../../../type/struct/usage';
+import type { ContractDesignTokenStyleRule } from '$stylist/design-token/interface/contract/style-rule';
+import type { DesignTokenUsage } from '$stylist/design-token/type/struct/usage';
 
 /** Extracts references (including nested fallbacks), preserving selector and state evidence. */
 export function resolveStyleTokenUsage(

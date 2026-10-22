@@ -3,14 +3,14 @@ import { HTML_STYLE } from '$stylist/html/const/array/html-style';
 import { ManagerThemeCSS } from '$stylist/theme/class/manager/theme-css';
 import { THEME_MODE_LIGHT } from '$stylist/theme/const/record/theme-mode-light';
 import { THEME_MODE_DARK } from '$stylist/theme/const/record/theme-mode-dark';
-import { DESIGN_TOKEN_HTML_SUPPLEMENT } from '../../../const/preset/html-supplement';
-import { DESIGN_TOKEN_HTML_REQUIREMENT } from '../../../const/record/html-requirement';
-import { resolveStyleTokenUsage } from '../../../function/resolve/style-token-usage';
-import { checkStyleTokenCoverage } from '../../../function/check/style-token-coverage';
-import { TOKEN_FONT_FAMILY } from '../../../const/object/font-family';
-import { TOKEN_DURATION } from '../../../const/object/duration';
-import { DESIGN_TOKEN_DENSITY } from '../../../const/preset/density';
-import { DESIGN_TOKEN_FOCUS } from '../../../const/preset/focus';
+import { DESIGN_TOKEN_HTML_SUPPLEMENT } from '$stylist/design-token/const/preset/html-supplement';
+import { DESIGN_TOKEN_HTML_REQUIREMENT } from '$stylist/design-token/const/record/html-requirement';
+import { resolveStyleTokenUsage } from '$stylist/design-token/function/resolve/style-token-usage';
+import { checkStyleTokenCoverage } from '$stylist/design-token/function/check/style-token-coverage';
+import { TOKEN_FONT_FAMILY } from '$stylist/design-token/const/object/font-family';
+import { TOKEN_DURATION } from '$stylist/design-token/const/object/duration';
+import { DESIGN_TOKEN_DENSITY } from '$stylist/design-token/const/preset/density';
+import { DESIGN_TOKEN_FOCUS } from '$stylist/design-token/const/preset/focus';
 
 describe('design-token HTML demand', () => {
 	it('keeps the demand snapshot in sync with live HTML selectors, states and values', () => {

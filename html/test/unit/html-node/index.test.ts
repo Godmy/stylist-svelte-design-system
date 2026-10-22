@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { checkHtmlChild } from '../../../function/check/html-child';
-import { checkHtmlNode } from '../../../function/check/html-node';
-import { checkHtmlRawText } from '../../../function/check/html-raw-text';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import type { HtmlTag } from '../../../type/alias/html-tag';
-import sample from '../../../data/json/html-node-sample/index.json';
+import { checkHtmlChild } from '$stylist/html/function/check/html-child';
+import { checkHtmlNode } from '$stylist/html/function/check/html-node';
+import { checkHtmlRawText } from '$stylist/html/function/check/html-raw-text';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import type { HtmlTag } from '$stylist/html/type/alias/html-tag';
+import sample from '$stylist/html/data/json/html-node-sample/index.json';
 
 describe('html composition', () => {
 	const el = (tag: HtmlTag, ...children: HtmlNode[]): HtmlNode => ({

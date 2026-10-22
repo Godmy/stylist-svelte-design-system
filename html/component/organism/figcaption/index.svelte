@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlFigcaption } from '../../../interface/recipe/figcaption';
+	import type { RecipeHtmlFigcaption } from '$stylist/html/interface/recipe/figcaption';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlFigcaption = $props();
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlInputText } from '../../../interface/recipe/input-text';
+	import type { RecipeHtmlInputText } from '$stylist/html/interface/recipe/input-text';
 
 	let { element = $bindable(null), value = $bindable(), ...rest }: RecipeHtmlInputText = $props();
 </script>

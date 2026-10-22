@@ -1,11 +1,11 @@
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import type { HtmlOutletNode } from '../../../type/struct/html-outlet-node';
-import type { HtmlElementSpec } from '../../../type/struct/html-element-spec';
-import type { HtmlNodeIssue } from '../../../type/struct/html-node-issue';
-import type { HtmlElementNode } from '../../../type/struct/html-element-node';
-import { checkHtmlConstraints } from '../html-constraints';
-import { checkHtmlChild } from '../html-child';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import type { HtmlOutletNode } from '$stylist/html/type/struct/html-outlet-node';
+import type { HtmlElementSpec } from '$stylist/html/type/struct/html-element-spec';
+import type { HtmlNodeIssue } from '$stylist/html/type/struct/html-node-issue';
+import type { HtmlElementNode } from '$stylist/html/type/struct/html-element-node';
+import { checkHtmlConstraints } from '$stylist/html/function/check/html-constraints';
+import { checkHtmlChild } from '$stylist/html/function/check/html-child';
 
 /**
  * Validates a whole HTML composite tree against the registry; returns every issue found.

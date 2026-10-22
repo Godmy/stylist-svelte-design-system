@@ -1,7 +1,7 @@
-import type { HtmlContent } from '../../alias/html-content';
-import type { HtmlLevel } from '../../alias/html-level';
-import type { HtmlNamespace } from '../../alias/html-namespace';
-import type { HtmlRender } from '../../alias/html-render';
+import type { HtmlContent } from '$stylist/html/type/alias/html-content';
+import type { HtmlLevel } from '$stylist/html/type/alias/html-level';
+import type { HtmlNamespace } from '$stylist/html/type/alias/html-namespace';
+import type { HtmlRender } from '$stylist/html/type/alias/html-render';
 
 /**
  * Registry entry of one element. Tokens in `parents`/`accepts` are tag names or

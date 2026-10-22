@@ -1,6 +1,6 @@
-import HtmlAbbr from './index.svelte';
-import type { RecipeHtmlAbbr } from '../../../interface/recipe/abbr';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlAbbr from '$stylist/html/component/atom/abbr/index.svelte';
+import type { RecipeHtmlAbbr } from '$stylist/html/interface/recipe/abbr';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<abbr>`: Abbreviation. */
 export default {

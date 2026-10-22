@@ -1,6 +1,6 @@
 import type { Component } from 'svelte';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import type { SlotStoryControl } from '../../slot/story-control';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import type { SlotStoryControl } from '$stylist/html/interface/slot/story-control';
 
 /**
  * `index.story.ts` contract between a component and the sandbox host. Typed by the

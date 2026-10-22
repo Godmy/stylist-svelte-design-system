@@ -1,14 +1,14 @@
 import { existsSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import type { ContractStory } from '../../../interface/contract/story';
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import type { HtmlTag } from '../../../type/alias/html-tag';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import type { HtmlElementNode } from '../../../type/struct/html-element-node';
-import { checkHtmlNode } from '../../../function/check/html-node';
-import { resolveHtmlAddress } from '../../../function/resolve/html-address';
-import { transformHtmlOutlet } from '../../../function/transform/html-outlet';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import type { HtmlTag } from '$stylist/html/type/alias/html-tag';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import type { HtmlElementNode } from '$stylist/html/type/struct/html-element-node';
+import { checkHtmlNode } from '$stylist/html/function/check/html-node';
+import { resolveHtmlAddress } from '$stylist/html/function/resolve/html-address';
+import { transformHtmlOutlet } from '$stylist/html/function/transform/html-outlet';
 
 describe('html stories', () => {
 	/** Vitest runs from the package root; `import.meta.url` is not a file URL under jsdom. */

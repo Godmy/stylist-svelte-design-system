@@ -1,6 +1,6 @@
-import HtmlTfoot from './index.svelte';
-import type { RecipeHtmlTfoot } from '../../../interface/recipe/tfoot';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlTfoot from '$stylist/html/component/molecule/tfoot/index.svelte';
+import type { RecipeHtmlTfoot } from '$stylist/html/interface/recipe/tfoot';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<tfoot>`: Group of footer rows in a table. */
 export default {

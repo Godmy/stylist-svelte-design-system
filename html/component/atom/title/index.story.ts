@@ -1,6 +1,6 @@
-import HtmlTitle from './index.svelte';
-import type { RecipeHtmlTitle } from '../../../interface/recipe/title';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlTitle from '$stylist/html/component/atom/title/index.svelte';
+import type { RecipeHtmlTitle } from '$stylist/html/interface/recipe/title';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<title>`: Document title. */
 export default {

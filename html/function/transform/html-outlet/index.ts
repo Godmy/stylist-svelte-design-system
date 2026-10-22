@@ -1,4 +1,4 @@
-import type { HtmlNode } from '../../../type/alias/html-node';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
 
 /**
  * Replaces the outlet of `tree` with `nodes` (a context with its content in place),

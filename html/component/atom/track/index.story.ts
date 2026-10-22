@@ -1,6 +1,6 @@
-import HtmlTrack from './index.svelte';
-import type { RecipeHtmlTrack } from '../../../interface/recipe/track';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlTrack from '$stylist/html/component/atom/track/index.svelte';
+import type { RecipeHtmlTrack } from '$stylist/html/interface/recipe/track';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<track>`: Timed text track. */
 export default {

@@ -1,6 +1,6 @@
-import HtmlBdi from './index.svelte';
-import type { RecipeHtmlBdi } from '../../../interface/recipe/bdi';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlBdi from '$stylist/html/component/atom/bdi/index.svelte';
+import type { RecipeHtmlBdi } from '$stylist/html/interface/recipe/bdi';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<bdi>`: Text directionality isolation. */
 export default {

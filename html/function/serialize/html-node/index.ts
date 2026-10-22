@@ -1,7 +1,7 @@
-import { HTML_ELEMENT } from '../../../const/record/html-element';
-import type { HtmlNode } from '../../../type/alias/html-node';
-import { serializeHtmlAttributes } from '../html-attributes';
-import { serializeHtmlRawText } from '../html-raw-text';
+import { HTML_ELEMENT } from '$stylist/html/const/record/html-element';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
+import { serializeHtmlAttributes } from '$stylist/html/function/serialize/html-attributes';
+import { serializeHtmlRawText } from '$stylist/html/function/serialize/html-raw-text';
 
 /**
  * Standalone HTML export, including html/head/body attributes. Does not execute scripts.

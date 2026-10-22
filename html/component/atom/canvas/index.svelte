@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { RecipeHtmlCanvas } from '../../../interface/recipe/canvas';
+	import type { RecipeHtmlCanvas } from '$stylist/html/interface/recipe/canvas';
 
 	let { element = $bindable(null), children, ...rest }: RecipeHtmlCanvas = $props();
 </script>

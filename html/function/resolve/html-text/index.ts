@@ -1,4 +1,4 @@
-import type { HtmlNode } from '../../../type/alias/html-node';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
 
 /** The text of a content tree with exactly one text node (an editable label), else `null`. */
 export function resolveHtmlText(nodes: readonly HtmlNode[]): string | null {

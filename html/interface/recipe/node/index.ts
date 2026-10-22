@@ -1,5 +1,5 @@
 import type { Snippet } from 'svelte';
-import type { HtmlNode } from '../../../type/alias/html-node';
+import type { HtmlNode } from '$stylist/html/type/alias/html-node';
 
 /** Recursive renderer of an HTML composite tree through the html components. */
 export interface RecipeHtmlNode {

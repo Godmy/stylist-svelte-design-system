@@ -1,6 +1,6 @@
-import HtmlArea from './index.svelte';
-import type { RecipeHtmlArea } from '../../../interface/recipe/area';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlArea from '$stylist/html/component/atom/area/index.svelte';
+import type { RecipeHtmlArea } from '$stylist/html/interface/recipe/area';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<area>`: Hyperlink or dead area on an image map. */
 export default {

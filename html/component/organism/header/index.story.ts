@@ -1,6 +1,6 @@
-import HtmlHeader from './index.svelte';
-import type { RecipeHtmlHeader } from '../../../interface/recipe/header';
-import type { ContractStory } from '../../../interface/contract/story';
+import HtmlHeader from '$stylist/html/component/organism/header/index.svelte';
+import type { RecipeHtmlHeader } from '$stylist/html/interface/recipe/header';
+import type { ContractStory } from '$stylist/html/interface/contract/story';
 
 /** `<header>`: Introductory or navigational aids for a page or section. */
 export default {

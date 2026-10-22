@@ -1,5 +1,5 @@
-import { serializeHtmlAttributes } from '../html-attributes';
-import { checkHtmlRawText } from '../../check/html-raw-text';
+import { serializeHtmlAttributes } from '$stylist/html/function/serialize/html-attributes';
+import { checkHtmlRawText } from '$stylist/html/function/check/html-raw-text';
 
 /** Trusted raw text. HTML end-tag delimiters must be escaped by the author. */
 export function serializeHtmlRawText(
