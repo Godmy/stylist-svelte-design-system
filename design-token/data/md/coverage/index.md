@@ -4,7 +4,7 @@
 
 ## Наблюдаемое покрытие
 
-HTML_STYLE содержит 63 правила, 128 ссылок var() и 60 уникальных имён. JSON snapshot содержит selector/state/pseudo/media/property/value для каждой ссылки. Light и dark emitters покрывают 60/60 имён без supplement и без разрешённого gap mono. Тесты также проверяют значения family, color, spacing, density, focus и duration, а stylesheet — строгий CSS parser.
+HTML_STYLE содержит 63 правила, 129 ссылок var() и 61 уникальное имя. JSON snapshot содержит selector/state/pseudo/media/property/value для каждой ссылки. Light и dark emitters покрывают 61/61 имя без supplement и без разрешённого gap mono. Тесты также проверяют значения family, color, spacing, density, focus и duration, а stylesheet — строгий CSS parser. Для mark светлый warning-100 сочетается с тёмным warning-900 в обеих темах; наследование цвета текста здесь нарушало контраст в dark mode.
 
 TOKEN_FONT_FAMILY.mono имеет одного владельца; ManagerThemeCSS выдаёт --font-mono напрямую из него. DESIGN_TOKEN_HTML_SUPPLEMENT сохранён как совместимый preset, производный от того же определения, и больше не является обязательным исправлением provider.
 

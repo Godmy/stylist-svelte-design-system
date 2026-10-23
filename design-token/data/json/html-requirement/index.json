@@ -25,6 +25,7 @@
     "--color-text-secondary",
     "--color-text-tertiary",
     "--color-warning-100",
+    "--color-warning-900",
     "--content-dialog",
     "--content-gutter",
     "--density-block",
@@ -444,6 +445,15 @@
       ],
       "property": "background",
       "value": "var(--color-warning-100, Mark)"
+    },
+    {
+      "name": "--color-warning-900",
+      "rule": 19,
+      "targets": [
+        "mark"
+      ],
+      "property": "color",
+      "value": "var(--color-warning-900, MarkText)"
     },
     {
       "name": "--font-relative-small",

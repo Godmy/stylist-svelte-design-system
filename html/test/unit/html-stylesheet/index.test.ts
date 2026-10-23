@@ -3,6 +3,7 @@ import postcss from 'postcss';
 import { describe, expect, it } from 'vitest';
 import { ManagerThemeCSS } from '$stylist/theme/class/manager/theme-css';
 import { THEME_MODE_LIGHT } from '$stylist/theme/const/record/theme-mode-light';
+import { THEME_MODE_DARK } from '$stylist/theme/const/record/theme-mode-dark';
 import { HTML_STYLE } from '$stylist/html/const/array/html-style';
 import type { HtmlStyleRule } from '$stylist/html/type/struct/html-style-rule';
 import { resolveHtmlStyleSelector } from '$stylist/html/function/resolve/html-style-selector';
@@ -11,6 +12,34 @@ import { serializeHtmlStylesheet } from '$stylist/html/function/serialize/html-s
 describe('html skin', () => {
 	const rules: readonly HtmlStyleRule[] = HTML_STYLE;
 	const css = serializeHtmlStylesheet();
+
+	it.each([THEME_MODE_LIGHT, THEME_MODE_DARK])(
+		'keeps highlighted text readable on the warning surface in $mode mode',
+		(theme) => {
+			const variables = ManagerThemeCSS.convertToCSSVars(theme);
+			const mark = rules.find((rule) => rule.target === 'mark')!;
+			const luminance = (declaration: string) => {
+				const name = declaration.match(/^var\((--[\w-]+),/)?.[1];
+				expect(
+					name,
+					'foreground and background must resolve independently of inherited text'
+				).toBeTruthy();
+				const color = variables[name!];
+				expect(color).toMatch(/^#[\da-f]{6}$/i);
+				return [1, 3, 5]
+					.map((offset) => parseInt(color.slice(offset, offset + 2), 16) / 255)
+					.map((channel) =>
+						channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4
+					)
+					.reduce((sum, channel, index) => sum + channel * [0.2126, 0.7152, 0.0722][index], 0);
+			};
+			const pair = [
+				luminance(mark.declarations.color),
+				luminance(mark.declarations.background)
+			].sort((a, b) => b - a);
+			expect((pair[0] + 0.05) / (pair[1] + 0.05)).toBeGreaterThanOrEqual(4.5);
+		}
+	);
 
 	it('is valid CSS for a strict parser', () => {
 		expect(() =>

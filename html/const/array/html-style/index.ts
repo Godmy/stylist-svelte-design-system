@@ -126,7 +126,7 @@ export const HTML_STYLE = [
 			padding: '0 0.15em',
 			'border-radius': 'var(--layout-border-radius-sm, 0.125rem)',
 			background: 'var(--color-warning-100, Mark)',
-			color: 'inherit'
+			color: 'var(--color-warning-900, MarkText)'
 		}
 	},
 	{
