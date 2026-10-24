@@ -12,7 +12,11 @@ export {
 export {
 	formatDate,
 	formatDateTime,
-	formatTime
+	formatDay,
+	formatMoment,
+	formatMoney,
+	formatTime,
+	formatUsd
 } from './function';
 export type {
 	CountryFlagProps,

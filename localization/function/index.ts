@@ -4,3 +4,9 @@ export {
 	formatDateTime,
 	formatTime
 } from './format-date-time';
+export {
+	formatDay,
+	formatMoment,
+	formatMoney,
+	formatUsd
+} from './transform';
