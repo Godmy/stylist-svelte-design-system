@@ -1,4 +1,5 @@
 import { HTML_STYLE } from '$stylist/html/const/array/html-style';
+import { HTML_LAYER_ORDER } from '$stylist/html/const/array/html-layer-order';
 import { HTML_SKIN_SCOPE } from '$stylist/html/const/value/html-skin-scope';
 import type { HtmlStyleRule } from '$stylist/html/type/struct/html-style-rule';
 import { resolveHtmlStyleSelector } from '$stylist/html/function/resolve/html-style-selector';
@@ -7,6 +8,9 @@ import { resolveHtmlStyleSelector } from '$stylist/html/function/resolve/html-st
  * CSS of the html skin. Rules sit in `@layer <layer>` and inside `:where()`, so they have
  * zero specificity and any component class overrides them. With `scope` (default
  * `[data-html-skin]`) they apply only inside that element; `scope: null` styles the page.
+ * The output starts with the canonical layer order (HTML_LAYER_ORDER, `<layer>` in place of
+ * `html`), so domain components (also `:where()`) override the skin whichever stylesheet
+ * the page loads first.
  */
 export function serializeHtmlStylesheet(
 	options: { rules?: readonly HtmlStyleRule[]; scope?: string | null; layer?: string } = {}
@@ -41,5 +45,6 @@ export function serializeHtmlStylesheet(
 			return rule.media ? `\t@media ${rule.media} {\n${css}\n\t}` : css;
 		})
 		.join('\n');
-	return `@layer ${layer} {\n${body}\n}\n`;
+	const order = HTML_LAYER_ORDER.map((name) => (name === 'html' ? layer : name)).join(', ');
+	return `@layer ${order};\n@layer ${layer} {\n${body}\n}\n`;
 }
