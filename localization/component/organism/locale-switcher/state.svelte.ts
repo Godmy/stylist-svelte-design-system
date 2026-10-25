@@ -5,6 +5,7 @@ import {
 } from '$stylist/localization/function/format-date-time';
 import type { SlotLocaleSwitcherLocale as LocaleSwitcherLocale } from '$stylist/localization/interface/slot/locale-switcher-locale';
 import type { RecipeLocaleSwitcher } from '$stylist/localization/interface/recipe/locale-switcher';
+import type { TokenIconName } from '$stylist/svg/type/alias/icon-name';
 
 export function createLocaleSwitcherState(getProps: () => RecipeLocaleSwitcher) {
 	const props = $derived(getProps());
@@ -65,16 +66,16 @@ export function createLocaleSwitcherState(getProps: () => RecipeLocaleSwitcher) 
 	}
 
 	return {
-		get iconCheck() {
+		get iconCheck(): TokenIconName {
 			return 'check';
 		},
-		get iconClock() {
+		get iconClock(): TokenIconName {
 			return 'clock';
 		},
-		get iconGlobe() {
+		get iconGlobe(): TokenIconName {
 			return 'globe';
 		},
-		get iconUser() {
+		get iconUser(): TokenIconName {
 			return 'user';
 		},
 		get locales() {

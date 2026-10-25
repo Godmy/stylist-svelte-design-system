@@ -1,3 +1,4 @@
+import type { TokenIconName } from '$stylist/svg/type/alias/icon-name';
 import type { TranslatableText } from '$stylist/localization/type/object/translatable-text';
 import type { RecipeTranslationEditor } from '$stylist/localization/interface/recipe/translation-editor';
 
@@ -71,22 +72,22 @@ export function createTranslationEditorState(getProps: () => RecipeTranslationEd
 	});
 
 	return {
-		get iconDownload() {
+		get iconDownload(): TokenIconName {
 			return 'download';
 		},
-		get iconEdit() {
+		get iconEdit(): TokenIconName {
 			return 'edit-3';
 		},
-		get iconLanguages() {
+		get iconLanguages(): TokenIconName {
 			return 'languages';
 		},
-		get iconSave() {
+		get iconSave(): TokenIconName {
 			return 'save';
 		},
-		get iconTrash() {
+		get iconTrash(): TokenIconName {
 			return 'trash';
 		},
-		get iconUpload() {
+		get iconUpload(): TokenIconName {
 			return 'upload';
 		},
 		get texts() {

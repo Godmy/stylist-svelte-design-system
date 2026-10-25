@@ -32,26 +32,26 @@ export const HTML_STYLE = [
 			'hgroup',
 			'address'
 		],
-		declarations: { 'margin-block': '0 var(--layout-spacing-1rem, 1rem)' }
+		declarations: { 'margin-block': '0 var(--space-4, 1rem)' }
 	},
 	{
 		target: '#heading',
 		declarations: {
-			'margin-block': 'var(--layout-spacing-1.5rem, 1.5rem) var(--layout-spacing-0.5rem, 0.5rem)',
+			'margin-block': 'var(--space-6, 1.5rem) var(--space-2, 0.5rem)',
 			...TYPOGRAPHY_PRESET.heading,
 			'text-wrap': 'balance'
 		}
 	},
-	{ target: 'h1', declarations: { 'font-size': 'var(--typography-font-size-10, 2.5rem)' } },
-	{ target: 'h2', declarations: { 'font-size': 'var(--typography-font-size-8, 2rem)' } },
-	{ target: 'h3', declarations: { 'font-size': 'var(--typography-font-size-6, 1.5rem)' } },
-	{ target: 'h4', declarations: { 'font-size': 'var(--typography-font-size-5, 1.25rem)' } },
-	{ target: 'h5', declarations: { 'font-size': 'var(--typography-font-size-4, 1rem)' } },
+	{ target: 'h1', declarations: { 'font-size': 'var(--font-size-10, 2.5rem)' } },
+	{ target: 'h2', declarations: { 'font-size': 'var(--font-size-8, 2rem)' } },
+	{ target: 'h3', declarations: { 'font-size': 'var(--font-size-6, 1.5rem)' } },
+	{ target: 'h4', declarations: { 'font-size': 'var(--font-size-5, 1.25rem)' } },
+	{ target: 'h5', declarations: { 'font-size': 'var(--font-size-4, 1rem)' } },
 	{
 		target: 'h6',
 		declarations: {
-			'font-size': 'var(--typography-font-size-3, 0.75rem)',
-			'letter-spacing': 'var(--typography-letter-spacing-wide, 0.04em)',
+			'font-size': 'var(--font-size-3, 0.75rem)',
+			'letter-spacing': 'var(--letter-spacing-wide, 0.04em)',
 			'text-transform': 'uppercase'
 		}
 	},
@@ -96,7 +96,7 @@ export const HTML_STYLE = [
 		target: ['code', 'kbd', 'samp'],
 		declarations: {
 			padding: '0.125em 0.35em',
-			'border-radius': 'var(--layout-border-radius-sm, 0.125rem)',
+			'border-radius': 'var(--radius-0-5, 0.125rem)',
 			background: 'var(--color-background-secondary, Canvas)'
 		}
 	},
@@ -110,9 +110,9 @@ export const HTML_STYLE = [
 	{
 		target: 'pre',
 		declarations: {
-			padding: 'var(--layout-spacing-1rem, 1rem)',
+			padding: 'var(--space-4, 1rem)',
 			overflow: 'auto',
-			'border-radius': 'var(--layout-border-radius-md, 0.375rem)',
+			'border-radius': 'var(--radius-1-5, 0.375rem)',
 			background: 'var(--color-background-secondary, Canvas)'
 		}
 	},
@@ -124,7 +124,7 @@ export const HTML_STYLE = [
 		target: 'mark',
 		declarations: {
 			padding: '0 0.15em',
-			'border-radius': 'var(--layout-border-radius-sm, 0.125rem)',
+			'border-radius': 'var(--radius-0-5, 0.125rem)',
 			background: 'var(--color-warning-100, Mark)',
 			color: 'var(--color-warning-900, MarkText)'
 		}
@@ -150,7 +150,7 @@ export const HTML_STYLE = [
 		target: 'blockquote',
 		declarations: {
 			'margin-inline': '0',
-			'padding-inline-start': 'var(--layout-spacing-1rem, 1rem)',
+			'padding-inline-start': 'var(--space-4, 1rem)',
 			'border-inline-start':
 				'var(--border-width-thick, 4px) solid var(--color-border-accent, GrayText)',
 			color: 'var(--color-text-secondary, GrayText)'
@@ -162,16 +162,16 @@ export const HTML_STYLE = [
 			border: '0',
 			'border-block-start':
 				'var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)',
-			'margin-block': 'var(--layout-spacing-2rem, 2rem)'
+			'margin-block': 'var(--space-8, 2rem)'
 		}
 	},
 	{
 		target: ['ul', 'ol', 'menu'],
-		declarations: { 'padding-inline-start': 'var(--layout-spacing-1.5rem, 1.5rem)' }
+		declarations: { 'padding-inline-start': 'var(--space-6, 1.5rem)' }
 	},
 	{
 		target: 'li + li',
-		declarations: { 'margin-block-start': 'var(--layout-spacing-0.25rem, 0.25rem)' }
+		declarations: { 'margin-block-start': 'var(--space-1, 0.25rem)' }
 	},
 	{
 		target: 'li',
@@ -180,13 +180,13 @@ export const HTML_STYLE = [
 	},
 	{
 		target: 'dt',
-		declarations: { 'font-weight': 'var(--typography-font-weight-semibold, 600)' }
+		declarations: { 'font-weight': 'var(--font-weight-semibold, 600)' }
 	},
 	{
 		target: 'dd',
 		declarations: {
-			'margin-inline-start': 'var(--layout-spacing-1.5rem, 1.5rem)',
-			'margin-block-end': 'var(--layout-spacing-0.5rem, 0.5rem)'
+			'margin-inline-start': 'var(--space-6, 1.5rem)',
+			'margin-block-end': 'var(--space-2, 0.5rem)'
 		}
 	},
 	{
@@ -202,7 +202,7 @@ export const HTML_STYLE = [
 		declarations: {
 			...TYPOGRAPHY_PRESET.caption,
 			'caption-side': 'top',
-			'padding-block': 'var(--layout-spacing-0.5rem, 0.5rem)',
+			'padding-block': 'var(--space-2, 0.5rem)',
 			'text-align': 'start',
 			color: 'var(--color-text-secondary, GrayText)'
 		}
@@ -220,7 +220,7 @@ export const HTML_STYLE = [
 	{
 		target: 'th',
 		declarations: {
-			'font-weight': 'var(--typography-font-weight-semibold, 600)',
+			'font-weight': 'var(--font-weight-semibold, 600)',
 			background: 'var(--color-background-secondary, Canvas)'
 		}
 	},
@@ -234,7 +234,7 @@ export const HTML_STYLE = [
 	{
 		target: 'figcaption',
 		declarations: {
-			'margin-block-start': 'var(--layout-spacing-0.5rem, 0.5rem)',
+			'margin-block-start': 'var(--space-2, 0.5rem)',
 			...TYPOGRAPHY_PRESET.caption,
 			color: 'var(--color-text-secondary, GrayText)'
 		}
@@ -264,10 +264,10 @@ export const HTML_STYLE = [
 		declarations: {
 			padding: 'var(--density-block, 0.5rem) var(--density-inline, 0.75rem)',
 			border: 'var(--border-width-thin, 1px) solid var(--color-border-primary, GrayText)',
-			'border-radius': 'var(--layout-border-radius-md, 0.375rem)',
+			'border-radius': 'var(--radius-1-5, 0.375rem)',
 			background: 'var(--color-background-primary, Field)',
 			color: 'inherit',
-			transition: 'border-color var(--motion-duration-150, 150ms) var(--motion-easing-ease, ease)'
+			transition: 'border-color var(--duration-150, 150ms) var(--easing-ease, ease)'
 		}
 	},
 	{
@@ -281,10 +281,10 @@ export const HTML_STYLE = [
 		declarations: {
 			padding: 'var(--density-block, 0.5rem) var(--density-inline, 0.75rem)',
 			border: 'var(--border-width-thin, 1px) solid transparent',
-			'border-radius': 'var(--layout-border-radius-md, 0.375rem)',
+			'border-radius': 'var(--radius-1-5, 0.375rem)',
 			background: 'var(--color-primary-600, ButtonFace)',
 			color: 'var(--color-on-primary, ButtonText)',
-			'font-weight': 'var(--typography-font-weight-medium, 500)',
+			'font-weight': 'var(--font-weight-medium, 500)',
 			cursor: 'pointer'
 		}
 	},
@@ -292,10 +292,10 @@ export const HTML_STYLE = [
 		target: 'input[type="file"]',
 		pseudo: '::file-selector-button',
 		declarations: {
-			'margin-inline-end': 'var(--layout-spacing-0.75rem, 0.75rem)',
-			padding: 'var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)',
+			'margin-inline-end': 'var(--space-3, 0.75rem)',
+			padding: 'var(--space-2, 0.5rem) var(--space-4, 1rem)',
 			border: 'var(--border-width-thin, 1px) solid transparent',
-			'border-radius': 'var(--layout-border-radius-md, 0.375rem)',
+			'border-radius': 'var(--radius-1-5, 0.375rem)',
 			background: 'var(--color-primary-600, ButtonFace)',
 			color: 'var(--color-on-primary, ButtonText)',
 			font: 'inherit',
@@ -319,54 +319,54 @@ export const HTML_STYLE = [
 	},
 	{
 		target: 'label',
-		declarations: { 'font-weight': 'var(--typography-font-weight-medium, 500)' }
+		declarations: { 'font-weight': 'var(--font-weight-medium, 500)' }
 	},
 	{
 		target: 'fieldset',
 		declarations: {
 			'margin-inline': '0',
-			padding: 'var(--layout-spacing-1rem, 1rem)',
+			padding: 'var(--space-4, 1rem)',
 			border: 'var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)',
-			'border-radius': 'var(--layout-border-radius-lg, 0.5rem)'
+			'border-radius': 'var(--radius-2, 0.5rem)'
 		}
 	},
 	{
 		target: 'legend',
 		declarations: {
-			'padding-inline': 'var(--layout-spacing-0.25rem, 0.25rem)',
-			'font-weight': 'var(--typography-font-weight-semibold, 600)'
+			'padding-inline': 'var(--space-1, 0.25rem)',
+			'font-weight': 'var(--font-weight-semibold, 600)'
 		}
 	},
 	{
 		target: 'details',
 		declarations: {
-			padding: 'var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)',
+			padding: 'var(--space-2, 0.5rem) var(--space-4, 1rem)',
 			border: 'var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)',
-			'border-radius': 'var(--layout-border-radius-md, 0.375rem)'
+			'border-radius': 'var(--radius-1-5, 0.375rem)'
 		}
 	},
 	{
 		target: 'summary',
 		declarations: {
 			cursor: 'pointer',
-			'font-weight': 'var(--typography-font-weight-medium, 500)'
+			'font-weight': 'var(--font-weight-medium, 500)'
 		}
 	},
 	{
 		target: 'details[open] > summary',
-		declarations: { 'margin-block-end': 'var(--layout-spacing-0.5rem, 0.5rem)' }
+		declarations: { 'margin-block-end': 'var(--space-2, 0.5rem)' }
 	},
 	{
 		target: 'dialog',
 		declarations: {
 			'max-width': 'min(var(--content-dialog, 32rem), calc(100vw - var(--content-gutter, 2rem)))',
-			padding: 'var(--layout-spacing-1.5rem, 1.5rem)',
+			padding: 'var(--space-6, 1.5rem)',
 			border: 'var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)',
-			'border-radius': 'var(--layout-border-radius-xl, 0.75rem)',
+			'border-radius': 'var(--radius-3, 0.75rem)',
 			background: 'var(--color-background-raised, Canvas)',
 			color: 'var(--color-text-primary, CanvasText)',
 			'box-shadow': 'var(--elevation-modal, none)',
-			'z-index': 'var(--layout-z-index-modal, 1400)'
+			'z-index': 'var(--z-index-modal, 1400)'
 		}
 	},
 	{
@@ -408,6 +408,6 @@ export const HTML_STYLE = [
 	{
 		target: ['input', 'select', 'textarea'],
 		media: '(prefers-reduced-motion: reduce)',
-		declarations: { 'transition-duration': 'var(--motion-duration-0, 0ms)' }
+		declarations: { 'transition-duration': 'var(--duration-0, 0ms)' }
 	}
 ] as const;

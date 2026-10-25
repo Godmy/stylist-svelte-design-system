@@ -13,4 +13,5 @@ export {
 export { RECORD_ELEVATION } from './elevation';
 export { DESIGN_TOKEN_HTML_REQUIREMENT } from './html-requirement';
 export { RECORD_SPACING } from './spacing';
+export { RECORD_TOKEN_ALIAS } from './token-alias';
 export { TOKEN_TRANSITION } from './transition';

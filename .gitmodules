@@ -10,3 +10,6 @@
 [submodule "src/lib/layout"]
 	path = layout
 	url = https://github.com/Godmy/stylist-svelte-layout.git
+[submodule "src/lib/mathml"]
+	path = mathml
+	url = https://github.com/Godmy/stylist-svelte-mathml.git

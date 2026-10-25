@@ -15,4 +15,6 @@ export { GRADIENT_RADIAL } from './gradient-radial';
 export { TOKEN_LETTER_SPACING } from './letter-spacing';
 export { TOKEN_LINE_HEIGHT } from './line-height';
 export { TOKEN_OPACITY } from './opacity';
+export { TOKEN_RADIUS } from './radius';
+export { TOKEN_SPACE } from './space';
 export { TOKEN_Z_INDEX } from './z-index';

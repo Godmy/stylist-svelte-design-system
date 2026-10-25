@@ -30,41 +30,41 @@
     "--content-gutter",
     "--density-block",
     "--density-inline",
+    "--duration-0",
+    "--duration-150",
+    "--easing-ease",
     "--elevation-modal",
     "--focus-offset",
     "--focus-width",
     "--font-mono",
     "--font-relative-small",
-    "--layout-border-radius-lg",
-    "--layout-border-radius-md",
-    "--layout-border-radius-sm",
-    "--layout-border-radius-xl",
-    "--layout-spacing-0.25rem",
-    "--layout-spacing-0.5rem",
-    "--layout-spacing-0.75rem",
-    "--layout-spacing-1.5rem",
-    "--layout-spacing-1rem",
-    "--layout-spacing-2rem",
-    "--layout-z-index-modal",
-    "--motion-duration-0",
-    "--motion-duration-150",
-    "--motion-easing-ease",
+    "--font-size-10",
+    "--font-size-3",
+    "--font-size-4",
+    "--font-size-5",
+    "--font-size-6",
+    "--font-size-8",
+    "--font-weight-medium",
+    "--font-weight-normal",
+    "--font-weight-semibold",
+    "--letter-spacing-narrow",
+    "--letter-spacing-wide",
+    "--line-height-normal",
+    "--line-height-tight",
     "--opacity-100",
     "--opacity-60",
+    "--radius-0-5",
+    "--radius-1-5",
+    "--radius-2",
+    "--radius-3",
+    "--space-1",
+    "--space-2",
+    "--space-3",
+    "--space-4",
+    "--space-6",
+    "--space-8",
     "--typography-font-family",
-    "--typography-font-size-10",
-    "--typography-font-size-3",
-    "--typography-font-size-4",
-    "--typography-font-size-5",
-    "--typography-font-size-6",
-    "--typography-font-size-8",
-    "--typography-font-weight-medium",
-    "--typography-font-weight-normal",
-    "--typography-font-weight-semibold",
-    "--typography-letter-spacing-narrow",
-    "--typography-letter-spacing-wide",
-    "--typography-line-height-normal",
-    "--typography-line-height-tight"
+    "--z-index-modal"
   ],
   "usages": [
     {
@@ -77,31 +77,31 @@
       "value": "var(--typography-font-family, Inter, system-ui, -apple-system, sans-serif)"
     },
     {
-      "name": "--typography-font-size-4",
+      "name": "--font-size-4",
       "rule": 0,
       "targets": [
         "@scope"
       ],
       "property": "font-size",
-      "value": "var(--typography-font-size-4, 1rem)"
+      "value": "var(--font-size-4, 1rem)"
     },
     {
-      "name": "--typography-font-weight-normal",
+      "name": "--font-weight-normal",
       "rule": 0,
       "targets": [
         "@scope"
       ],
       "property": "font-weight",
-      "value": "var(--typography-font-weight-normal, 400)"
+      "value": "var(--font-weight-normal, 400)"
     },
     {
-      "name": "--typography-line-height-normal",
+      "name": "--line-height-normal",
       "rule": 0,
       "targets": [
         "@scope"
       ],
       "property": "line-height",
-      "value": "var(--typography-line-height-normal, 1.5)"
+      "value": "var(--line-height-normal, 1.5)"
     },
     {
       "name": "--color-text-primary",
@@ -122,7 +122,7 @@
       "value": "var(--color-background-primary, Canvas)"
     },
     {
-      "name": "--layout-spacing-1rem",
+      "name": "--space-4",
       "rule": 1,
       "targets": [
         "p",
@@ -141,115 +141,115 @@
         "address"
       ],
       "property": "margin-block",
-      "value": "0 var(--layout-spacing-1rem, 1rem)"
+      "value": "0 var(--space-4, 1rem)"
     },
     {
-      "name": "--layout-spacing-1.5rem",
+      "name": "--space-6",
       "rule": 2,
       "targets": [
         "#heading"
       ],
       "property": "margin-block",
-      "value": "var(--layout-spacing-1.5rem, 1.5rem) var(--layout-spacing-0.5rem, 0.5rem)"
+      "value": "var(--space-6, 1.5rem) var(--space-2, 0.5rem)"
     },
     {
-      "name": "--layout-spacing-0.5rem",
+      "name": "--space-2",
       "rule": 2,
       "targets": [
         "#heading"
       ],
       "property": "margin-block",
-      "value": "var(--layout-spacing-1.5rem, 1.5rem) var(--layout-spacing-0.5rem, 0.5rem)"
+      "value": "var(--space-6, 1.5rem) var(--space-2, 0.5rem)"
     },
     {
-      "name": "--typography-font-weight-semibold",
+      "name": "--font-weight-semibold",
       "rule": 2,
       "targets": [
         "#heading"
       ],
       "property": "font-weight",
-      "value": "var(--typography-font-weight-semibold, 600)"
+      "value": "var(--font-weight-semibold, 600)"
     },
     {
-      "name": "--typography-line-height-tight",
+      "name": "--line-height-tight",
       "rule": 2,
       "targets": [
         "#heading"
       ],
       "property": "line-height",
-      "value": "var(--typography-line-height-tight, 1.25)"
+      "value": "var(--line-height-tight, 1.25)"
     },
     {
-      "name": "--typography-letter-spacing-narrow",
+      "name": "--letter-spacing-narrow",
       "rule": 2,
       "targets": [
         "#heading"
       ],
       "property": "letter-spacing",
-      "value": "var(--typography-letter-spacing-narrow, -0.01em)"
+      "value": "var(--letter-spacing-narrow, -0.01em)"
     },
     {
-      "name": "--typography-font-size-10",
+      "name": "--font-size-10",
       "rule": 3,
       "targets": [
         "h1"
       ],
       "property": "font-size",
-      "value": "var(--typography-font-size-10, 2.5rem)"
+      "value": "var(--font-size-10, 2.5rem)"
     },
     {
-      "name": "--typography-font-size-8",
+      "name": "--font-size-8",
       "rule": 4,
       "targets": [
         "h2"
       ],
       "property": "font-size",
-      "value": "var(--typography-font-size-8, 2rem)"
+      "value": "var(--font-size-8, 2rem)"
     },
     {
-      "name": "--typography-font-size-6",
+      "name": "--font-size-6",
       "rule": 5,
       "targets": [
         "h3"
       ],
       "property": "font-size",
-      "value": "var(--typography-font-size-6, 1.5rem)"
+      "value": "var(--font-size-6, 1.5rem)"
     },
     {
-      "name": "--typography-font-size-5",
+      "name": "--font-size-5",
       "rule": 6,
       "targets": [
         "h4"
       ],
       "property": "font-size",
-      "value": "var(--typography-font-size-5, 1.25rem)"
+      "value": "var(--font-size-5, 1.25rem)"
     },
     {
-      "name": "--typography-font-size-4",
+      "name": "--font-size-4",
       "rule": 7,
       "targets": [
         "h5"
       ],
       "property": "font-size",
-      "value": "var(--typography-font-size-4, 1rem)"
+      "value": "var(--font-size-4, 1rem)"
     },
     {
-      "name": "--typography-font-size-3",
+      "name": "--font-size-3",
       "rule": 8,
       "targets": [
         "h6"
       ],
       "property": "font-size",
-      "value": "var(--typography-font-size-3, 0.75rem)"
+      "value": "var(--font-size-3, 0.75rem)"
     },
     {
-      "name": "--typography-letter-spacing-wide",
+      "name": "--letter-spacing-wide",
       "rule": 8,
       "targets": [
         "h6"
       ],
       "property": "letter-spacing",
-      "value": "var(--typography-letter-spacing-wide, 0.04em)"
+      "value": "var(--letter-spacing-wide, 0.04em)"
     },
     {
       "name": "--color-text-secondary",
@@ -353,7 +353,7 @@
       "value": "var(--font-relative-small, 0.875em)"
     },
     {
-      "name": "--layout-border-radius-sm",
+      "name": "--radius-0-5",
       "rule": 15,
       "targets": [
         "code",
@@ -361,7 +361,7 @@
         "samp"
       ],
       "property": "border-radius",
-      "value": "var(--layout-border-radius-sm, 0.125rem)"
+      "value": "var(--radius-0-5, 0.125rem)"
     },
     {
       "name": "--color-background-secondary",
@@ -402,22 +402,22 @@
       "value": "var(--border-width-medium, 2px)"
     },
     {
-      "name": "--layout-spacing-1rem",
+      "name": "--space-4",
       "rule": 17,
       "targets": [
         "pre"
       ],
       "property": "padding",
-      "value": "var(--layout-spacing-1rem, 1rem)"
+      "value": "var(--space-4, 1rem)"
     },
     {
-      "name": "--layout-border-radius-md",
+      "name": "--radius-1-5",
       "rule": 17,
       "targets": [
         "pre"
       ],
       "property": "border-radius",
-      "value": "var(--layout-border-radius-md, 0.375rem)"
+      "value": "var(--radius-1-5, 0.375rem)"
     },
     {
       "name": "--color-background-secondary",
@@ -429,13 +429,13 @@
       "value": "var(--color-background-secondary, Canvas)"
     },
     {
-      "name": "--layout-border-radius-sm",
+      "name": "--radius-0-5",
       "rule": 19,
       "targets": [
         "mark"
       ],
       "property": "border-radius",
-      "value": "var(--layout-border-radius-sm, 0.125rem)"
+      "value": "var(--radius-0-5, 0.125rem)"
     },
     {
       "name": "--color-warning-100",
@@ -484,13 +484,13 @@
       "value": "var(--color-success-100, Canvas)"
     },
     {
-      "name": "--layout-spacing-1rem",
+      "name": "--space-4",
       "rule": 25,
       "targets": [
         "blockquote"
       ],
       "property": "padding-inline-start",
-      "value": "var(--layout-spacing-1rem, 1rem)"
+      "value": "var(--space-4, 1rem)"
     },
     {
       "name": "--border-width-thick",
@@ -538,16 +538,16 @@
       "value": "var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)"
     },
     {
-      "name": "--layout-spacing-2rem",
+      "name": "--space-8",
       "rule": 26,
       "targets": [
         "hr"
       ],
       "property": "margin-block",
-      "value": "var(--layout-spacing-2rem, 2rem)"
+      "value": "var(--space-8, 2rem)"
     },
     {
-      "name": "--layout-spacing-1.5rem",
+      "name": "--space-6",
       "rule": 27,
       "targets": [
         "ul",
@@ -555,16 +555,16 @@
         "menu"
       ],
       "property": "padding-inline-start",
-      "value": "var(--layout-spacing-1.5rem, 1.5rem)"
+      "value": "var(--space-6, 1.5rem)"
     },
     {
-      "name": "--layout-spacing-0.25rem",
+      "name": "--space-1",
       "rule": 28,
       "targets": [
         "li + li"
       ],
       "property": "margin-block-start",
-      "value": "var(--layout-spacing-0.25rem, 0.25rem)"
+      "value": "var(--space-1, 0.25rem)"
     },
     {
       "name": "--color-text-secondary",
@@ -577,31 +577,31 @@
       "value": "var(--color-text-secondary, GrayText)"
     },
     {
-      "name": "--typography-font-weight-semibold",
+      "name": "--font-weight-semibold",
       "rule": 30,
       "targets": [
         "dt"
       ],
       "property": "font-weight",
-      "value": "var(--typography-font-weight-semibold, 600)"
+      "value": "var(--font-weight-semibold, 600)"
     },
     {
-      "name": "--layout-spacing-1.5rem",
+      "name": "--space-6",
       "rule": 31,
       "targets": [
         "dd"
       ],
       "property": "margin-inline-start",
-      "value": "var(--layout-spacing-1.5rem, 1.5rem)"
+      "value": "var(--space-6, 1.5rem)"
     },
     {
-      "name": "--layout-spacing-0.5rem",
+      "name": "--space-2",
       "rule": 31,
       "targets": [
         "dd"
       ],
       "property": "margin-block-end",
-      "value": "var(--layout-spacing-0.5rem, 0.5rem)"
+      "value": "var(--space-2, 0.5rem)"
     },
     {
       "name": "--font-relative-small",
@@ -613,31 +613,31 @@
       "value": "var(--font-relative-small, 0.875em)"
     },
     {
-      "name": "--typography-font-weight-normal",
+      "name": "--font-weight-normal",
       "rule": 33,
       "targets": [
         "caption"
       ],
       "property": "font-weight",
-      "value": "var(--typography-font-weight-normal, 400)"
+      "value": "var(--font-weight-normal, 400)"
     },
     {
-      "name": "--typography-line-height-normal",
+      "name": "--line-height-normal",
       "rule": 33,
       "targets": [
         "caption"
       ],
       "property": "line-height",
-      "value": "var(--typography-line-height-normal, 1.5)"
+      "value": "var(--line-height-normal, 1.5)"
     },
     {
-      "name": "--layout-spacing-0.5rem",
+      "name": "--space-2",
       "rule": 33,
       "targets": [
         "caption"
       ],
       "property": "padding-block",
-      "value": "var(--layout-spacing-0.5rem, 0.5rem)"
+      "value": "var(--space-2, 0.5rem)"
     },
     {
       "name": "--color-text-secondary",
@@ -689,13 +689,13 @@
       "value": "var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)"
     },
     {
-      "name": "--typography-font-weight-semibold",
+      "name": "--font-weight-semibold",
       "rule": 35,
       "targets": [
         "th"
       ],
       "property": "font-weight",
-      "value": "var(--typography-font-weight-semibold, 600)"
+      "value": "var(--font-weight-semibold, 600)"
     },
     {
       "name": "--color-background-secondary",
@@ -707,13 +707,13 @@
       "value": "var(--color-background-secondary, Canvas)"
     },
     {
-      "name": "--layout-spacing-0.5rem",
+      "name": "--space-2",
       "rule": 40,
       "targets": [
         "figcaption"
       ],
       "property": "margin-block-start",
-      "value": "var(--layout-spacing-0.5rem, 0.5rem)"
+      "value": "var(--space-2, 0.5rem)"
     },
     {
       "name": "--font-relative-small",
@@ -725,22 +725,22 @@
       "value": "var(--font-relative-small, 0.875em)"
     },
     {
-      "name": "--typography-font-weight-normal",
+      "name": "--font-weight-normal",
       "rule": 40,
       "targets": [
         "figcaption"
       ],
       "property": "font-weight",
-      "value": "var(--typography-font-weight-normal, 400)"
+      "value": "var(--font-weight-normal, 400)"
     },
     {
-      "name": "--typography-line-height-normal",
+      "name": "--line-height-normal",
       "rule": 40,
       "targets": [
         "figcaption"
       ],
       "property": "line-height",
-      "value": "var(--typography-line-height-normal, 1.5)"
+      "value": "var(--line-height-normal, 1.5)"
     },
     {
       "name": "--color-text-secondary",
@@ -844,7 +844,7 @@
       "value": "var(--border-width-thin, 1px) solid var(--color-border-primary, GrayText)"
     },
     {
-      "name": "--layout-border-radius-md",
+      "name": "--radius-1-5",
       "rule": 42,
       "targets": [
         "input:not([type])",
@@ -864,7 +864,7 @@
         "textarea"
       ],
       "property": "border-radius",
-      "value": "var(--layout-border-radius-md, 0.375rem)"
+      "value": "var(--radius-1-5, 0.375rem)"
     },
     {
       "name": "--color-background-primary",
@@ -890,7 +890,7 @@
       "value": "var(--color-background-primary, Field)"
     },
     {
-      "name": "--motion-duration-150",
+      "name": "--duration-150",
       "rule": 42,
       "targets": [
         "input:not([type])",
@@ -910,10 +910,10 @@
         "textarea"
       ],
       "property": "transition",
-      "value": "border-color var(--motion-duration-150, 150ms) var(--motion-easing-ease, ease)"
+      "value": "border-color var(--duration-150, 150ms) var(--easing-ease, ease)"
     },
     {
-      "name": "--motion-easing-ease",
+      "name": "--easing-ease",
       "rule": 42,
       "targets": [
         "input:not([type])",
@@ -933,7 +933,7 @@
         "textarea"
       ],
       "property": "transition",
-      "value": "border-color var(--motion-duration-150, 150ms) var(--motion-easing-ease, ease)"
+      "value": "border-color var(--duration-150, 150ms) var(--easing-ease, ease)"
     },
     {
       "name": "--color-danger-500",
@@ -984,7 +984,7 @@
       "value": "var(--border-width-thin, 1px) solid transparent"
     },
     {
-      "name": "--layout-border-radius-md",
+      "name": "--radius-1-5",
       "rule": 45,
       "targets": [
         "button",
@@ -993,7 +993,7 @@
         "input[type=\"button\"]"
       ],
       "property": "border-radius",
-      "value": "var(--layout-border-radius-md, 0.375rem)"
+      "value": "var(--radius-1-5, 0.375rem)"
     },
     {
       "name": "--color-primary-600",
@@ -1020,7 +1020,7 @@
       "value": "var(--color-on-primary, ButtonText)"
     },
     {
-      "name": "--typography-font-weight-medium",
+      "name": "--font-weight-medium",
       "rule": 45,
       "targets": [
         "button",
@@ -1029,37 +1029,37 @@
         "input[type=\"button\"]"
       ],
       "property": "font-weight",
-      "value": "var(--typography-font-weight-medium, 500)"
+      "value": "var(--font-weight-medium, 500)"
     },
     {
-      "name": "--layout-spacing-0.75rem",
+      "name": "--space-3",
       "rule": 46,
       "targets": [
         "input[type=\"file\"]"
       ],
       "pseudo": "::file-selector-button",
       "property": "margin-inline-end",
-      "value": "var(--layout-spacing-0.75rem, 0.75rem)"
+      "value": "var(--space-3, 0.75rem)"
     },
     {
-      "name": "--layout-spacing-0.5rem",
+      "name": "--space-2",
       "rule": 46,
       "targets": [
         "input[type=\"file\"]"
       ],
       "pseudo": "::file-selector-button",
       "property": "padding",
-      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)"
+      "value": "var(--space-2, 0.5rem) var(--space-4, 1rem)"
     },
     {
-      "name": "--layout-spacing-1rem",
+      "name": "--space-4",
       "rule": 46,
       "targets": [
         "input[type=\"file\"]"
       ],
       "pseudo": "::file-selector-button",
       "property": "padding",
-      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)"
+      "value": "var(--space-2, 0.5rem) var(--space-4, 1rem)"
     },
     {
       "name": "--border-width-thin",
@@ -1072,14 +1072,14 @@
       "value": "var(--border-width-thin, 1px) solid transparent"
     },
     {
-      "name": "--layout-border-radius-md",
+      "name": "--radius-1-5",
       "rule": 46,
       "targets": [
         "input[type=\"file\"]"
       ],
       "pseudo": "::file-selector-button",
       "property": "border-radius",
-      "value": "var(--layout-border-radius-md, 0.375rem)"
+      "value": "var(--radius-1-5, 0.375rem)"
     },
     {
       "name": "--color-primary-600",
@@ -1128,22 +1128,22 @@
       "value": "var(--color-primary-600, AccentColor)"
     },
     {
-      "name": "--typography-font-weight-medium",
+      "name": "--font-weight-medium",
       "rule": 49,
       "targets": [
         "label"
       ],
       "property": "font-weight",
-      "value": "var(--typography-font-weight-medium, 500)"
+      "value": "var(--font-weight-medium, 500)"
     },
     {
-      "name": "--layout-spacing-1rem",
+      "name": "--space-4",
       "rule": 50,
       "targets": [
         "fieldset"
       ],
       "property": "padding",
-      "value": "var(--layout-spacing-1rem, 1rem)"
+      "value": "var(--space-4, 1rem)"
     },
     {
       "name": "--border-width-thin",
@@ -1164,49 +1164,49 @@
       "value": "var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)"
     },
     {
-      "name": "--layout-border-radius-lg",
+      "name": "--radius-2",
       "rule": 50,
       "targets": [
         "fieldset"
       ],
       "property": "border-radius",
-      "value": "var(--layout-border-radius-lg, 0.5rem)"
+      "value": "var(--radius-2, 0.5rem)"
     },
     {
-      "name": "--layout-spacing-0.25rem",
+      "name": "--space-1",
       "rule": 51,
       "targets": [
         "legend"
       ],
       "property": "padding-inline",
-      "value": "var(--layout-spacing-0.25rem, 0.25rem)"
+      "value": "var(--space-1, 0.25rem)"
     },
     {
-      "name": "--typography-font-weight-semibold",
+      "name": "--font-weight-semibold",
       "rule": 51,
       "targets": [
         "legend"
       ],
       "property": "font-weight",
-      "value": "var(--typography-font-weight-semibold, 600)"
+      "value": "var(--font-weight-semibold, 600)"
     },
     {
-      "name": "--layout-spacing-0.5rem",
+      "name": "--space-2",
       "rule": 52,
       "targets": [
         "details"
       ],
       "property": "padding",
-      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)"
+      "value": "var(--space-2, 0.5rem) var(--space-4, 1rem)"
     },
     {
-      "name": "--layout-spacing-1rem",
+      "name": "--space-4",
       "rule": 52,
       "targets": [
         "details"
       ],
       "property": "padding",
-      "value": "var(--layout-spacing-0.5rem, 0.5rem) var(--layout-spacing-1rem, 1rem)"
+      "value": "var(--space-2, 0.5rem) var(--space-4, 1rem)"
     },
     {
       "name": "--border-width-thin",
@@ -1227,31 +1227,31 @@
       "value": "var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)"
     },
     {
-      "name": "--layout-border-radius-md",
+      "name": "--radius-1-5",
       "rule": 52,
       "targets": [
         "details"
       ],
       "property": "border-radius",
-      "value": "var(--layout-border-radius-md, 0.375rem)"
+      "value": "var(--radius-1-5, 0.375rem)"
     },
     {
-      "name": "--typography-font-weight-medium",
+      "name": "--font-weight-medium",
       "rule": 53,
       "targets": [
         "summary"
       ],
       "property": "font-weight",
-      "value": "var(--typography-font-weight-medium, 500)"
+      "value": "var(--font-weight-medium, 500)"
     },
     {
-      "name": "--layout-spacing-0.5rem",
+      "name": "--space-2",
       "rule": 54,
       "targets": [
         "details[open] > summary"
       ],
       "property": "margin-block-end",
-      "value": "var(--layout-spacing-0.5rem, 0.5rem)"
+      "value": "var(--space-2, 0.5rem)"
     },
     {
       "name": "--content-dialog",
@@ -1272,13 +1272,13 @@
       "value": "min(var(--content-dialog, 32rem), calc(100vw - var(--content-gutter, 2rem)))"
     },
     {
-      "name": "--layout-spacing-1.5rem",
+      "name": "--space-6",
       "rule": 55,
       "targets": [
         "dialog"
       ],
       "property": "padding",
-      "value": "var(--layout-spacing-1.5rem, 1.5rem)"
+      "value": "var(--space-6, 1.5rem)"
     },
     {
       "name": "--border-width-thin",
@@ -1299,13 +1299,13 @@
       "value": "var(--border-width-thin, 1px) solid var(--color-border-secondary, GrayText)"
     },
     {
-      "name": "--layout-border-radius-xl",
+      "name": "--radius-3",
       "rule": 55,
       "targets": [
         "dialog"
       ],
       "property": "border-radius",
-      "value": "var(--layout-border-radius-xl, 0.75rem)"
+      "value": "var(--radius-3, 0.75rem)"
     },
     {
       "name": "--color-background-raised",
@@ -1335,13 +1335,13 @@
       "value": "var(--elevation-modal, none)"
     },
     {
-      "name": "--layout-z-index-modal",
+      "name": "--z-index-modal",
       "rule": 55,
       "targets": [
         "dialog"
       ],
       "property": "z-index",
-      "value": "var(--layout-z-index-modal, 1400)"
+      "value": "var(--z-index-modal, 1400)"
     },
     {
       "name": "--color-backdrop",
@@ -1430,7 +1430,7 @@
       "value": "var(--color-primary-800, LinkText)"
     },
     {
-      "name": "--motion-duration-0",
+      "name": "--duration-0",
       "rule": 62,
       "targets": [
         "input",
@@ -1439,7 +1439,7 @@
       ],
       "media": "(prefers-reduced-motion: reduce)",
       "property": "transition-duration",
-      "value": "var(--motion-duration-0, 0ms)"
+      "value": "var(--duration-0, 0ms)"
     }
   ],
   "proposedCoverage": [

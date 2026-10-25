@@ -31,7 +31,7 @@ describe('design-token HTML demand', () => {
 		expect(variables['--color-primary-600']).toBe(theme.colors.primary[600]);
 		expect(variables['--focus-width']).toBe(DESIGN_TOKEN_FOCUS.width);
 		expect(variables['--density-block']).toBe(DESIGN_TOKEN_DENSITY.comfortable.block);
-		expect(variables['--motion-duration-150']).toBe(TOKEN_DURATION[150]);
+		expect(variables['--duration-150']).toBe(TOKEN_DURATION[150]);
 		expect(variables['--layout-spacing-0.5rem']).toBe('0.5rem');
 		expect(
 			checkStyleTokenCoverage(HTML_STYLE, { ...DESIGN_TOKEN_HTML_SUPPLEMENT, ...variables }).missing
