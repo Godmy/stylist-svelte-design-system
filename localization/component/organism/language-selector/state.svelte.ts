@@ -1,8 +1,8 @@
 import type { HTMLAttributes } from 'svelte/elements';
-import type { RecipeLanguageSelector as ILanguageSelectorProps } from '$stylist/localization/interface/recipe/language-selector';
+import type { RecipeLanguageSelector } from '$stylist/localization/interface/recipe/language-selector';
 
 function createLanguageSelectorState(
-	getProps: () => ILanguageSelectorProps & HTMLAttributes<HTMLDivElement>
+	getProps: () => RecipeLanguageSelector & HTMLAttributes<HTMLDivElement>
 ) {
 	const props = $derived(getProps());
 	let isOpen = $state(false);
@@ -12,43 +12,20 @@ function createLanguageSelectorState(
 	const currentLanguage = $derived(props.currentLanguage);
 
 	const filteredLanguages = $derived.by(() => {
-		if (!searchQuery) return languages;
-		const query = searchQuery.toLowerCase();
-		return languages.filter(
-			(lang) =>
-				lang.name.toLowerCase().includes(query) ||
-				(lang.nativeName && lang.nativeName.toLowerCase().includes(query)) ||
-				lang.code.toLowerCase().includes(query)
+		const query = searchQuery.trim().toLowerCase();
+		if (!query) return languages;
+		return languages.filter((language) =>
+			[language.name, language.nativeName, language.code].some((text) =>
+				text?.toLowerCase().includes(query)
+			)
 		);
 	});
 
-	const selectedLanguage = $derived(languages.find((lang) => lang.code === currentLanguage));
-
-	const baseClasses = $derived(['c-language-selector', props.class].filter(Boolean).join(' '));
-	const buttonBaseClasses = $derived(
-		[
-			'c-language-selector__trigger',
-			props.variant &&
-				props.variant !== 'default' &&
-				`c-language-selector__trigger--${props.variant}`,
-			props.size && props.size !== 'md' && `c-language-selector__trigger--${props.size}`,
-			props.buttonClass
-		]
-			.filter(Boolean)
-			.join(' ')
+	const selectedLanguage = $derived(
+		languages.find((language) => language.code === currentLanguage)
 	);
-	const dropdownBaseClasses = $derived(
-		[
-			'c-language-selector__dropdown',
-			props.dropdownPlacement === 'top' && 'c-language-selector__dropdown--top',
-			props.dropdownClass
-		]
-			.filter(Boolean)
-			.join(' ')
-	);
-	const searchInputClasses = $derived('c-language-selector__search');
-	const flagClasses = $derived('c-language-selector__flag');
-	const checkIconClasses = $derived('ml-auto h-4 w-4 text-[--color-icon-accent]');
+	const size = $derived(props.size === 'sm' || props.size === 'lg' ? props.size : 'md');
+	const tone = $derived(props.variant && props.variant !== 'default' ? props.variant : 'primary');
 
 	const restProps = $derived.by(() => {
 		const {
@@ -70,32 +47,24 @@ function createLanguageSelectorState(
 		return rest;
 	});
 
-	function toggleDropdown() {
-		isOpen = !isOpen;
-	}
-
-	function selectLanguage(code: string) {
-		props.onLanguageChange?.(code);
+	function close() {
 		isOpen = false;
 		searchQuery = '';
 	}
 
-	function getLanguageItemClasses(isActive: boolean): string {
-		return [
-			'c-language-selector__item',
-			isActive && 'c-language-selector__item--active',
-			props.languageClass
-		]
-			.filter(Boolean)
-			.join(' ');
+	function toggleDropdown() {
+		if (isOpen) close();
+		else isOpen = true;
+	}
+
+	function selectLanguage(code: string) {
+		props.onLanguageChange?.(code);
+		close();
 	}
 
 	return {
 		get isOpen() {
 			return isOpen;
-		},
-		set isOpen(value: boolean) {
-			isOpen = value;
 		},
 		get searchQuery() {
 			return searchQuery;
@@ -109,23 +78,11 @@ function createLanguageSelectorState(
 		get selectedLanguage() {
 			return selectedLanguage;
 		},
-		get baseClasses() {
-			return baseClasses;
+		get size() {
+			return size;
 		},
-		get buttonBaseClasses() {
-			return buttonBaseClasses;
-		},
-		get dropdownBaseClasses() {
-			return dropdownBaseClasses;
-		},
-		get searchInputClasses() {
-			return searchInputClasses;
-		},
-		get flagClasses() {
-			return flagClasses;
-		},
-		get checkIconClasses() {
-			return checkIconClasses;
+		get tone() {
+			return tone;
 		},
 		get restProps() {
 			return restProps;
@@ -139,12 +96,15 @@ function createLanguageSelectorState(
 		get searchable() {
 			return props.searchable ?? true;
 		},
+		get placement() {
+			return props.dropdownPlacement ?? 'bottom';
+		},
 		get currentLanguage() {
 			return currentLanguage;
 		},
+		close,
 		toggleDropdown,
-		selectLanguage,
-		getLanguageItemClasses
+		selectLanguage
 	};
 }
 

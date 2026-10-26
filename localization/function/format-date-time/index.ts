@@ -1,15 +1,8 @@
-export function formatDate(date: Date, localeCode: string, timeZone: string): string {
-	return new Intl.DateTimeFormat(localeCode, { dateStyle: 'full', timeZone }).format(date);
-}
-
-export function formatTime(date: Date, localeCode: string, timeZone: string): string {
-	return new Intl.DateTimeFormat(localeCode, { timeStyle: 'medium', timeZone }).format(date);
-}
-
-export function formatDateTime(date: Date, localeCode: string, timeZone: string): string {
-	return new Intl.DateTimeFormat(localeCode, {
-		dateStyle: 'long',
-		timeStyle: 'short',
-		timeZone
-	}).format(date);
-}
+/**
+ * @deprecated `function/format-date-time` is not a joint: use
+ * `$stylist/localization/function/transform/format-date`, `.../format-time` and
+ * `.../format-date-time`. Kept for the generated barrel until the next `stylist:index`.
+ */
+export { formatDate } from '$stylist/localization/function/transform/format-date';
+export { formatTime } from '$stylist/localization/function/transform/format-time';
+export { formatDateTime } from '$stylist/localization/function/transform/format-date-time';

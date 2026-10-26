@@ -93,6 +93,23 @@ flowchart LR
 | `function`  | `resolveMessage`, `pickLocalized`, `resolveTextDirection`, `checkMessageCatalog`, `useLocale`, `useMessage`, `useFormat`, форматтеры `format*`                                    |
 | `component` | `LocaleProvider`, `LocalePreview`, `LanguageSelector`, `LocaleSwitcher`, `TranslationEditor`, `CountryFlag`                                                                       |
 
+## Компоненты домена
+
+Эталон миграции: LanguageSelector, LocaleSwitcher, TranslationEditor и CountryFlag. Все тексты в
+каталогах `const/record/<family>-message` (en, ru полные; ar, he для RTL-пресетов), стили в
+`@layer localization` под `:where`, логические свойства, html-обёртки, id через `$props.id()`.
+Тест `test/unit/style-layer` проверяет стили, `test/render/localized-components` — смену языка
+в LocaleProvider.
+
+- **LocaleSwitcher**: превью дат форматируется в _выбранной_ локали и поясе (явная локаль,
+  `function/transform/format-date|format-time|format-date-time`), а подписи — на языке интерфейса.
+  Невалидный код или пояс откатываются на значения провайдера.
+- **TranslationEditor**: правки держатся локальным слоем поверх `texts` (prop не мутируется) и
+  уходят в `onTranslationChange`. `onImport(file: File)` отдаёт выбранный `.json`: формат файла
+  знает сайт. Кнопки импорта, экспорта и сохранения видны только с обработчиками.
+- **CountryFlag**: доступное имя — страна на языке интерфейса (`Intl.DisplayNames`).
+- `function/format-date-time` устарел (`@deprecated`): остаётся до следующей генерации barrel.
+
 ## Отложено
 
 Шрифты для письменностей (`:lang(zh)`, `:lang(hi)`, `:lang(ar)`) в теме и зеркалирование

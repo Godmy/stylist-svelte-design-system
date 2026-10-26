@@ -1,40 +1,58 @@
-import {
-	formatDate,
-	formatTime,
-	formatDateTime
-} from '$stylist/localization/function/format-date-time';
-import type { SlotLocaleSwitcherLocale as LocaleSwitcherLocale } from '$stylist/localization/interface/slot/locale-switcher-locale';
+import { formatDate } from '$stylist/localization/function/transform/format-date';
+import { formatTime } from '$stylist/localization/function/transform/format-time';
+import { formatDateTime } from '$stylist/localization/function/transform/format-date-time';
+import type { ContractLocaleContext } from '$stylist/localization/interface/contract/locale-context';
 import type { RecipeLocaleSwitcher } from '$stylist/localization/interface/recipe/locale-switcher';
-import type { TokenIconName } from '$stylist/svg/type/alias/icon-name';
 
-export function createLocaleSwitcherState(getProps: () => RecipeLocaleSwitcher) {
+const canonical = (code: string | undefined) => {
+	try {
+		return code ? Intl.getCanonicalLocales(code)[0] : undefined;
+	} catch {
+		return undefined;
+	}
+};
+
+const validZone = (zone: string | undefined) => {
+	try {
+		return zone
+			? new Intl.DateTimeFormat('en', { timeZone: zone }).resolvedOptions().timeZone
+			: undefined;
+	} catch {
+		return undefined;
+	}
+};
+
+/**
+ * The preview formats dates in the SELECTED locale and time zone (that is what it previews),
+ * not in the interface language; an invalid code or zone falls back to the provider's.
+ */
+export function createLocaleSwitcherState(
+	getProps: () => Omit<RecipeLocaleSwitcher, 'onLocaleChange' | 'onTimezoneChange'>,
+	context: ContractLocaleContext
+) {
 	const props = $derived(getProps());
 	const locales = $derived(props.locales ?? []);
 	const currentLocale = $derived(props.currentLocale);
 	const timezoneOptions = $derived(props.timezoneOptions ?? []);
 	const currentTimezone = $derived(
-		props.currentTimezone ?? Intl.DateTimeFormat().resolvedOptions().timeZone
+		validZone(props.currentTimezone) ??
+			validZone(context.timeZone) ??
+			Intl.DateTimeFormat().resolvedOptions().timeZone
 	);
+	const previewLocale = $derived(canonical(currentLocale) ?? canonical(context.locale) ?? 'en');
 	const showRegional = $derived(props.showRegional ?? true);
 	const showDatePreview = $derived(props.showDatePreview ?? true);
 	const showTimePreview = $derived(props.showTimePreview ?? true);
 
+	// One fixed moment of the preview; it is never mutated.
+	// eslint-disable-next-line svelte/prefer-svelte-reactivity
 	const now = new Date();
 	const currentLocaleObj = $derived(
-		locales.find((loc: LocaleSwitcherLocale) => loc.code === currentLocale) ?? locales[0]
+		locales.find((locale) => locale.code === currentLocale) ?? locales[0]
 	);
-
-	const rootClass = $derived(['c-locale-switcher', props.class].filter(Boolean).join(' '));
-	const headerClass = $derived(
-		['c-locale-switcher__header', props.headerClass].filter(Boolean).join(' ')
-	);
-	const contentClass = $derived(
-		['c-locale-switcher__content', props.contentClass].filter(Boolean).join(' ')
-	);
-	const timezoneSelectClass = $derived('c-locale-switcher__timezone-select');
-	const footerClass = $derived(
-		['c-locale-switcher__footer', props.footerClass].filter(Boolean).join(' ')
-	);
+	const date = $derived(formatDate(now, previewLocale, currentTimezone));
+	const time = $derived(formatTime(now, previewLocale, currentTimezone));
+	const dateTime = $derived(formatDateTime(now, previewLocale, currentTimezone));
 
 	const restProps = $derived.by(() => {
 		const {
@@ -55,29 +73,7 @@ export function createLocaleSwitcherState(getProps: () => RecipeLocaleSwitcher) 
 		return rest;
 	});
 
-	function getLocaleButtonClass(isActive: boolean): string {
-		return [
-			'c-locale-switcher__locale-btn',
-			isActive && 'c-locale-switcher__locale-btn--active',
-			props.localeClass
-		]
-			.filter(Boolean)
-			.join(' ');
-	}
-
 	return {
-		get iconCheck(): TokenIconName {
-			return 'check';
-		},
-		get iconClock(): TokenIconName {
-			return 'clock';
-		},
-		get iconGlobe(): TokenIconName {
-			return 'globe';
-		},
-		get iconUser(): TokenIconName {
-			return 'user';
-		},
 		get locales() {
 			return locales;
 		},
@@ -86,6 +82,9 @@ export function createLocaleSwitcherState(getProps: () => RecipeLocaleSwitcher) 
 		},
 		get currentLocaleObj() {
 			return currentLocaleObj;
+		},
+		get previewLocale() {
+			return previewLocale;
 		},
 		get timezoneOptions() {
 			return timezoneOptions;
@@ -102,31 +101,18 @@ export function createLocaleSwitcherState(getProps: () => RecipeLocaleSwitcher) 
 		get showTimePreview() {
 			return showTimePreview;
 		},
-		get now() {
-			return now;
+		get date() {
+			return date;
 		},
-		get rootClass() {
-			return rootClass;
+		get time() {
+			return time;
 		},
-		get headerClass() {
-			return headerClass;
-		},
-		get contentClass() {
-			return contentClass;
-		},
-		get timezoneSelectClass() {
-			return timezoneSelectClass;
-		},
-		get footerClass() {
-			return footerClass;
+		get dateTime() {
+			return dateTime;
 		},
 		get restProps() {
 			return restProps;
-		},
-		formatDate,
-		formatTime,
-		formatDateTime,
-		getLocaleButtonClass
+		}
 	};
 }
 

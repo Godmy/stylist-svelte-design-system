@@ -1,319 +1,287 @@
 <script lang="ts">
 	import type { HTMLAttributes } from 'svelte/elements';
+	import HtmlButton from '$stylist/html/component/atom/button/index.svelte';
+	import HtmlDiv from '$stylist/html/component/organism/div/index.svelte';
+	import HtmlInputSearch from '$stylist/html/component/atom/input-search/index.svelte';
+	import HtmlLi from '$stylist/html/component/organism/li/index.svelte';
+	import HtmlP from '$stylist/html/component/atom/p/index.svelte';
+	import HtmlSpan from '$stylist/html/component/atom/span/index.svelte';
+	import HtmlUl from '$stylist/html/component/molecule/ul/index.svelte';
 	import BaseIcon from '$stylist/svg/component/atom/icon/index.svelte';
 	import BaseFlag from '$stylist/svg/component/atom/flag/index.svelte';
+	import { LOCALIZATION_LANGUAGE_SELECTOR_MESSAGE } from '$stylist/localization/const/record/language-selector-message';
+	import { useMessage } from '$stylist/localization/function/hook/use-message';
 	import type { RecipeLanguageSelector } from '$stylist/localization/interface/recipe/language-selector';
 	import createLanguageSelectorState from '$stylist/localization/component/organism/language-selector/state.svelte';
 
-	const Globe = 'globe';
-	const Check = 'check';
-	const ChevronDown = 'chevron-down';
-	const Search = 'search';
-
 	let props: RecipeLanguageSelector & HTMLAttributes<HTMLDivElement> = $props();
-	const state = createLanguageSelectorState(() => props);
+	const id = $props.id();
+	const t = useMessage('language-selector', LOCALIZATION_LANGUAGE_SELECTOR_MESSAGE);
+	const selector = createLanguageSelectorState(() => props);
+	let root = $state<HTMLDivElement | null>(null);
+	let trigger = $state<HTMLButtonElement | null>(null);
+
+	// The list is a disclosure: it closes on Escape (focus returns to the button) and on a
+	// pointer press outside the selector.
+	function onKeydown(event: KeyboardEvent) {
+		if (event.key !== 'Escape' || !selector.isOpen) return;
+		selector.close();
+		trigger?.focus();
+	}
+	function onPointerdown(event: PointerEvent) {
+		if (selector.isOpen && root && !root.contains(event.target as Node)) selector.close();
+	}
 </script>
 
-<div class={state.baseClasses} {...state.restProps}>
-	<div>
-		<button
-			type="button"
-			class={state.buttonBaseClasses}
-			id="language-selector-button"
-			aria-haspopup="true"
-			aria-expanded={state.isOpen}
-			onclick={() => state.toggleDropdown()}
+<svelte:window onkeydown={onKeydown} onpointerdown={onPointerdown} />
+
+<HtmlDiv
+	bind:element={root}
+	{...selector.restProps}
+	class={['localization-language-selector', props.class]}
+	data-size={selector.size}
+	style="--localization-language-selector-accent: var(--color-{selector.tone}-500, var(--color-primary-500))"
+>
+	<HtmlButton
+		bind:element={trigger}
+		type="button"
+		class={['localization-language-selector__trigger', props.buttonClass]}
+		aria-expanded={selector.isOpen}
+		aria-controls={selector.isOpen ? `${id}-list` : undefined}
+		onclick={() => selector.toggleDropdown()}
+	>
+		{#if selector.selectedLanguage}
+			{#if selector.showFlags && selector.selectedLanguage.flag}
+				<BaseFlag
+					flag={selector.selectedLanguage.flag}
+					code={selector.selectedLanguage.code}
+					class="localization-language-selector__flag"
+				/>
+			{/if}
+			<HtmlSpan lang={selector.selectedLanguage.code}>
+				{selector.selectedLanguage.name}
+				{#if selector.showNativeName && selector.selectedLanguage.nativeName && selector.selectedLanguage.nativeName !== selector.selectedLanguage.name}
+					<HtmlSpan class="localization-language-selector__native">
+						({selector.selectedLanguage.nativeName})
+					</HtmlSpan>
+				{/if}
+			</HtmlSpan>
+		{:else}
+			<BaseIcon name="globe" size={16} />
+			<HtmlSpan>{t('placeholder')}</HtmlSpan>
+		{/if}
+		<BaseIcon name="chevron-down" size={16} class="localization-language-selector__chevron" />
+	</HtmlButton>
+
+	{#if selector.isOpen}
+		<HtmlDiv
+			id="{id}-list"
+			class={['localization-language-selector__dropdown', props.dropdownClass]}
+			data-placement={selector.placement}
 		>
-			{#if state.selectedLanguage}
-				{#if state.showFlags && state.selectedLanguage.flag}
-					<BaseFlag
-						flag={state.selectedLanguage.flag}
-						code={state.selectedLanguage.code}
-						class={state.flagClasses}
+			{#if selector.searchable}
+				<HtmlDiv class="localization-language-selector__search">
+					<BaseIcon name="search" size={16} class="localization-language-selector__search-icon" />
+					<HtmlInputSearch
+						class="localization-language-selector__search-input"
+						placeholder={t('search')}
+						aria-label={t('search')}
+						bind:value={selector.searchQuery}
 					/>
-				{/if}
-				<span>
-					{state.selectedLanguage.name}
-					{#if state.showNativeName && state.selectedLanguage.nativeName && state.selectedLanguage.nativeName !== state.selectedLanguage.name}
-						<span class="c-language-selector__native-name">
-							({state.selectedLanguage.nativeName})
-						</span>
-					{/if}
-				</span>
+				</HtmlDiv>
+			{/if}
+
+			{#if selector.filteredLanguages.length === 0}
+				<HtmlP class="localization-language-selector__empty" role="status">{t('empty')}</HtmlP>
 			{:else}
-				<span class="c-language-selector__no-lang">
-					<BaseIcon name={Globe} class="_c1" />
-					Select Language
-				</span>
-			{/if}
-			<span class="c-language-selector__chevron">
-				<BaseIcon name={ChevronDown} size={20} />
-			</span>
-		</button>
-	</div>
-
-	{#if state.isOpen}
-		<div class={state.dropdownBaseClasses}>
-			{#if state.searchable}
-				<div class="c-language-selector__search-wrapper">
-					<div class="c-language-selector__search-inner">
-						<div class="c-language-selector__search-icon">
-							<span class="c-language-selector__search-svg">
-								<BaseIcon name={Search} size={20} />
-							</span>
-						</div>
-						<input
-							type="text"
-							class={state.searchInputClasses}
-							placeholder="Search languages..."
-							bind:value={state.searchQuery}
-						/>
-					</div>
-				</div>
-			{/if}
-
-			<div class="c-language-selector__list">
-				{#if state.filteredLanguages.length === 0}
-					<div class="c-language-selector__empty">No languages found</div>
-				{:else}
-					{#each state.filteredLanguages as language}
-						<button
-							type="button"
-							class={state.getLanguageItemClasses(language.code === state.currentLanguage)}
-							onclick={() => state.selectLanguage(language.code)}
-						>
-							{#if state.showFlags && language.flag}
-								<BaseFlag flag={language.flag} code={language.code} class={state.flagClasses} />
-							{/if}
-							<span class="c-language-selector__lang-name">
-								{language.name}
-								{#if state.showNativeName && language.nativeName && language.name !== language.nativeName}
-									<span class="c-language-selector__item-native">
-										({language.nativeName})
-									</span>
+				<HtmlUl class="localization-language-selector__list" aria-label={t('list')}>
+					{#each selector.filteredLanguages as language (language.code)}
+						{@const current = language.code === selector.currentLanguage}
+						<HtmlLi>
+							<HtmlButton
+								type="button"
+								class={['localization-language-selector__item', props.languageClass]}
+								aria-current={current ? 'true' : undefined}
+								onclick={() => selector.selectLanguage(language.code)}
+							>
+								{#if selector.showFlags && language.flag}
+									<BaseFlag
+										flag={language.flag}
+										code={language.code}
+										class="localization-language-selector__flag"
+									/>
 								{/if}
-							</span>
-							{#if language.code === state.currentLanguage}
-								<BaseIcon name={Check} class={state.checkIconClasses} />
-							{/if}
-						</button>
+								<HtmlSpan class="localization-language-selector__name" lang={language.code}>
+									{language.name}
+									{#if selector.showNativeName && language.nativeName && language.name !== language.nativeName}
+										<HtmlSpan class="localization-language-selector__native">
+											({language.nativeName})
+										</HtmlSpan>
+									{/if}
+								</HtmlSpan>
+								{#if current}
+									<BaseIcon name="check" size={16} class="localization-language-selector__check" />
+								{/if}
+							</HtmlButton>
+						</HtmlLi>
 					{/each}
-				{/if}
-			</div>
+				</HtmlUl>
+			{/if}
 
-			<div class="c-language-selector__footer">
-				<div class="c-language-selector__count">
-					{state.filteredLanguages.length} language{state.filteredLanguages.length !== 1 ? 's' : ''}
-					available
-				</div>
-			</div>
-		</div>
+			<HtmlP class="localization-language-selector__count" aria-live="polite">
+				{t('count', { count: selector.filteredLanguages.length })}
+			</HtmlP>
+		</HtmlDiv>
 	{/if}
-</div>
+</HtmlDiv>
 
 <style>
-	.c-language-selector {
-		position: relative;
-		display: inline-block;
-	}
-
-	.c-language-selector__trigger {
-		display: inline-flex;
-		align-items: center;
-		justify-content: space-between;
-		border-radius: 0.375rem;
-		border: 1px solid var(--color-border-primary);
-		background: var(--color-background-primary);
-		color: var(--color-text-primary);
-		padding: 0.5rem 0.75rem;
-		font-size: 0.875rem;
-		font-weight: 500;
-		box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-		cursor: pointer;
-	}
-
-	.c-language-selector__trigger:hover {
-		background: var(--color-background-secondary);
-	}
-
-	.c-language-selector__trigger:focus {
-		outline: none;
-		box-shadow: 0 0 0 2px var(--color-primary-500);
-	}
-
-	.c-language-selector__trigger--minimal {
-		border: none;
-		background: transparent;
-		box-shadow: none;
-	}
-
-	.c-language-selector__trigger--minimal:hover {
-		background: transparent;
-	}
-
-	.c-language-selector__trigger--compact,
-	.c-language-selector__trigger--sm {
-		padding: 0.25rem 0.5rem;
-		font-size: 0.75rem;
-	}
-
-	.c-language-selector__trigger--lg {
-		padding: 0.75rem 1rem;
-		font-size: 1rem;
-	}
-
-	.c-language-selector__chevron {
-		margin-left: 0.5rem;
-		margin-right: -0.25rem;
-		width: 1.25rem;
-		height: 1.25rem;
-		flex-shrink: 0;
-	}
-
-	.c-language-selector__native-name {
-		margin-left: 0.25rem;
-		color: var(--color-text-secondary);
-	}
-
-	.c-language-selector__no-lang {
-		display: flex;
-		align-items: center;
-	}
-
-	.c-language-selector__dropdown {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		z-index: var(--z-index-docked, 10);
-		margin-top: 0.25rem;
-		width: 12rem;
-		border-radius: 0.375rem;
-		background: var(--color-background-primary);
-		color: var(--color-text-primary);
-		box-shadow:
-			0 10px 15px -3px rgb(0 0 0 / 0.1),
-			0 4px 6px -4px rgb(0 0 0 / 0.1);
-		border: 1px solid var(--color-border-primary);
-	}
-
-	.c-language-selector__dropdown--top {
-		top: auto;
-		bottom: 100%;
-		margin-top: 0;
-		margin-bottom: 0.25rem;
-	}
-
-	.c-language-selector__search-wrapper {
-		border-bottom: 1px solid var(--color-border-primary);
-		padding: 0.5rem;
-	}
-
-	.c-language-selector__search-inner {
-		position: relative;
-	}
-
-	.c-language-selector__search-icon {
-		pointer-events: none;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		display: flex;
-		align-items: center;
-		padding-left: 0.75rem;
-	}
-
-	.c-language-selector__search-svg {
-		width: 1.25rem;
-		height: 1.25rem;
-		color: var(--color-text-secondary);
-	}
-
-	.c-language-selector__search {
-		display: block;
-		width: 100%;
-		border-radius: 0.375rem;
-		border: 1px solid var(--color-border-primary);
-		background: var(--color-background-primary);
-		color: var(--color-text-primary);
-		padding: 0.5rem 0.75rem 0.5rem 2.5rem;
-		font-size: 0.875rem;
-	}
-
-	.c-language-selector__search::placeholder {
-		color: var(--color-text-secondary);
-	}
-
-	.c-language-selector__search:focus {
-		outline: none;
-		box-shadow: 0 0 0 2px var(--color-primary-500);
-		border-color: var(--color-primary-500);
-	}
-
-	.c-language-selector__list {
-		max-height: 15rem;
-		overflow-y: auto;
-		padding-block: 0.25rem;
-	}
-
-	.c-language-selector__empty {
-		padding: 0.5rem 1rem;
-		font-size: 0.875rem;
-		color: var(--color-text-secondary);
-	}
-
-	.c-language-selector__item {
-		display: flex;
-		align-items: center;
-		width: 100%;
-		padding: 0.5rem 1rem;
-		font-size: 0.875rem;
-		cursor: pointer;
-		background: none;
-		border: none;
-		color: var(--color-text-primary);
-		text-align: left;
-	}
-
-	.c-language-selector__item:hover {
-		background: var(--color-background-secondary);
-	}
-
-	.c-language-selector__item--active {
-		background: var(--color-background-selected, var(--color-background-secondary));
-		font-weight: 500;
-	}
-
-	.c-language-selector__flag {
-		margin-right: 0.5rem;
-		flex-shrink: 0;
-	}
-
-	.c-language-selector__lang-name {
-		flex: 1;
-		text-align: left;
-	}
-
-	.c-language-selector__item-native {
-		margin-left: 0.5rem;
-		font-size: 0.75rem;
-		color: var(--color-text-secondary);
-	}
-
-	.c-language-selector__footer {
-		border-top: 1px solid var(--color-border-primary);
-		padding-block: 0.25rem;
-	}
-
-	.c-language-selector__count {
-		padding: 0.5rem 1rem;
-		font-size: 0.75rem;
-		color: var(--color-text-secondary);
-	}
-
-	._c1 {
-		margin-right: 0.5rem;
-		height: 1rem;
-		width: 1rem;
+	@layer html, typography, svg, mathml, layout, theme, localization;
+	@layer localization {
+		:global {
+			:where(.localization-language-selector) {
+				--localization-language-selector-pad: calc(var(--space-2) * var(--density-scale, 1));
+				position: relative;
+				display: inline-block;
+			}
+			:where(.localization-language-selector[data-size='sm']) {
+				font-size: 0.875em;
+			}
+			:where(.localization-language-selector[data-size='lg']) {
+				font-size: 1.125em;
+			}
+			:where(.localization-language-selector__trigger) {
+				display: inline-flex;
+				align-items: center;
+				gap: var(--localization-language-selector-pad);
+				padding-block: var(--localization-language-selector-pad);
+				padding-inline: calc(var(--space-3) * var(--density-scale, 1));
+				border: var(--border-width-thin, 1px) solid var(--color-border-primary);
+				border-radius: var(--radius-2);
+				background: var(--color-background-primary);
+				box-shadow: var(--elevation-level1);
+				color: var(--color-text-primary);
+				font: inherit;
+				font-weight: var(--font-weight-medium);
+				cursor: pointer;
+			}
+			:where(.localization-language-selector__trigger):hover {
+				background: var(--color-background-secondary);
+			}
+			:where(
+				.localization-language-selector__trigger,
+				.localization-language-selector__item
+			):focus-visible {
+				outline: 2px solid var(--localization-language-selector-accent);
+				outline-offset: 2px;
+			}
+			:where(.localization-language-selector__chevron) {
+				margin-inline-start: auto;
+				color: var(--color-text-secondary);
+			}
+			:where(.localization-language-selector__native) {
+				margin-inline-start: var(--space-1);
+				color: var(--color-text-secondary);
+			}
+			:where(.localization-language-selector__dropdown) {
+				position: absolute;
+				inset-block-start: 100%;
+				inset-inline-start: 0;
+				z-index: var(--z-index-docked, 10);
+				box-sizing: border-box;
+				min-inline-size: max(100%, 14em);
+				margin-block-start: var(--space-1);
+				border: var(--border-width-thin, 1px) solid var(--color-border-primary);
+				border-radius: var(--radius-2);
+				background: var(--color-background-primary);
+				box-shadow: var(--elevation-level2);
+				color: var(--color-text-primary);
+			}
+			:where(.localization-language-selector__dropdown[data-placement='top']) {
+				inset-block: auto 100%;
+				margin-block: 0 var(--space-1);
+			}
+			:where(.localization-language-selector__search) {
+				position: relative;
+				padding: var(--localization-language-selector-pad);
+				border-block-end: var(--border-width-thin, 1px) solid var(--color-border-primary);
+			}
+			:where(.localization-language-selector__search-icon) {
+				position: absolute;
+				inset-block: 0;
+				inset-inline-start: calc(var(--localization-language-selector-pad) * 2);
+				margin-block: auto;
+				color: var(--color-text-secondary);
+				pointer-events: none;
+			}
+			:where(.localization-language-selector__search-input) {
+				box-sizing: border-box;
+				inline-size: 100%;
+				padding-block: var(--localization-language-selector-pad);
+				padding-inline: 2.25em var(--localization-language-selector-pad);
+				border: var(--border-width-thin, 1px) solid var(--color-border-primary);
+				border-radius: var(--radius-2);
+				background: var(--color-background-primary);
+				color: inherit;
+				font: inherit;
+			}
+			:where(.localization-language-selector__search-input):focus-visible {
+				outline: 2px solid var(--localization-language-selector-accent);
+				outline-offset: -1px;
+			}
+			:where(.localization-language-selector__list) {
+				max-block-size: 15em;
+				margin: 0;
+				padding-block: var(--space-1);
+				padding-inline: 0;
+				overflow-y: auto;
+				list-style: none;
+			}
+			:where(.localization-language-selector__item) {
+				display: flex;
+				align-items: center;
+				gap: var(--localization-language-selector-pad);
+				box-sizing: border-box;
+				inline-size: 100%;
+				padding-block: var(--localization-language-selector-pad);
+				padding-inline: calc(var(--space-4) * var(--density-scale, 1));
+				border: 0;
+				background: none;
+				color: inherit;
+				font: inherit;
+				text-align: start;
+				cursor: pointer;
+			}
+			:where(.localization-language-selector__item):hover {
+				background: var(--color-background-secondary);
+			}
+			:where(.localization-language-selector__item[aria-current='true']) {
+				background: color-mix(
+					in srgb,
+					var(--localization-language-selector-accent) 12%,
+					transparent
+				);
+				font-weight: var(--font-weight-medium);
+			}
+			:where(.localization-language-selector__flag) {
+				flex-shrink: 0;
+			}
+			:where(.localization-language-selector__name) {
+				flex: 1;
+			}
+			:where(.localization-language-selector__check) {
+				color: var(--localization-language-selector-accent);
+			}
+			:where(.localization-language-selector__empty, .localization-language-selector__count) {
+				margin: 0;
+				padding-block: var(--localization-language-selector-pad);
+				padding-inline: calc(var(--space-4) * var(--density-scale, 1));
+				color: var(--color-text-secondary);
+				font-size: 0.875em;
+			}
+			:where(.localization-language-selector__count) {
+				border-block-start: var(--border-width-thin, 1px) solid var(--color-border-primary);
+			}
+		}
 	}
 </style>

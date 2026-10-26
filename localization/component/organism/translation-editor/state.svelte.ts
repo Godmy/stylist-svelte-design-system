@@ -1,31 +1,51 @@
-import type { TokenIconName } from '$stylist/svg/type/alias/icon-name';
 import type { TranslatableText } from '$stylist/localization/type/object/translatable-text';
 import type { RecipeTranslationEditor } from '$stylist/localization/interface/recipe/translation-editor';
 
-export function createTranslationEditorState(getProps: () => RecipeTranslationEditor) {
+/**
+ * Edits stay in a local layer over `texts` (the prop is never mutated) and go to
+ * `onTranslationChange`; new `texts` from the parent replace the layer.
+ */
+export function createTranslationEditorState(
+	getProps: () => Omit<RecipeTranslationEditor, 'onSave' | 'onImport' | 'onExport'>
+) {
 	const props = $derived(getProps());
 	const texts = $derived(props.texts ?? []);
-	const locales = $derived(props.locales ?? []);
 	const defaultLocale = $derived(props.defaultLocale ?? 'en');
 	const currentLocale = $derived(props.currentLocale ?? 'en');
 	const showKeyColumn = $derived(props.showKeyColumn ?? true);
 	const showContextColumn = $derived(props.showContextColumn ?? true);
 	const showStatusColumn = $derived(props.showStatusColumn ?? true);
+	const columns = $derived(
+		3 + Number(showKeyColumn) + Number(showContextColumn) + Number(showStatusColumn)
+	);
 
 	let editingId = $state<string | null>(null);
 	let editedValue = $state('');
+	let edits = $state<Record<string, Record<string, string>>>({});
+
+	$effect.pre(() => {
+		void props.texts;
+		edits = {};
+		editingId = null;
+	});
+
+	function translation(text: TranslatableText): string {
+		return edits[text.id]?.[currentLocale] ?? text.translations[currentLocale] ?? '';
+	}
+
+	function write(text: TranslatableText, value: string) {
+		edits = { ...edits, [text.id]: { ...edits[text.id], [currentLocale]: value } };
+		props.onTranslationChange?.(text.key, currentLocale, value);
+	}
 
 	function beginEdit(text: TranslatableText) {
 		editingId = text.id;
-		editedValue = text.translations[currentLocale] || '';
+		editedValue = translation(text);
 	}
 
 	function saveEdit() {
-		if (!editingId) return;
 		const text = texts.find((item) => item.id === editingId);
-		if (!text) return;
-		text.translations[currentLocale] = editedValue;
-		props.onTranslationChange?.(text.key, currentLocale, editedValue);
+		if (text) write(text, editedValue);
 		editingId = null;
 	}
 
@@ -33,20 +53,9 @@ export function createTranslationEditorState(getProps: () => RecipeTranslationEd
 		editingId = null;
 	}
 
-	const rootClass = $derived(['c-translation-editor', props.class].filter(Boolean).join(' '));
-	const panelClass = $derived('c-translation-editor__panel');
-	const headerClass = $derived(
-		['c-translation-editor__header', props.headerClass].filter(Boolean).join(' ')
-	);
-	const tableClass = $derived(
-		['c-translation-editor__table', props.tableClass].filter(Boolean).join(' ')
-	);
-	const rowClass = $derived(
-		['c-translation-editor__row', props.rowClass].filter(Boolean).join(' ')
-	);
-	const editorClass = $derived(
-		['c-translation-editor__editor', props.editorClass].filter(Boolean).join(' ')
-	);
+	function clear(text: TranslatableText) {
+		write(text, '');
+	}
 
 	const restProps = $derived.by(() => {
 		const {
@@ -63,38 +72,14 @@ export function createTranslationEditorState(getProps: () => RecipeTranslationEd
 			showContextColumn: _showContextColumn,
 			showStatusColumn: _showStatusColumn,
 			onTranslationChange: _onTranslationChange,
-			onSave: _onSave,
-			onImport: _onImport,
-			onExport: _onExport,
 			...rest
 		} = props;
 		return rest;
 	});
 
 	return {
-		get iconDownload(): TokenIconName {
-			return 'download';
-		},
-		get iconEdit(): TokenIconName {
-			return 'edit-3';
-		},
-		get iconLanguages(): TokenIconName {
-			return 'languages';
-		},
-		get iconSave(): TokenIconName {
-			return 'save';
-		},
-		get iconTrash(): TokenIconName {
-			return 'trash';
-		},
-		get iconUpload(): TokenIconName {
-			return 'upload';
-		},
 		get texts() {
 			return texts;
-		},
-		get locales() {
-			return locales;
 		},
 		get defaultLocale() {
 			return defaultLocale;
@@ -111,6 +96,9 @@ export function createTranslationEditorState(getProps: () => RecipeTranslationEd
 		get showStatusColumn() {
 			return showStatusColumn;
 		},
+		get columns() {
+			return columns;
+		},
 		get editingId() {
 			return editingId;
 		},
@@ -120,29 +108,15 @@ export function createTranslationEditorState(getProps: () => RecipeTranslationEd
 		set editedValue(value: string) {
 			editedValue = value;
 		},
-		get rootClass() {
-			return rootClass;
-		},
-		get panelClass() {
-			return panelClass;
-		},
-		get headerClass() {
-			return headerClass;
-		},
-		get tableClass() {
-			return tableClass;
-		},
-		get rowClass() {
-			return rowClass;
-		},
-		get editorClass() {
-			return editorClass;
-		},
 		get restProps() {
 			return restProps;
 		},
+		translation,
 		beginEdit,
 		saveEdit,
-		cancelEdit
+		cancelEdit,
+		clear
 	};
 }
+
+export default createTranslationEditorState;
