@@ -51,3 +51,4 @@ export {
 	RECORD_TOKEN_ALIAS,
 	TOKEN_TRANSITION
 } from './record';
+export { TOKEN_FONT_FAMILY_MATH } from './value';
