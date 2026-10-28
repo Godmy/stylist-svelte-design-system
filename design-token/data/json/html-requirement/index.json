@@ -1,6 +1,6 @@
 {
   "date": "2026-10-11",
-  "source": "html/const/array/html-style/index.ts",
+  "source": "html/const/preset/html-style/index.ts",
   "scope": "Observed references; emission is verified separately against light/dark theme providers.",
   "rules": 63,
   "names": [

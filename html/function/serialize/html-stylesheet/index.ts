@@ -1,4 +1,4 @@
-import { HTML_STYLE } from '$stylist/html/const/array/html-style';
+import { HTML_STYLE } from '$stylist/html/const/preset/html-style';
 import { HTML_LAYER_ORDER } from '$stylist/html/const/array/html-layer-order';
 import { HTML_SKIN_SCOPE } from '$stylist/html/const/value/html-skin-scope';
 import type { HtmlStyleRule } from '$stylist/html/type/struct/html-style-rule';

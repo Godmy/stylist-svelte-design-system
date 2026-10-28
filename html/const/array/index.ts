@@ -8,4 +8,3 @@ export { HTML_LAYER_ORDER } from './html-layer-order';
 export { HTML_LEVEL } from './html-level';
 export { HTML_NAMESPACE } from './html-namespace';
 export { HTML_RENDER } from './html-render';
-export { HTML_STYLE } from './html-style';

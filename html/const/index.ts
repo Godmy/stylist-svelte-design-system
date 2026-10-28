@@ -8,9 +8,9 @@ export {
 	HTML_LAYER_ORDER,
 	HTML_LEVEL,
 	HTML_NAMESPACE,
-	HTML_RENDER,
-	HTML_STYLE
+	HTML_RENDER
 } from './array';
+export { HTML_STYLE } from './preset';
 export {
 	HTML_ELEMENT,
 	HTML_INTERACTIVE_CONDITION

@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { ManagerThemeCSS } from '$stylist/theme/class/manager/theme-css';
 import { THEME_MODE_LIGHT } from '$stylist/theme/const/record/theme-mode-light';
 import { THEME_MODE_DARK } from '$stylist/theme/const/record/theme-mode-dark';
-import { HTML_STYLE } from '$stylist/html/const/array/html-style';
+import { HTML_STYLE } from '$stylist/html/const/preset/html-style';
 import { HTML_LAYER_ORDER } from '$stylist/html/const/array/html-layer-order';
 import type { HtmlStyleRule } from '$stylist/html/type/struct/html-style-rule';
 import { resolveHtmlStyleSelector } from '$stylist/html/function/resolve/html-style-selector';
