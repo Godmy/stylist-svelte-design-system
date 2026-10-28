@@ -5,7 +5,7 @@ import type { ContractStory } from '$stylist/html/interface/contract/story';
 /** `<h1>`: Heading. */
 export default {
 	component: HtmlH1,
-	content: [{ kind: 'text', value: 'Heading level 1' }],
+	content: [{ kind: 'text', value: 'Hello world!!!' }],
 	controls: {
 		// Global attributes
 		title: { type: 'text' },
