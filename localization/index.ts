@@ -60,8 +60,6 @@ export type {
 	RecipeLocaleProvider,
 	RecipeLocaleSwitcher,
 	RecipeTranslationEditor,
-	SlotExtendedTranslationEditor,
 	SlotLanguageSelectorStyleClasses,
-	SlotLocaleSwitcher,
 	SlotLocaleSwitcherLocale
 } from './interface';

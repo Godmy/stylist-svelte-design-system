@@ -10,8 +10,6 @@ export type {
 } from './recipe';
 export type {
 	NumberFormatOptions,
-	SlotExtendedTranslationEditor,
 	SlotLanguageSelectorStyleClasses,
-	SlotLocaleSwitcher,
 	SlotLocaleSwitcherLocale
 } from './slot';
