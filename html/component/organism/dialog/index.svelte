@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { RecipeHtmlDialog } from '$stylist/html/interface/recipe/dialog';
+	import createDialogComponentState from '$stylist/html/component/organism/dialog/state.svelte';
 
 	let {
 		element = $bindable(null),
@@ -10,14 +11,7 @@
 		...rest
 	}: RecipeHtmlDialog = $props();
 
-	$effect(() => {
-		const dialog = element;
-		if (!dialog || typeof dialog.show !== 'function') return;
-		if (open && !dialog.open) {
-			if (modal) dialog.showModal();
-			else dialog.show();
-		} else if (!open && dialog.open) dialog.close();
-	});
+	const state = createDialogComponentState(() => ({ element: element, open: open, modal: modal }));
 </script>
 
 <dialog

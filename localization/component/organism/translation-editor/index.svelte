@@ -14,52 +14,41 @@
 	import HtmlThead from '$stylist/html/component/molecule/thead/index.svelte';
 	import HtmlTr from '$stylist/html/component/molecule/tr/index.svelte';
 	import BaseIcon from '$stylist/svg/component/atom/icon/index.svelte';
-	import { LOCALIZATION_TRANSLATION_EDITOR_MESSAGE } from '$stylist/localization/const/record/translation-editor-message';
-	import { useMessage } from '$stylist/localization/function/hook/use-message';
+
 	import type { RecipeTranslationEditor } from '$stylist/localization/interface/recipe/translation-editor';
 	import createTranslationEditorState from '$stylist/localization/component/organism/translation-editor/state.svelte';
 
 	let { onSave, onImport, onExport, ...stateProps }: RecipeTranslationEditor = $props();
 	const id = $props.id();
-	const t = useMessage('translation-editor', LOCALIZATION_TRANSLATION_EDITOR_MESSAGE);
-	const editor = createTranslationEditorState(() => stateProps);
-	let fileInput = $state<HTMLInputElement | null>(null);
-
-	// The chosen file goes to the site as is: only the site knows its format.
-	function importFile(event: Event) {
-		const input = event.currentTarget as HTMLInputElement;
-		const file = input.files?.[0];
-		if (file) onImport?.(file);
-		input.value = '';
-	}
+	const state = createTranslationEditorState(() => ({ onImport: onImport, __rest: stateProps }));
 </script>
 
 <HtmlSection
-	{...editor.restProps}
+	{...state.editor.restProps}
 	class={['localization-translation-editor', stateProps.class]}
 	aria-labelledby="{id}-title"
 >
 	<HtmlHeader class={['localization-translation-editor__header', stateProps.headerClass]}>
 		<HtmlH3 id="{id}-title" class="localization-translation-editor__title">
 			<BaseIcon name="languages" size={20} />
-			{t('title')}
+			{state.t('title')}
 		</HtmlH3>
 		<HtmlDiv class="localization-translation-editor__actions">
 			{#if onImport}
 				<HtmlInputFile
-					bind:element={fileInput}
+					bind:element={state.fileInput}
 					class="localization-translation-editor__file"
 					accept=".json,application/json"
 					tabindex={-1}
 					aria-hidden="true"
-					onchange={importFile}
+					onchange={state.importFile}
 				/>
 				<HtmlButton
 					type="button"
 					class="localization-translation-editor__icon-button"
-					aria-label={t('import')}
-					title={t('import')}
-					onclick={() => fileInput?.click()}
+					aria-label={state.t('import')}
+					title={state.t('import')}
+					onclick={() => state.fileInput?.click()}
 				>
 					<BaseIcon name="upload" size={16} />
 				</HtmlButton>
@@ -68,8 +57,8 @@
 				<HtmlButton
 					type="button"
 					class="localization-translation-editor__icon-button"
-					aria-label={t('export')}
-					title={t('export')}
+					aria-label={state.t('export')}
+					title={state.t('export')}
 					onclick={() => onExport()}
 				>
 					<BaseIcon name="download" size={16} />
@@ -79,8 +68,8 @@
 				<HtmlButton
 					type="button"
 					class="localization-translation-editor__icon-button"
-					aria-label={t('saveAll')}
-					title={t('saveAll')}
+					aria-label={state.t('saveAll')}
+					title={state.t('saveAll')}
 					onclick={() => onSave()}
 				>
 					<BaseIcon name="save" size={16} />
@@ -93,86 +82,90 @@
 		<HtmlTable class={['localization-translation-editor__table', stateProps.tableClass]}>
 			<HtmlThead>
 				<HtmlTr>
-					{#if editor.showKeyColumn}
-						<HtmlTh scope="col">{t('key')}</HtmlTh>
+					{#if state.editor.showKeyColumn}
+						<HtmlTh scope="col">{state.t('key')}</HtmlTh>
 					{/if}
-					<HtmlTh scope="col">{t('source', { locale: editor.defaultLocale })}</HtmlTh>
-					<HtmlTh scope="col">{t('translation', { locale: editor.currentLocale })}</HtmlTh>
-					{#if editor.showContextColumn}
-						<HtmlTh scope="col">{t('context')}</HtmlTh>
+					<HtmlTh scope="col">{state.t('source', { locale: state.editor.defaultLocale })}</HtmlTh>
+					<HtmlTh scope="col"
+						>{state.t('translation', { locale: state.editor.currentLocale })}</HtmlTh
+					>
+					{#if state.editor.showContextColumn}
+						<HtmlTh scope="col">{state.t('context')}</HtmlTh>
 					{/if}
-					{#if editor.showStatusColumn}
-						<HtmlTh scope="col">{t('status')}</HtmlTh>
+					{#if state.editor.showStatusColumn}
+						<HtmlTh scope="col">{state.t('status')}</HtmlTh>
 					{/if}
-					<HtmlTh scope="col" class="localization-translation-editor__end">{t('actions')}</HtmlTh>
+					<HtmlTh scope="col" class="localization-translation-editor__end"
+						>{state.t('actions')}</HtmlTh
+					>
 				</HtmlTr>
 			</HtmlThead>
 			<HtmlTbody>
-				{#each editor.texts as text (text.id)}
-					{@const value = editor.translation(text)}
+				{#each state.editor.texts as text (text.id)}
+					{@const value = state.editor.translation(text)}
 					<HtmlTr class={['localization-translation-editor__row', stateProps.rowClass]}>
-						{#if editor.showKeyColumn}
+						{#if state.editor.showKeyColumn}
 							<HtmlTd class="localization-translation-editor__muted">{text.key}</HtmlTd>
 						{/if}
-						<HtmlTd lang={editor.defaultLocale}>{text.original}</HtmlTd>
+						<HtmlTd lang={state.editor.defaultLocale}>{text.original}</HtmlTd>
 						<HtmlTd>
-							{#if editor.editingId === text.id}
+							{#if state.editor.editingId === text.id}
 								<HtmlDiv
 									class={['localization-translation-editor__editor', stateProps.editorClass]}
 								>
 									<HtmlTextarea
 										class="localization-translation-editor__textarea"
 										rows={3}
-										lang={editor.currentLocale}
+										lang={state.editor.currentLocale}
 										dir="auto"
-										aria-label={t('field', { key: text.key })}
-										bind:value={editor.editedValue}
+										aria-label={state.t('field', { key: text.key })}
+										bind:value={state.editor.editedValue}
 									/>
 									<HtmlDiv class="localization-translation-editor__editor-actions">
 										<HtmlButton
 											type="button"
 											class="localization-translation-editor__button"
-											onclick={() => editor.cancelEdit()}
+											onclick={() => state.editor.cancelEdit()}
 										>
-											{t('cancel')}
+											{state.t('cancel')}
 										</HtmlButton>
 										<HtmlButton
 											type="button"
 											class="localization-translation-editor__button"
-											onclick={() => editor.saveEdit()}
+											onclick={() => state.editor.saveEdit()}
 										>
-											{t('save')}
+											{state.t('save')}
 										</HtmlButton>
 									</HtmlDiv>
 								</HtmlDiv>
 							{:else}
 								<HtmlDiv class="localization-translation-editor__cell">
 									{#if value}
-										<HtmlSpan lang={editor.currentLocale} dir="auto">{value}</HtmlSpan>
+										<HtmlSpan lang={state.editor.currentLocale} dir="auto">{value}</HtmlSpan>
 									{:else}
 										<HtmlSpan class="localization-translation-editor__muted"
-											>{t('missing')}</HtmlSpan
+											>{state.t('missing')}</HtmlSpan
 										>
 									{/if}
 									<HtmlButton
 										type="button"
 										class="localization-translation-editor__icon-button localization-translation-editor__icon-button--plain"
-										aria-label={t('edit', { key: text.key })}
-										title={t('edit', { key: text.key })}
-										onclick={() => editor.beginEdit(text)}
+										aria-label={state.t('edit', { key: text.key })}
+										title={state.t('edit', { key: text.key })}
+										onclick={() => state.editor.beginEdit(text)}
 									>
 										<BaseIcon name="edit-3" size={16} />
 									</HtmlButton>
 								</HtmlDiv>
 							{/if}
 						</HtmlTd>
-						{#if editor.showContextColumn}
+						{#if state.editor.showContextColumn}
 							<HtmlTd class="localization-translation-editor__muted">{text.context || '—'}</HtmlTd>
 						{/if}
-						{#if editor.showStatusColumn}
+						{#if state.editor.showStatusColumn}
 							<HtmlTd>
 								<HtmlSpan class="localization-translation-editor__status" data-status={text.status}>
-									{t(text.status)}
+									{state.t(text.status)}
 								</HtmlSpan>
 							</HtmlTd>
 						{/if}
@@ -180,10 +173,10 @@
 							<HtmlButton
 								type="button"
 								class="localization-translation-editor__icon-button localization-translation-editor__icon-button--plain"
-								aria-label={t('clear', { key: text.key })}
-								title={t('clear', { key: text.key })}
+								aria-label={state.t('clear', { key: text.key })}
+								title={state.t('clear', { key: text.key })}
 								disabled={!value}
-								onclick={() => editor.clear(text)}
+								onclick={() => state.editor.clear(text)}
 							>
 								<BaseIcon name="trash" size={16} />
 							</HtmlButton>
@@ -191,8 +184,8 @@
 					</HtmlTr>
 				{:else}
 					<HtmlTr>
-						<HtmlTd colspan={editor.columns} class="localization-translation-editor__muted">
-							{t('empty')}
+						<HtmlTd colspan={state.editor.columns} class="localization-translation-editor__muted">
+							{state.t('empty')}
 						</HtmlTd>
 					</HtmlTr>
 				{/each}

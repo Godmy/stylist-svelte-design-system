@@ -1,9 +1,10 @@
 <script lang="ts">
 	import HtmlDiv from '$stylist/html/component/organism/div/index.svelte';
-	import { ManagerLocaleContext } from '$stylist/localization/class/manager/locale-context';
+
 	import { LOCALIZATION_LOCALE_FALLBACK } from '$stylist/localization/const/value/locale-fallback';
-	import { resolveTextDirection } from '$stylist/localization/function/resolve/text-direction';
+
 	import type { RecipeLocaleProvider } from '$stylist/localization/interface/recipe/locale-provider';
+	import createLocaleProviderComponentState from '$stylist/localization/component/atom/locale-provider/state.svelte';
 
 	let {
 		locale = LOCALIZATION_LOCALE_FALLBACK,
@@ -16,38 +17,17 @@
 		children
 	}: RecipeLocaleProvider = $props();
 
-	const dir = $derived(resolveTextDirection(locale));
-
-	ManagerLocaleContext.set({
-		get locale() {
-			return locale;
-		},
-		get fallback() {
-			return fallback;
-		},
-		get dir() {
-			return dir;
-		},
-		get timeZone() {
-			return timeZone;
-		},
-		get currency() {
-			return currency;
-		},
-		get messages() {
-			return messages;
-		}
-	});
-
-	$effect(() => {
-		if (!syncDocument) return;
-		const root = window.document.documentElement;
-		root.lang = locale;
-		root.dir = dir;
-	});
+	const state = createLocaleProviderComponentState(() => ({
+		locale: locale,
+		fallback: fallback,
+		timeZone: timeZone,
+		currency: currency,
+		messages: messages,
+		document: syncDocument
+	}));
 </script>
 
-<HtmlDiv class={['localization-locale-provider', className]} lang={locale} {dir}>
+<HtmlDiv class={['localization-locale-provider', className]} lang={locale} dir={state.dir}>
 	{@render children?.()}
 </HtmlDiv>
 

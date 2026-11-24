@@ -9,102 +9,89 @@
 	import HtmlUl from '$stylist/html/component/molecule/ul/index.svelte';
 	import BaseIcon from '$stylist/svg/component/atom/icon/index.svelte';
 	import BaseFlag from '$stylist/svg/component/atom/flag/index.svelte';
-	import { LOCALIZATION_LANGUAGE_SELECTOR_MESSAGE } from '$stylist/localization/const/record/language-selector-message';
-	import { useMessage } from '$stylist/localization/function/hook/use-message';
+
 	import type { RecipeLanguageSelector } from '$stylist/localization/interface/recipe/language-selector';
-	import createLanguageSelectorState from '$stylist/localization/component/organism/language-selector/state.svelte';
+	import createLanguageSelectorComponentState from '$stylist/localization/component/organism/language-selector/state.svelte';
 
 	let props: RecipeLanguageSelector & HTMLAttributes<HTMLDivElement> = $props();
 	const id = $props.id();
-	const t = useMessage('language-selector', LOCALIZATION_LANGUAGE_SELECTOR_MESSAGE);
-	const selector = createLanguageSelectorState(() => props);
-	let root = $state<HTMLDivElement | null>(null);
-	let trigger = $state<HTMLButtonElement | null>(null);
-
-	// The list is a disclosure: it closes on Escape (focus returns to the button) and on a
-	// pointer press outside the selector.
-	function onKeydown(event: KeyboardEvent) {
-		if (event.key !== 'Escape' || !selector.isOpen) return;
-		selector.close();
-		trigger?.focus();
-	}
-	function onPointerdown(event: PointerEvent) {
-		if (selector.isOpen && root && !root.contains(event.target as Node)) selector.close();
-	}
+	const state = createLanguageSelectorComponentState(() => props);
 </script>
 
-<svelte:window onkeydown={onKeydown} onpointerdown={onPointerdown} />
+<svelte:window onkeydown={state.onKeydown} onpointerdown={state.onPointerdown} />
 
 <HtmlDiv
-	bind:element={root}
-	{...selector.restProps}
+	bind:element={state.root}
+	{...state.selector.restProps}
 	class={['localization-language-selector', props.class]}
-	data-size={selector.size}
-	style="--localization-language-selector-accent: var(--color-{selector.tone}-500, var(--color-primary-500))"
+	data-size={state.selector.size}
+	style="--localization-language-selector-accent: var(--color-{state.selector
+		.tone}-500, var(--color-primary-500))"
 >
 	<HtmlButton
-		bind:element={trigger}
+		bind:element={state.trigger}
 		type="button"
 		class={['localization-language-selector__trigger', props.buttonClass]}
-		aria-expanded={selector.isOpen}
-		aria-controls={selector.isOpen ? `${id}-list` : undefined}
-		onclick={() => selector.toggleDropdown()}
+		aria-expanded={state.selector.isOpen}
+		aria-controls={state.selector.isOpen ? `${id}-list` : undefined}
+		onclick={() => state.selector.toggleDropdown()}
 	>
-		{#if selector.selectedLanguage}
-			{#if selector.showFlags && selector.selectedLanguage.flag}
+		{#if state.selector.selectedLanguage}
+			{#if state.selector.showFlags && state.selector.selectedLanguage.flag}
 				<BaseFlag
-					flag={selector.selectedLanguage.flag}
-					code={selector.selectedLanguage.code}
+					flag={state.selector.selectedLanguage.flag}
+					code={state.selector.selectedLanguage.code}
 					class="localization-language-selector__flag"
 				/>
 			{/if}
-			<HtmlSpan lang={selector.selectedLanguage.code}>
-				{selector.selectedLanguage.name}
-				{#if selector.showNativeName && selector.selectedLanguage.nativeName && selector.selectedLanguage.nativeName !== selector.selectedLanguage.name}
+			<HtmlSpan lang={state.selector.selectedLanguage.code}>
+				{state.selector.selectedLanguage.name}
+				{#if state.selector.showNativeName && state.selector.selectedLanguage.nativeName && state.selector.selectedLanguage.nativeName !== state.selector.selectedLanguage.name}
 					<HtmlSpan class="localization-language-selector__native">
-						({selector.selectedLanguage.nativeName})
+						({state.selector.selectedLanguage.nativeName})
 					</HtmlSpan>
 				{/if}
 			</HtmlSpan>
 		{:else}
 			<BaseIcon name="globe" size={16} />
-			<HtmlSpan>{t('placeholder')}</HtmlSpan>
+			<HtmlSpan>{state.t('placeholder')}</HtmlSpan>
 		{/if}
 		<BaseIcon name="chevron-down" size={16} class="localization-language-selector__chevron" />
 	</HtmlButton>
 
-	{#if selector.isOpen}
+	{#if state.selector.isOpen}
 		<HtmlDiv
 			id="{id}-list"
 			class={['localization-language-selector__dropdown', props.dropdownClass]}
-			data-placement={selector.placement}
+			data-placement={state.selector.placement}
 		>
-			{#if selector.searchable}
+			{#if state.selector.searchable}
 				<HtmlDiv class="localization-language-selector__search">
 					<BaseIcon name="search" size={16} class="localization-language-selector__search-icon" />
 					<HtmlInputSearch
 						class="localization-language-selector__search-input"
-						placeholder={t('search')}
-						aria-label={t('search')}
-						bind:value={selector.searchQuery}
+						placeholder={state.t('search')}
+						aria-label={state.t('search')}
+						bind:value={state.selector.searchQuery}
 					/>
 				</HtmlDiv>
 			{/if}
 
-			{#if selector.filteredLanguages.length === 0}
-				<HtmlP class="localization-language-selector__empty" role="status">{t('empty')}</HtmlP>
+			{#if state.selector.filteredLanguages.length === 0}
+				<HtmlP class="localization-language-selector__empty" role="status">{state.t('empty')}</HtmlP
+				>
 			{:else}
-				<HtmlUl class="localization-language-selector__list" aria-label={t('list')}>
-					{#each selector.filteredLanguages as language (language.code)}
-						{@const current = language.code === selector.currentLanguage}
+				<HtmlUl class="localization-language-selector__list" aria-label={state.t('list')}>
+					{#each state.selector.filteredLanguages as language (language.code)}
+						{@const current = language.code === state.selector.currentLanguage}
 						<HtmlLi>
 							<HtmlButton
 								type="button"
 								class={['localization-language-selector__item', props.languageClass]}
 								aria-current={current ? 'true' : undefined}
-								onclick={() => selector.selectLanguage(language.code)}
+								onclick={() => state.selector.selectLanguage(language.code)}
 							>
-								{#if selector.showFlags && language.flag}
+								{#if state.selector.showFlags && language.flag}
 									<BaseFlag
 										flag={language.flag}
 										code={language.code}
@@ -113,7 +100,7 @@
 								{/if}
 								<HtmlSpan class="localization-language-selector__name" lang={language.code}>
 									{language.name}
-									{#if selector.showNativeName && language.nativeName && language.name !== language.nativeName}
+									{#if state.selector.showNativeName && language.nativeName && language.name !== language.nativeName}
 										<HtmlSpan class="localization-language-selector__native">
 											({language.nativeName})
 										</HtmlSpan>
@@ -129,7 +116,7 @@
 			{/if}
 
 			<HtmlP class="localization-language-selector__count" aria-live="polite">
-				{t('count', { count: selector.filteredLanguages.length })}
+				{state.t('count', { count: state.selector.filteredLanguages.length })}
 			</HtmlP>
 		</HtmlDiv>
 	{/if}
