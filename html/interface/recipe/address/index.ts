@@ -1,7 +1,8 @@
+import type { ComputeIntersectAll } from '$stylist/theme/type/compute/intersect-all';
 import type { HTMLAttributes } from 'svelte/elements';
 
 /** `<address>`: Contact information for a page or article element. */
-export interface RecipeHtmlAddress extends HTMLAttributes<HTMLElement> {
+export interface RecipeHtmlAddress extends ComputeIntersectAll<[HTMLAttributes<HTMLElement>]> {
 	/** Bound DOM node (`bind:element`). */
 	element?: HTMLElement | null;
 }
